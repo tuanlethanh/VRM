@@ -49,47 +49,46 @@
             this.ribbonButton6 = new System.Windows.Forms.RibbonButton();
             this.daMembers = new System.Windows.Forms.DataGridView();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtResidence = new System.Windows.Forms.RichTextBox();
-            this.txtAddress = new System.Windows.Forms.RichTextBox();
-            this.txtHomtown = new System.Windows.Forms.RichTextBox();
-            this.txtCode = new System.Windows.Forms.TextBox();
-            this.pbAvatar = new System.Windows.Forms.PictureBox();
-            this.cboGender = new System.Windows.Forms.ComboBox();
-            this.txtDateOfBirth = new System.Windows.Forms.DateTimePicker();
-            this.txtFullName = new System.Windows.Forms.TextBox();
-            this.txtQuanlify = new System.Windows.Forms.TextBox();
-            this.txtPoliticalTheory = new System.Windows.Forms.TextBox();
-            this.txtAcademic = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtPhoneNumber = new System.Windows.Forms.TextBox();
-            this.txtReligon = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtethnic = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.lblDanToc = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblCode = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtResidence = new System.Windows.Forms.RichTextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtAddress = new System.Windows.Forms.RichTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtHomtown = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtCode = new System.Windows.Forms.TextBox();
+            this.lblCode = new System.Windows.Forms.Label();
+            this.pbAvatar = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cboGender = new System.Windows.Forms.ComboBox();
+            this.lblDanToc = new System.Windows.Forms.Label();
+            this.txtDateOfBirth = new System.Windows.Forms.DateTimePicker();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtFullName = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtQuanlify = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtPoliticalTheory = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtAcademic = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtPhoneNumber = new System.Windows.Forms.TextBox();
+            this.txtethnic = new System.Windows.Forms.TextBox();
+            this.txtReligon = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -119,19 +118,19 @@
             this.CHUCVU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DONVI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.THOIGIAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.daMembers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.groupBox6.SuspendLayout();
@@ -140,6 +139,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbon1
@@ -235,7 +235,8 @@
             this.ribbonButton1.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
             this.ribbonButton1.Name = "ribbonButton1";
             this.ribbonButton1.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.SmallImage")));
-            this.ribbonButton1.Text = "In biểu mẫu";
+            this.ribbonButton1.Text = "Xuất danh sách hội viên";
+            this.ribbonButton1.Click += new System.EventHandler(this.ribbonButton1_Click);
             // 
             // ribbonButton2
             // 
@@ -244,7 +245,7 @@
             this.ribbonButton2.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
             this.ribbonButton2.Name = "ribbonButton2";
             this.ribbonButton2.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton2.SmallImage")));
-            this.ribbonButton2.Text = "In biểu mẫu";
+            this.ribbonButton2.Text = "In thông tin hội viên";
             // 
             // ribbonPanel5
             // 
@@ -338,273 +339,6 @@
             this.splitContainer1.SplitterDistance = 458;
             this.splitContainer1.TabIndex = 2;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(244, 13);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(182, 26);
-            this.label11.TabIndex = 55;
-            this.label11.Text = "Thông tin hội viên";
-            // 
-            // txtResidence
-            // 
-            this.txtResidence.Enabled = false;
-            this.txtResidence.Location = new System.Drawing.Point(120, 247);
-            this.txtResidence.Name = "txtResidence";
-            this.txtResidence.Size = new System.Drawing.Size(407, 39);
-            this.txtResidence.TabIndex = 54;
-            this.txtResidence.Text = "";
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.Enabled = false;
-            this.txtAddress.Location = new System.Drawing.Point(120, 202);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(407, 39);
-            this.txtAddress.TabIndex = 53;
-            this.txtAddress.Text = "";
-            // 
-            // txtHomtown
-            // 
-            this.txtHomtown.Enabled = false;
-            this.txtHomtown.Location = new System.Drawing.Point(120, 157);
-            this.txtHomtown.Name = "txtHomtown";
-            this.txtHomtown.Size = new System.Drawing.Size(407, 39);
-            this.txtHomtown.TabIndex = 52;
-            this.txtHomtown.Text = "";
-            // 
-            // txtCode
-            // 
-            this.txtCode.Enabled = false;
-            this.txtCode.Location = new System.Drawing.Point(120, 52);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(109, 20);
-            this.txtCode.TabIndex = 26;
-            // 
-            // pbAvatar
-            // 
-            this.pbAvatar.BackColor = System.Drawing.Color.Gray;
-            this.pbAvatar.Location = new System.Drawing.Point(533, 52);
-            this.pbAvatar.Name = "pbAvatar";
-            this.pbAvatar.Size = new System.Drawing.Size(210, 286);
-            this.pbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbAvatar.TabIndex = 49;
-            this.pbAvatar.TabStop = false;
-            // 
-            // cboGender
-            // 
-            this.cboGender.Enabled = false;
-            this.cboGender.FormattingEnabled = true;
-            this.cboGender.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ",
-            "Không xác định"});
-            this.cboGender.Location = new System.Drawing.Point(312, 78);
-            this.cboGender.Name = "cboGender";
-            this.cboGender.Size = new System.Drawing.Size(215, 21);
-            this.cboGender.TabIndex = 51;
-            // 
-            // txtDateOfBirth
-            // 
-            this.txtDateOfBirth.Enabled = false;
-            this.txtDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtDateOfBirth.Location = new System.Drawing.Point(120, 79);
-            this.txtDateOfBirth.Name = "txtDateOfBirth";
-            this.txtDateOfBirth.Size = new System.Drawing.Size(109, 20);
-            this.txtDateOfBirth.TabIndex = 50;
-            // 
-            // txtFullName
-            // 
-            this.txtFullName.Enabled = false;
-            this.txtFullName.Location = new System.Drawing.Point(312, 52);
-            this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(215, 20);
-            this.txtFullName.TabIndex = 30;
-            // 
-            // txtQuanlify
-            // 
-            this.txtQuanlify.Enabled = false;
-            this.txtQuanlify.Location = new System.Drawing.Point(352, 292);
-            this.txtQuanlify.Name = "txtQuanlify";
-            this.txtQuanlify.Size = new System.Drawing.Size(175, 20);
-            this.txtQuanlify.TabIndex = 29;
-            // 
-            // txtPoliticalTheory
-            // 
-            this.txtPoliticalTheory.Enabled = false;
-            this.txtPoliticalTheory.Location = new System.Drawing.Point(121, 318);
-            this.txtPoliticalTheory.Name = "txtPoliticalTheory";
-            this.txtPoliticalTheory.Size = new System.Drawing.Size(406, 20);
-            this.txtPoliticalTheory.TabIndex = 34;
-            // 
-            // txtAcademic
-            // 
-            this.txtAcademic.Enabled = false;
-            this.txtAcademic.Location = new System.Drawing.Point(121, 292);
-            this.txtAcademic.Name = "txtAcademic";
-            this.txtAcademic.Size = new System.Drawing.Size(108, 20);
-            this.txtAcademic.TabIndex = 31;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Enabled = false;
-            this.txtEmail.Location = new System.Drawing.Point(312, 131);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(215, 20);
-            this.txtEmail.TabIndex = 27;
-            // 
-            // txtPhoneNumber
-            // 
-            this.txtPhoneNumber.Enabled = false;
-            this.txtPhoneNumber.Location = new System.Drawing.Point(121, 131);
-            this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(108, 20);
-            this.txtPhoneNumber.TabIndex = 33;
-            // 
-            // txtReligon
-            // 
-            this.txtReligon.Enabled = false;
-            this.txtReligon.Location = new System.Drawing.Point(312, 105);
-            this.txtReligon.Name = "txtReligon";
-            this.txtReligon.Size = new System.Drawing.Size(215, 20);
-            this.txtReligon.TabIndex = 28;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(235, 295);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(131, 13);
-            this.label9.TabIndex = 38;
-            this.label9.Text = "Trình độ chuyên môn:";
-            // 
-            // txtethnic
-            // 
-            this.txtethnic.Enabled = false;
-            this.txtethnic.Location = new System.Drawing.Point(121, 105);
-            this.txtethnic.Name = "txtethnic";
-            this.txtethnic.Size = new System.Drawing.Size(108, 20);
-            this.txtethnic.TabIndex = 32;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(23, 321);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(104, 13);
-            this.label10.TabIndex = 42;
-            this.label10.Text = "Lý luận chính trị:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(246, 138);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(41, 13);
-            this.label7.TabIndex = 39;
-            this.label7.Text = "Email:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(23, 295);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(109, 13);
-            this.label8.TabIndex = 43;
-            this.label8.Text = "Trình độ học vấn:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(246, 85);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(60, 13);
-            this.label16.TabIndex = 36;
-            this.label16.Text = "Giới tính:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 134);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 13);
-            this.label3.TabIndex = 40;
-            this.label3.Text = "Số điện thoại:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(246, 112);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(61, 13);
-            this.label15.TabIndex = 37;
-            this.label15.Text = "Tôn giáo:";
-            // 
-            // lblDanToc
-            // 
-            this.lblDanToc.AutoSize = true;
-            this.lblDanToc.Location = new System.Drawing.Point(23, 108);
-            this.lblDanToc.Name = "lblDanToc";
-            this.lblDanToc.Size = new System.Drawing.Size(56, 13);
-            this.lblDanToc.TabIndex = 41;
-            this.lblDanToc.Text = "Dân tộc:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 81);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 13);
-            this.label2.TabIndex = 44;
-            this.label2.Text = "Ngày sinh:";
-            // 
-            // lblCode
-            // 
-            this.lblCode.AutoSize = true;
-            this.lblCode.Location = new System.Drawing.Point(23, 59);
-            this.lblCode.Name = "lblCode";
-            this.lblCode.Size = new System.Drawing.Size(77, 13);
-            this.lblCode.TabIndex = 45;
-            this.lblCode.Text = "Mã hội viên:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(246, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
-            this.label1.TabIndex = 46;
-            this.label1.Text = "Họ tên:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 157);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 13);
-            this.label4.TabIndex = 47;
-            this.label4.Text = "Quê quán:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(23, 250);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(84, 13);
-            this.label6.TabIndex = 35;
-            this.label6.Text = "Nơi ĐKHKTT:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 204);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 13);
-            this.label5.TabIndex = 48;
-            this.label5.Text = "Chỗ ở hiện nay:";
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -666,19 +400,15 @@
             this.tabPage1.Text = "Thông tin hội viên";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // checkBox7
             // 
-            this.tabPage2.Controls.Add(this.groupBox7);
-            this.tabPage2.Controls.Add(this.groupBox6);
-            this.tabPage2.Controls.Add(this.groupBox5);
-            this.tabPage2.Controls.Add(this.groupBox4);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(760, 497);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Quá trình chiến đấu";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.Location = new System.Drawing.Point(294, 367);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(150, 17);
+            this.checkBox7.TabIndex = 58;
+            this.checkBox7.Text = "Chất độc màu da cam";
+            this.checkBox7.UseVisualStyleBackColor = true;
             // 
             // checkBox6
             // 
@@ -740,27 +470,286 @@
             this.checkBox1.Text = "Đảng viên";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // checkBox7
+            // label11
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(294, 367);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(150, 17);
-            this.checkBox7.TabIndex = 58;
-            this.checkBox7.Text = "Chất độc màu da cam";
-            this.checkBox7.UseVisualStyleBackColor = true;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(244, 13);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(182, 26);
+            this.label11.TabIndex = 55;
+            this.label11.Text = "Thông tin hội viên";
             // 
-            // tabPage3
+            // label5
             // 
-            this.tabPage3.Controls.Add(this.groupBox2);
-            this.tabPage3.Controls.Add(this.groupBox1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(760, 497);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Thi đua khen thưởng";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(23, 204);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(96, 13);
+            this.label5.TabIndex = 48;
+            this.label5.Text = "Chỗ ở hiện nay:";
+            // 
+            // txtResidence
+            // 
+            this.txtResidence.Enabled = false;
+            this.txtResidence.Location = new System.Drawing.Point(120, 247);
+            this.txtResidence.Name = "txtResidence";
+            this.txtResidence.Size = new System.Drawing.Size(407, 39);
+            this.txtResidence.TabIndex = 54;
+            this.txtResidence.Text = "";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(23, 250);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(84, 13);
+            this.label6.TabIndex = 35;
+            this.label6.Text = "Nơi ĐKHKTT:";
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Enabled = false;
+            this.txtAddress.Location = new System.Drawing.Point(120, 202);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(407, 39);
+            this.txtAddress.TabIndex = 53;
+            this.txtAddress.Text = "";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(23, 157);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(66, 13);
+            this.label4.TabIndex = 47;
+            this.label4.Text = "Quê quán:";
+            // 
+            // txtHomtown
+            // 
+            this.txtHomtown.Enabled = false;
+            this.txtHomtown.Location = new System.Drawing.Point(120, 157);
+            this.txtHomtown.Name = "txtHomtown";
+            this.txtHomtown.Size = new System.Drawing.Size(407, 39);
+            this.txtHomtown.TabIndex = 52;
+            this.txtHomtown.Text = "";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(246, 55);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.TabIndex = 46;
+            this.label1.Text = "Họ tên:";
+            // 
+            // txtCode
+            // 
+            this.txtCode.Enabled = false;
+            this.txtCode.Location = new System.Drawing.Point(120, 52);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(109, 20);
+            this.txtCode.TabIndex = 26;
+            // 
+            // lblCode
+            // 
+            this.lblCode.AutoSize = true;
+            this.lblCode.Location = new System.Drawing.Point(23, 59);
+            this.lblCode.Name = "lblCode";
+            this.lblCode.Size = new System.Drawing.Size(77, 13);
+            this.lblCode.TabIndex = 45;
+            this.lblCode.Text = "Mã hội viên:";
+            // 
+            // pbAvatar
+            // 
+            this.pbAvatar.BackColor = System.Drawing.Color.Gray;
+            this.pbAvatar.Location = new System.Drawing.Point(533, 52);
+            this.pbAvatar.Name = "pbAvatar";
+            this.pbAvatar.Size = new System.Drawing.Size(210, 286);
+            this.pbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbAvatar.TabIndex = 49;
+            this.pbAvatar.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(23, 81);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 13);
+            this.label2.TabIndex = 44;
+            this.label2.Text = "Ngày sinh:";
+            // 
+            // cboGender
+            // 
+            this.cboGender.Enabled = false;
+            this.cboGender.FormattingEnabled = true;
+            this.cboGender.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ",
+            "Không xác định"});
+            this.cboGender.Location = new System.Drawing.Point(312, 78);
+            this.cboGender.Name = "cboGender";
+            this.cboGender.Size = new System.Drawing.Size(215, 21);
+            this.cboGender.TabIndex = 51;
+            // 
+            // lblDanToc
+            // 
+            this.lblDanToc.AutoSize = true;
+            this.lblDanToc.Location = new System.Drawing.Point(23, 108);
+            this.lblDanToc.Name = "lblDanToc";
+            this.lblDanToc.Size = new System.Drawing.Size(56, 13);
+            this.lblDanToc.TabIndex = 41;
+            this.lblDanToc.Text = "Dân tộc:";
+            // 
+            // txtDateOfBirth
+            // 
+            this.txtDateOfBirth.Enabled = false;
+            this.txtDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtDateOfBirth.Location = new System.Drawing.Point(120, 79);
+            this.txtDateOfBirth.Name = "txtDateOfBirth";
+            this.txtDateOfBirth.Size = new System.Drawing.Size(109, 20);
+            this.txtDateOfBirth.TabIndex = 50;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(246, 112);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(61, 13);
+            this.label15.TabIndex = 37;
+            this.label15.Text = "Tôn giáo:";
+            // 
+            // txtFullName
+            // 
+            this.txtFullName.Enabled = false;
+            this.txtFullName.Location = new System.Drawing.Point(312, 52);
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.Size = new System.Drawing.Size(215, 20);
+            this.txtFullName.TabIndex = 30;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(23, 134);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 13);
+            this.label3.TabIndex = 40;
+            this.label3.Text = "Số điện thoại:";
+            // 
+            // txtQuanlify
+            // 
+            this.txtQuanlify.Enabled = false;
+            this.txtQuanlify.Location = new System.Drawing.Point(352, 292);
+            this.txtQuanlify.Name = "txtQuanlify";
+            this.txtQuanlify.Size = new System.Drawing.Size(175, 20);
+            this.txtQuanlify.TabIndex = 29;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(246, 85);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(60, 13);
+            this.label16.TabIndex = 36;
+            this.label16.Text = "Giới tính:";
+            // 
+            // txtPoliticalTheory
+            // 
+            this.txtPoliticalTheory.Enabled = false;
+            this.txtPoliticalTheory.Location = new System.Drawing.Point(121, 318);
+            this.txtPoliticalTheory.Name = "txtPoliticalTheory";
+            this.txtPoliticalTheory.Size = new System.Drawing.Size(406, 20);
+            this.txtPoliticalTheory.TabIndex = 34;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(23, 295);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(109, 13);
+            this.label8.TabIndex = 43;
+            this.label8.Text = "Trình độ học vấn:";
+            // 
+            // txtAcademic
+            // 
+            this.txtAcademic.Enabled = false;
+            this.txtAcademic.Location = new System.Drawing.Point(121, 292);
+            this.txtAcademic.Name = "txtAcademic";
+            this.txtAcademic.Size = new System.Drawing.Size(108, 20);
+            this.txtAcademic.TabIndex = 31;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(246, 138);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(41, 13);
+            this.label7.TabIndex = 39;
+            this.label7.Text = "Email:";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Enabled = false;
+            this.txtEmail.Location = new System.Drawing.Point(312, 131);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(215, 20);
+            this.txtEmail.TabIndex = 27;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(23, 321);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(104, 13);
+            this.label10.TabIndex = 42;
+            this.label10.Text = "Lý luận chính trị:";
+            // 
+            // txtPhoneNumber
+            // 
+            this.txtPhoneNumber.Enabled = false;
+            this.txtPhoneNumber.Location = new System.Drawing.Point(121, 131);
+            this.txtPhoneNumber.Name = "txtPhoneNumber";
+            this.txtPhoneNumber.Size = new System.Drawing.Size(108, 20);
+            this.txtPhoneNumber.TabIndex = 33;
+            // 
+            // txtethnic
+            // 
+            this.txtethnic.Enabled = false;
+            this.txtethnic.Location = new System.Drawing.Point(121, 105);
+            this.txtethnic.Name = "txtethnic";
+            this.txtethnic.Size = new System.Drawing.Size(108, 20);
+            this.txtethnic.TabIndex = 32;
+            // 
+            // txtReligon
+            // 
+            this.txtReligon.Enabled = false;
+            this.txtReligon.Location = new System.Drawing.Point(312, 105);
+            this.txtReligon.Name = "txtReligon";
+            this.txtReligon.Size = new System.Drawing.Size(215, 20);
+            this.txtReligon.TabIndex = 28;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(235, 295);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(131, 13);
+            this.label9.TabIndex = 38;
+            this.label9.Text = "Trình độ chuyên môn:";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.groupBox7);
+            this.tabPage2.Controls.Add(this.groupBox6);
+            this.tabPage2.Controls.Add(this.groupBox5);
+            this.tabPage2.Controls.Add(this.groupBox4);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(760, 497);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Quá trình chiến đấu";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // groupBox7
             // 
@@ -988,14 +977,17 @@
             this.THOIGIAN.HeaderText = "Thời gian";
             this.THOIGIAN.Name = "THOIGIAN";
             // 
-            // groupBox1
+            // tabPage3
             // 
-            this.groupBox1.Location = new System.Drawing.Point(7, 7);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(745, 165);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Khen thưởng";
+            this.tabPage3.Controls.Add(this.groupBox2);
+            this.tabPage3.Controls.Add(this.groupBox1);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(760, 497);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Thi đua khen thưởng";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -1005,6 +997,15 @@
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Kỷ luật";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(7, 7);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(745, 165);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Khen thưởng";
             // 
             // tabPage4
             // 
@@ -1035,12 +1036,11 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.groupBox6.ResumeLayout(false);
@@ -1049,6 +1049,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
