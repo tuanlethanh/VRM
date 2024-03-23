@@ -21,7 +21,7 @@ namespace VRM.Forms
             InitializeComponent();
         }
 
-        public Branch branch { get; set; }
+        public CHIHOI branch { get; set; }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -37,7 +37,7 @@ namespace VRM.Forms
                 return;
             }
 
-            var existingBranch = databaseContext.Branches.FirstOrDefault(s => s.CODE ==  txtCode.Text);
+            var existingBranch = databaseContext.CHIHOIs.FirstOrDefault(s => s.MACHIHOI ==  txtCode.Text);
             if (existingBranch != null)
             {
                 MessageBox.Show("Mã chi bộ đã tồn tại, vui lòng kiểm tra lại", "Lỗi nhập liệu");
@@ -46,12 +46,12 @@ namespace VRM.Forms
 
             if (branch == null || branch.ID == 0)
             {
-                branch = new Branch();
+                branch = new CHIHOI();
             }
 
-            branch.CODE = txtCode.Text;
-            branch.NAME = txtName.Text;
-            databaseContext.Branches.Add(branch);
+            branch.MACHIHOI = txtCode.Text;
+            branch.TENCHIHOI = txtName.Text;
+            databaseContext.CHIHOIs.Add(branch);
             databaseContext.SaveChanges();
             DialogResult = DialogResult.OK;
         }
@@ -60,8 +60,8 @@ namespace VRM.Forms
         {
             if (branch != null)
             {
-                txtCode.Text = branch.CODE;
-                txtName.Text = branch.NAME;
+                txtCode.Text = branch.MACHIHOI;
+                txtName.Text = branch.TENCHIHOI;
             }
         }
     }

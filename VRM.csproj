@@ -36,6 +36,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Aspose.Cells">
+      <HintPath>Lib\Aspose.Cells.dll</HintPath>
+    </Reference>
     <Reference Include="ComponentFactory.Krypton.Toolkit">
       <HintPath>Lib\ComponentFactory.Krypton.Toolkit.dll</HintPath>
     </Reference>
@@ -75,8 +78,11 @@
   <ItemGroup>
     <Compile Include="Database\DatabaseContext.cs" />
     <Compile Include="Database\SQLiteConfiguration.cs" />
-    <Compile Include="Entities\Branch.cs" />
-    <Compile Include="Entities\Member.cs" />
+    <Compile Include="Entities\CHIHOI.cs" />
+    <Compile Include="Entities\KHENTHUONG.cs" />
+    <Compile Include="Entities\QUATRINHCHIENDAU.cs" />
+    <Compile Include="Entities\HOIVIEN.cs" />
+    <Compile Include="Entities\THONGTINGIADINH.cs" />
     <Compile Include="Forms\frmBranch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,11 +95,29 @@
     <Compile Include="Forms\frmEditBranch.Designer.cs">
       <DependentUpon>frmEditBranch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmKhenThuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmKhenThuong.Designer.cs">
+      <DependentUpon>frmKhenThuong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmQuaTrinhChienDau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmQuaTrinhChienDau.Designer.cs">
+      <DependentUpon>frmQuaTrinhChienDau.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmModifyMember.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmModifyMember.Designer.cs">
       <DependentUpon>frmModifyMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmThongTinGiaDinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmThongTinGiaDinh.Designer.cs">
+      <DependentUpon>frmThongTinGiaDinh.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -101,67 +125,128 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMain1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMain1.Designer.cs">
-      <DependentUpon>frmMain1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Main.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Models\DropdownModel.cs" />
+    <Compile Include="Models\HoiVienModel.cs" />
+    <Compile Include="Models\PrintModel.cs" />
+    <Compile Include="Models\QuaTrinhCongTacChienDau.cs" />
+    <Compile Include="Models\ReportListModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\Constant.cs" />
+    <Compile Include="Utilities\Excel\ColumnValue.cs" />
+    <Compile Include="Utilities\Excel\Emums.cs" />
+    <Compile Include="Utilities\Excel\ExcelHelper.cs" />
     <EmbeddedResource Include="Forms\frmBranch.resx">
       <DependentUpon>frmBranch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmEditBranch.resx">
       <DependentUpon>frmEditBranch.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmKhenThuong.resx">
+      <DependentUpon>frmKhenThuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmQuaTrinhChienDau.resx">
+      <DependentUpon>frmQuaTrinhChienDau.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmModifyMember.resx">
       <DependentUpon>frmModifyMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmThongTinGiaDinh.resx">
+      <DependentUpon>frmThongTinGiaDinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMain1.resx">
-      <DependentUpon>frmMain1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Main.resx">
-      <DependentUpon>Main.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="Database\VRM.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    <None Include="Templates\DanhSachHoiVienFULL.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
+    <None Include="Templates\DanhSachHoiVien.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\DonXinVaoHoiCCB.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\add.png" />
+    <None Include="Resources\add1.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diskette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove-user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\financial-report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\to-do-list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\padlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\programmer.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.txtKeyword = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnNew = new System.Windows.Forms.Button();
-            this.daBranch = new System.Windows.Forms.DataGridView();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnNew = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtKeyword = new System.Windows.Forms.TextBox();
+            this.daBranch = new System.Windows.Forms.DataGridView();
             this.CODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,23 +67,6 @@
             this.splitContainer1.SplitterDistance = 40;
             this.splitContainer1.TabIndex = 0;
             // 
-            // txtKeyword
-            // 
-            this.txtKeyword.Location = new System.Drawing.Point(65, 12);
-            this.txtKeyword.Name = "txtKeyword";
-            this.txtKeyword.Size = new System.Drawing.Size(174, 20);
-            this.txtKeyword.TabIndex = 0;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(245, 12);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 1;
-            this.btnSearch.Text = "Tìm kiếm";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -93,15 +76,51 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Từ khóa";
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Image = global::VRM.Properties.Resources.delete;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.Location = new System.Drawing.Point(467, 3);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(66, 35);
+            this.btnDelete.TabIndex = 1;
+            this.btnDelete.Text = "Xóa";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // btnNew
             // 
-            this.btnNew.Location = new System.Drawing.Point(379, 10);
+            this.btnNew.Image = global::VRM.Properties.Resources.add;
+            this.btnNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNew.Location = new System.Drawing.Point(373, 2);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(75, 23);
+            this.btnNew.Size = new System.Drawing.Size(88, 35);
             this.btnNew.TabIndex = 1;
             this.btnNew.Text = "Thêm mới";
+            this.btnNew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Image = global::VRM.Properties.Resources.search;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSearch.Location = new System.Drawing.Point(245, 3);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(83, 35);
+            this.btnSearch.TabIndex = 1;
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtKeyword
+            // 
+            this.txtKeyword.Location = new System.Drawing.Point(65, 12);
+            this.txtKeyword.Name = "txtKeyword";
+            this.txtKeyword.Size = new System.Drawing.Size(174, 20);
+            this.txtKeyword.TabIndex = 0;
             // 
             // daBranch
             // 
@@ -125,19 +144,9 @@
             this.daBranch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.daBranch_CellClick);
             this.daBranch.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.daBranch_CellDoubleClick);
             // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(460, 10);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 1;
-            this.btnDelete.Text = "Xóa";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
             // CODE
             // 
-            this.CODE.DataPropertyName = "CODE";
+            this.CODE.DataPropertyName = "MACHIHOI";
             this.CODE.HeaderText = "Mã chi hội";
             this.CODE.Name = "CODE";
             this.CODE.ReadOnly = true;
@@ -145,7 +154,7 @@
             // NAME
             // 
             this.NAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NAME.DataPropertyName = "NAME";
+            this.NAME.DataPropertyName = "TENCHIHOI";
             this.NAME.HeaderText = "Tên chi hội";
             this.NAME.Name = "NAME";
             this.NAME.ReadOnly = true;
@@ -169,6 +178,7 @@
             this.Name = "frmBranch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Danh mục chi hội";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmBranch_FormClosed);
             this.Load += new System.EventHandler(this.frmBranch_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();

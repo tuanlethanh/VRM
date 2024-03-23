@@ -27,9 +27,15 @@ namespace VRM.Database
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<Member> Members { get; set; }
+        public DbSet<HOIVIEN> HOIVIENs { get; set; }
 
-        public DbSet<Branch> Branches { get; set; }
+        public DbSet<CHIHOI> CHIHOIs { get; set; }
+
+        public DbSet<QUATRINHCHIENDAU> QUATRINHCHIENDAUs { get; set; }
+
+        public DbSet<KHENTHUONG> KHENTHUONGs { get; set; }
+
+        public DbSet<THONGTINGIADINH> THONGTINGIADINHs { get; set; }
 
     }
 }

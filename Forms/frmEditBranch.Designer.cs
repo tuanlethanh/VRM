@@ -70,21 +70,27 @@
             // 
             // btnClose
             // 
+            this.btnClose.Image = global::VRM.Properties.Resources.logout;
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(181, 64);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.Size = new System.Drawing.Size(70, 35);
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "Đóng";
+            this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(100, 64);
+            this.btnSave.Image = global::VRM.Properties.Resources.diskette;
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.Location = new System.Drawing.Point(112, 64);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(63, 35);
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Lưu";
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -92,7 +98,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(268, 94);
+            this.ClientSize = new System.Drawing.Size(268, 106);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label2);
@@ -103,7 +109,7 @@
             this.MinimizeBox = false;
             this.Name = "frmEditBranch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmEditBranch";
+            this.Text = "Chi hội";
             this.Load += new System.EventHandler(this.frmEditBranch_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

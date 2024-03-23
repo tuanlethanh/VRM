@@ -12,17 +12,17 @@ using System.Threading.Tasks;
 
 namespace VRM.Entities
 {
-    [Table(Name = "Branch")]
-    public class Branch
+    [Table(Name = "CHIHOI")]
+    public class CHIHOI
     {
         [Column(Name = "ID", IsDbGenerated = true, IsPrimaryKey = true, DbType = "INTEGER")]
         [Key]
         public int ID { get; set; }
 
-        [Column(Name = "CODE", DbType = "VARCHAR")]
-        public string CODE { get; set; }
+        [Column(Name = "MACHIHOI", DbType = "VARCHAR")]
+        public string MACHIHOI { get; set; }
 
-        [Column(Name = "NAME", DbType = "VARCHAR")]
-        public string NAME { get; set; }
+        [Column(Name = "TENCHIHOI", DbType = "VARCHAR")]
+        public string TENCHIHOI { get; set; }
     }
 }

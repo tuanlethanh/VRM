@@ -34,16 +34,16 @@ namespace VRM.Forms
 
         void refreshGrid()
         {
-            var query = databaseContext.Branches.AsQueryable();
+            var query = databaseContext.CHIHOIs.AsQueryable();
             if (!string.IsNullOrEmpty(txtKeyword.Text))
             {
-                query.Where(s => txtKeyword.Text.Contains(s.NAME)
-                || txtKeyword.Text.Contains(s.CODE));
+                query.Where(s => txtKeyword.Text.Contains(s.TENCHIHOI)
+                || txtKeyword.Text.Contains(s.MACHIHOI));
             }
 
             daBranch.DataSource = query.ToList();
         }
-        void showEditForm(Branch branch)
+        void showEditForm(CHIHOI branch)
         {
             var editBranch = new frmEditBranch();
             editBranch.branch = branch;
@@ -66,10 +66,10 @@ namespace VRM.Forms
             if (confirm == DialogResult.Yes)
             {
                 var id = int.Parse(currentSelectedRow.Cells["ID"].Value.ToString());
-                var branch = databaseContext.Branches.FirstOrDefault(r => r.ID == id);
+                var branch = databaseContext.CHIHOIs.FirstOrDefault(r => r.ID == id);
                 if (branch != null)
                 {
-                    databaseContext.Branches.Remove(branch);
+                    databaseContext.CHIHOIs.Remove(branch);
                     databaseContext.SaveChanges();
                     
                 }
@@ -85,12 +85,17 @@ namespace VRM.Forms
         private void daBranch_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             currentSelectedRow = this.daBranch.CurrentRow;
-            showEditForm(new Branch
+            showEditForm(new CHIHOI
             {
-                CODE = currentSelectedRow.Cells["CODE"].Value.ToString(),
-                NAME = currentSelectedRow.Cells["NAME"].Value.ToString(),
+                MACHIHOI = currentSelectedRow.Cells["CODE"].Value.ToString(),
+                TENCHIHOI = currentSelectedRow.Cells["NAME"].Value.ToString(),
                 ID = int.Parse(currentSelectedRow.Cells["ID"].Value.ToString())
             });
+        }
+
+        private void frmBranch_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            DialogResult = DialogResult.OK;
         }
     }
 }
