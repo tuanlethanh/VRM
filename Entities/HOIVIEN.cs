@@ -101,10 +101,10 @@ namespace VRM.Entities
         public DateTime UPDATED_AT { get; set; }
 
         [Column(Name = "CREATED_BY", DbType = "INTEGER")]
-        public DateTime CREATED_BY { get; set; }
+        public int CREATED_BY { get; set; }
 
         [Column(Name = "UPDATED_BY", DbType = "INTEGER")]
-        public DateTime UPDATED_BY { get; set; }
+        public int UPDATED_BY { get; set; }
 
         [Column(Name = "NGAYNHAPNGU", DbType = "DATE")]
         public DateTime NGAYNHAPNGU { get; set; }

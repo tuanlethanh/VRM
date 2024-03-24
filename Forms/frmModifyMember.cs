@@ -101,11 +101,13 @@ namespace VRM.Forms
             if (hoivien.ID == 0)
             {
                 hoivien.CREATED_AT = DateTime.Now;
+                hoivien.CREATED_BY = Constant.LoginUser.ID;
                 hoivien = databaseContext.HOIVIENs.Add(hoivien);
             }
             else
             {
                 hoivien.UPDATED_AT = DateTime.Now;
+                hoivien.UPDATED_BY = Constant.LoginUser.ID;
             }
             
             DanhSachQuaTrinhChienDau.ForEach(s => s.HOIVIEN_ID = hoivien.ID);

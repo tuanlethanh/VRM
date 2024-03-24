@@ -14,6 +14,7 @@ using System.Windows.Forms;
 using VRM.Database;
 using VRM.Entities;
 using VRM.Forms;
+using VRM.Forms.Authentication;
 using VRM.Models;
 using VRM.Utilities;
 using VRM.Utilities.Excel;
@@ -36,32 +37,50 @@ namespace VRM
         public List<THONGTINGIADINH> DanhSachThanhVien { get; set; } = new List<THONGTINGIADINH>();
         private void frmMain_Load(object sender, EventArgs e)
         {
-            oldSize = base.Size;
-            refreshDataGridView();
 
-            var listChiHoi = databaseContext.CHIHOIs.ToList();
-            listChiHoi.Insert(0, new CHIHOI { ID = -1, TENCHIHOI = "------Tất cả------" });
-            cboTimKiemChiHoi.DataSource = listChiHoi;
-            cboTimKiemChiHoi.DisplayMember = "TENCHIHOI";
-            cboTimKiemChiHoi.ValueMember = "ID";
+            //Chua login:
+            listButtonUpdate.Enabled = false;
+            listButtonExport.Enabled = false;
+            listUserManager.Enabled = false;
+            listDanhMuc.Enabled = false;
+            btnSearch.Enabled = false;
 
-            var branchs = databaseContext.CHIHOIs.ToList();
-            cboBranch.DataSource = branchs;
-            cboBranch.DisplayMember = "TENCHIHOI";
-            cboBranch.ValueMember = "ID";
+            frmLogin frm = new frmLogin();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                listButtonUpdate.Enabled = true;
+                listButtonExport.Enabled = true;
+                listUserManager.Enabled = true;
+                listDanhMuc.Enabled = true;
+                btnSearch.Enabled = true;
 
-            cboGender.DataSource = Constant.DanhMucGioiTinh;
-            cboGender.DisplayMember = "Name";
-            cboGender.ValueMember = "Id";
 
-            cboThuongBenhBinh.DataSource = Constant.DanhMucHangThuongBinh;
-            cboThuongBenhBinh.DisplayMember = "Name";
-            cboThuongBenhBinh.ValueMember = "Id";
+                oldSize = base.Size;
+                refreshDataGridView();
 
-            cboCapBac.DataSource = Constant.DanhMucCapBac;
-            cboCapBac.DisplayMember = "Name";
-            cboCapBac.ValueMember = "Id";
+                var listChiHoi = databaseContext.CHIHOIs.ToList();
+                listChiHoi.Insert(0, new CHIHOI { ID = -1, TENCHIHOI = "------Tất cả------" });
+                cboTimKiemChiHoi.DataSource = listChiHoi;
+                cboTimKiemChiHoi.DisplayMember = "TENCHIHOI";
+                cboTimKiemChiHoi.ValueMember = "ID";
 
+                var branchs = databaseContext.CHIHOIs.ToList();
+                cboBranch.DataSource = branchs;
+                cboBranch.DisplayMember = "TENCHIHOI";
+                cboBranch.ValueMember = "ID";
+
+                cboGender.DataSource = Constant.DanhMucGioiTinh;
+                cboGender.DisplayMember = "Name";
+                cboGender.ValueMember = "Id";
+
+                cboThuongBenhBinh.DataSource = Constant.DanhMucHangThuongBinh;
+                cboThuongBenhBinh.DisplayMember = "Name";
+                cboThuongBenhBinh.ValueMember = "Id";
+
+                cboCapBac.DataSource = Constant.DanhMucCapBac;
+                cboCapBac.DisplayMember = "Name";
+                cboCapBac.ValueMember = "Id";
+            }
         }
 
         void refreshDataGridView()
@@ -593,6 +612,72 @@ namespace VRM
                 Process.Start(save.FileName);
             }
 
+        }
+
+        private void btnDangNhap_Click(object sender, EventArgs e)
+        {
+
+            frmLogin frm = new frmLogin();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                listButtonUpdate.Enabled = true;
+                listButtonExport.Enabled = true;
+                listUserManager.Enabled = true;
+                listDanhMuc.Enabled = true;
+                btnSearch.Enabled = true;
+
+
+                oldSize = base.Size;
+                refreshDataGridView();
+
+                var listChiHoi = databaseContext.CHIHOIs.ToList();
+                listChiHoi.Insert(0, new CHIHOI { ID = -1, TENCHIHOI = "------Tất cả------" });
+                cboTimKiemChiHoi.DataSource = listChiHoi;
+                cboTimKiemChiHoi.DisplayMember = "TENCHIHOI";
+                cboTimKiemChiHoi.ValueMember = "ID";
+
+                var branchs = databaseContext.CHIHOIs.ToList();
+                cboBranch.DataSource = branchs;
+                cboBranch.DisplayMember = "TENCHIHOI";
+                cboBranch.ValueMember = "ID";
+
+                cboGender.DataSource = Constant.DanhMucGioiTinh;
+                cboGender.DisplayMember = "Name";
+                cboGender.ValueMember = "Id";
+
+                cboThuongBenhBinh.DataSource = Constant.DanhMucHangThuongBinh;
+                cboThuongBenhBinh.DisplayMember = "Name";
+                cboThuongBenhBinh.ValueMember = "Id";
+
+                cboCapBac.DataSource = Constant.DanhMucCapBac;
+                cboCapBac.DisplayMember = "Name";
+                cboCapBac.ValueMember = "Id";
+            }
+        }
+
+        private void btnDoiMatKhau_Click(object sender, EventArgs e)
+        {
+            frmChangePassword frm = new frmChangePassword();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show("Thay đổi mật khẩu thành công, vui lòng đăng nhập lại để tiếp tục sử dụng chương trình");
+                listButtonUpdate.Enabled = false;
+                listButtonExport.Enabled = false;
+                listUserManager.Enabled = false;
+                listDanhMuc.Enabled = false;
+                btnSearch.Enabled = false;
+
+                frmLogin frmLogin = new frmLogin();
+                if (frmLogin.ShowDialog() == DialogResult.OK)
+                {
+                    listButtonUpdate.Enabled = true;
+                    listButtonExport.Enabled = true;
+                    listUserManager.Enabled = true;
+                    listDanhMuc.Enabled = true;
+                    btnSearch.Enabled = true;
+
+                }
+            }
         }
     }
 }

@@ -83,6 +83,19 @@
     <Compile Include="Entities\QUATRINHCHIENDAU.cs" />
     <Compile Include="Entities\HOIVIEN.cs" />
     <Compile Include="Entities\THONGTINGIADINH.cs" />
+    <Compile Include="Entities\USER.cs" />
+    <Compile Include="Forms\Authentication\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Authentication\frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Authentication\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Authentication\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmBranch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +154,12 @@
     <Compile Include="Utilities\Excel\ColumnValue.cs" />
     <Compile Include="Utilities\Excel\Emums.cs" />
     <Compile Include="Utilities\Excel\ExcelHelper.cs" />
+    <EmbeddedResource Include="Forms\Authentication\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Authentication\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmBranch.resx">
       <DependentUpon>frmBranch.cs</DependentUpon>
     </EmbeddedResource>

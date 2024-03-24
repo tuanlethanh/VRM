@@ -36,6 +36,7 @@ namespace VRM.Database
         public DbSet<KHENTHUONG> KHENTHUONGs { get; set; }
 
         public DbSet<THONGTINGIADINH> THONGTINGIADINHs { get; set; }
+        public DbSet<USER> USERs { get; set; }
 
     }
 }

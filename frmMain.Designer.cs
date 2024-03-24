@@ -31,26 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.ribbon1 = new System.Windows.Forms.Ribbon();
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
-            this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
-            this.btnNewMember = new System.Windows.Forms.RibbonButton();
-            this.btnUpdateMember = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton3 = new System.Windows.Forms.RibbonButton();
-            this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
-            this.btnExport = new System.Windows.Forms.RibbonButton();
-            this.btnPrint = new System.Windows.Forms.RibbonButton();
-            this.ribbonPanel5 = new System.Windows.Forms.RibbonPanel();
+            this.listButtonUpdate = new System.Windows.Forms.RibbonPanel();
+            this.listButtonExport = new System.Windows.Forms.RibbonPanel();
             this.ribbonTab2 = new System.Windows.Forms.RibbonTab();
-            this.ribbonPanel3 = new System.Windows.Forms.RibbonPanel();
-            this.btnBranchManage = new System.Windows.Forms.RibbonButton();
-            this.ribbonPanel4 = new System.Windows.Forms.RibbonPanel();
-            this.btnQuanLyUser = new System.Windows.Forms.RibbonButton();
-            this.btnDoiMatKhau = new System.Windows.Forms.RibbonButton();
-            this.btnLogin = new System.Windows.Forms.RibbonButton();
+            this.listDanhMuc = new System.Windows.Forms.RibbonPanel();
+            this.listUserManager = new System.Windows.Forms.RibbonPanel();
             this.daMembers = new System.Windows.Forms.DataGridView();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.txtTimKiemNamSinh = new System.Windows.Forms.TextBox();
             this.txtTimKiemTuKhoa = new System.Windows.Forms.TextBox();
             this.cboTimKiemChiHoi = new System.Windows.Forms.ComboBox();
@@ -102,7 +91,6 @@
             this.chkDanTocItNguoi = new System.Windows.Forms.CheckBox();
             this.chkConLietSi = new System.Windows.Forms.CheckBox();
             this.chkDangVien = new System.Windows.Forms.CheckBox();
-            this.pbAvatar = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -157,6 +145,19 @@
             this.HVHoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VNGAYSINH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HVQUEQUAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PanelDangNhapHeThong = new System.Windows.Forms.RibbonPanel();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.pbAvatar = new System.Windows.Forms.PictureBox();
+            this.btnNewMember = new System.Windows.Forms.RibbonButton();
+            this.btnUpdateMember = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton3 = new System.Windows.Forms.RibbonButton();
+            this.btnExport = new System.Windows.Forms.RibbonButton();
+            this.btnPrint = new System.Windows.Forms.RibbonButton();
+            this.btnDangNhap = new System.Windows.Forms.RibbonButton();
+            this.btnBranchManage = new System.Windows.Forms.RibbonButton();
+            this.btnQuanLyUser = new System.Windows.Forms.RibbonButton();
+            this.btnDoiMatKhau = new System.Windows.Forms.RibbonButton();
+            this.btnLogin = new System.Windows.Forms.RibbonButton();
             ((System.ComponentModel.ISupportInitialize)(this.daMembers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -176,10 +177,10 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDateOfBirth)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dagKhangChien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dagKhenThuong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dagGiaDinh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon1
@@ -206,141 +207,46 @@
             // ribbonTab1
             // 
             this.ribbonTab1.Name = "ribbonTab1";
-            this.ribbonTab1.Panels.Add(this.ribbonPanel1);
-            this.ribbonTab1.Panels.Add(this.ribbonPanel2);
-            this.ribbonTab1.Panels.Add(this.ribbonPanel5);
+            this.ribbonTab1.Panels.Add(this.listButtonUpdate);
+            this.ribbonTab1.Panels.Add(this.listButtonExport);
+            this.ribbonTab1.Panels.Add(this.PanelDangNhapHeThong);
             this.ribbonTab1.Text = "Chức năng";
             // 
-            // ribbonPanel1
+            // listButtonUpdate
             // 
-            this.ribbonPanel1.Items.Add(this.btnNewMember);
-            this.ribbonPanel1.Items.Add(this.btnUpdateMember);
-            this.ribbonPanel1.Items.Add(this.ribbonButton3);
-            this.ribbonPanel1.Name = "ribbonPanel1";
-            this.ribbonPanel1.Text = "Quản lý thông tin";
+            this.listButtonUpdate.Items.Add(this.btnNewMember);
+            this.listButtonUpdate.Items.Add(this.btnUpdateMember);
+            this.listButtonUpdate.Items.Add(this.ribbonButton3);
+            this.listButtonUpdate.Name = "listButtonUpdate";
+            this.listButtonUpdate.Text = "Quản lý thông tin";
             // 
-            // btnNewMember
+            // listButtonExport
             // 
-            this.btnNewMember.Image = ((System.Drawing.Image)(resources.GetObject("btnNewMember.Image")));
-            this.btnNewMember.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNewMember.LargeImage")));
-            this.btnNewMember.MaximumSize = new System.Drawing.Size(100, 0);
-            this.btnNewMember.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
-            this.btnNewMember.Name = "btnNewMember";
-            this.btnNewMember.SmallImage = global::VRM.Properties.Resources.add_icon;
-            this.btnNewMember.Text = "Thêm hội viên";
-            this.btnNewMember.Click += new System.EventHandler(this.btnNewMember_Click);
-            // 
-            // btnUpdateMember
-            // 
-            this.btnUpdateMember.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdateMember.Image")));
-            this.btnUpdateMember.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnUpdateMember.LargeImage")));
-            this.btnUpdateMember.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
-            this.btnUpdateMember.Name = "btnUpdateMember";
-            this.btnUpdateMember.SmallImage = global::VRM.Properties.Resources.edit_icon;
-            this.btnUpdateMember.Text = "Cập nhật hội viên";
-            this.btnUpdateMember.Click += new System.EventHandler(this.btnUpdateMember_Click);
-            // 
-            // ribbonButton3
-            // 
-            this.ribbonButton3.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton3.Image")));
-            this.ribbonButton3.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton3.LargeImage")));
-            this.ribbonButton3.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
-            this.ribbonButton3.Name = "ribbonButton3";
-            this.ribbonButton3.SmallImage = global::VRM.Properties.Resources.remove_user;
-            this.ribbonButton3.Text = "Xóa hội viên";
-            this.ribbonButton3.Click += new System.EventHandler(this.ribbonButton3_Click);
-            // 
-            // ribbonPanel2
-            // 
-            this.ribbonPanel2.Items.Add(this.btnExport);
-            this.ribbonPanel2.Items.Add(this.btnPrint);
-            this.ribbonPanel2.Name = "ribbonPanel2";
-            this.ribbonPanel2.Text = "Lập biểu mẫu";
-            // 
-            // btnExport
-            // 
-            this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
-            this.btnExport.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnExport.LargeImage")));
-            this.btnExport.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
-            this.btnExport.Name = "btnExport";
-            this.btnExport.SmallImage = global::VRM.Properties.Resources.financial_report;
-            this.btnExport.Text = "Xuất danh sách hội viên";
-            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
-            this.btnPrint.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPrint.LargeImage")));
-            this.btnPrint.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.SmallImage = global::VRM.Properties.Resources.print;
-            this.btnPrint.Text = "In giấy xin vào hội";
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
-            // ribbonPanel5
-            // 
-            this.ribbonPanel5.Name = "ribbonPanel5";
-            this.ribbonPanel5.Text = "Thoát";
+            this.listButtonExport.Items.Add(this.btnExport);
+            this.listButtonExport.Items.Add(this.btnPrint);
+            this.listButtonExport.Name = "listButtonExport";
+            this.listButtonExport.Text = "Lập biểu mẫu";
             // 
             // ribbonTab2
             // 
             this.ribbonTab2.Name = "ribbonTab2";
-            this.ribbonTab2.Panels.Add(this.ribbonPanel3);
-            this.ribbonTab2.Panels.Add(this.ribbonPanel4);
+            this.ribbonTab2.Panels.Add(this.listDanhMuc);
+            this.ribbonTab2.Panels.Add(this.listUserManager);
             this.ribbonTab2.Text = "Cấu hình";
             // 
-            // ribbonPanel3
+            // listDanhMuc
             // 
-            this.ribbonPanel3.Items.Add(this.btnBranchManage);
-            this.ribbonPanel3.Name = "ribbonPanel3";
-            this.ribbonPanel3.Text = "Quản lý danh mục";
+            this.listDanhMuc.Items.Add(this.btnBranchManage);
+            this.listDanhMuc.Name = "listDanhMuc";
+            this.listDanhMuc.Text = "Quản lý danh mục";
             // 
-            // btnBranchManage
+            // listUserManager
             // 
-            this.btnBranchManage.Image = global::VRM.Properties.Resources.list;
-            this.btnBranchManage.LargeImage = global::VRM.Properties.Resources.list;
-            this.btnBranchManage.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
-            this.btnBranchManage.Name = "btnBranchManage";
-            this.btnBranchManage.SmallImage = global::VRM.Properties.Resources.to_do_list;
-            this.btnBranchManage.Text = "Danh mục chi hội";
-            this.btnBranchManage.Click += new System.EventHandler(this.btnBranchManage_Click);
-            // 
-            // ribbonPanel4
-            // 
-            this.ribbonPanel4.Items.Add(this.btnQuanLyUser);
-            this.ribbonPanel4.Items.Add(this.btnDoiMatKhau);
-            this.ribbonPanel4.Items.Add(this.btnLogin);
-            this.ribbonPanel4.Name = "ribbonPanel4";
-            this.ribbonPanel4.Text = "Quản lý tài khoản đăng nhập";
-            // 
-            // btnQuanLyUser
-            // 
-            this.btnQuanLyUser.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanLyUser.Image")));
-            this.btnQuanLyUser.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnQuanLyUser.LargeImage")));
-            this.btnQuanLyUser.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
-            this.btnQuanLyUser.Name = "btnQuanLyUser";
-            this.btnQuanLyUser.SmallImage = global::VRM.Properties.Resources.programmer;
-            this.btnQuanLyUser.Text = "Quản lý User";
-            // 
-            // btnDoiMatKhau
-            // 
-            this.btnDoiMatKhau.Image = ((System.Drawing.Image)(resources.GetObject("btnDoiMatKhau.Image")));
-            this.btnDoiMatKhau.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDoiMatKhau.LargeImage")));
-            this.btnDoiMatKhau.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
-            this.btnDoiMatKhau.MinSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
-            this.btnDoiMatKhau.Name = "btnDoiMatKhau";
-            this.btnDoiMatKhau.SmallImage = global::VRM.Properties.Resources.padlock;
-            this.btnDoiMatKhau.Text = "Thay đổi mật khẩu";
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.Image = ((System.Drawing.Image)(resources.GetObject("btnLogin.Image")));
-            this.btnLogin.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLogin.LargeImage")));
-            this.btnLogin.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
-            this.btnLogin.MinSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.SmallImage = global::VRM.Properties.Resources.login;
-            this.btnLogin.Text = "Đăng xuất";
+            this.listUserManager.Items.Add(this.btnQuanLyUser);
+            this.listUserManager.Items.Add(this.btnDoiMatKhau);
+            this.listUserManager.Items.Add(this.btnLogin);
+            this.listUserManager.Name = "listUserManager";
+            this.listUserManager.Text = "Quản lý tài khoản đăng nhập";
             // 
             // daMembers
             // 
@@ -418,19 +324,6 @@
             this.groupBox9.TabIndex = 0;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Tìm kiếm";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Image = global::VRM.Properties.Resources.search;
-            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSearch.Location = new System.Drawing.Point(369, 55);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(83, 35);
-            this.btnSearch.TabIndex = 3;
-            this.btnSearch.Text = "Tìm kiếm";
-            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtTimKiemNamSinh
             // 
@@ -956,16 +849,6 @@
             this.chkDangVien.Text = "Đảng viên";
             this.chkDangVien.UseVisualStyleBackColor = true;
             // 
-            // pbAvatar
-            // 
-            this.pbAvatar.BackColor = System.Drawing.Color.Gray;
-            this.pbAvatar.Location = new System.Drawing.Point(578, 19);
-            this.pbAvatar.Name = "pbAvatar";
-            this.pbAvatar.Size = new System.Drawing.Size(172, 246);
-            this.pbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbAvatar.TabIndex = 21;
-            this.pbAvatar.TabStop = false;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -1432,6 +1315,137 @@
             this.HVQUEQUAN.ReadOnly = true;
             this.HVQUEQUAN.Width = 200;
             // 
+            // PanelDangNhapHeThong
+            // 
+            this.PanelDangNhapHeThong.Items.Add(this.btnDangNhap);
+            this.PanelDangNhapHeThong.Name = "PanelDangNhapHeThong";
+            this.PanelDangNhapHeThong.Text = "Đăng nhập ứng dụng";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Image = global::VRM.Properties.Resources.search;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSearch.Location = new System.Drawing.Point(369, 55);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(83, 35);
+            this.btnSearch.TabIndex = 3;
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // pbAvatar
+            // 
+            this.pbAvatar.BackColor = System.Drawing.Color.Gray;
+            this.pbAvatar.Location = new System.Drawing.Point(578, 19);
+            this.pbAvatar.Name = "pbAvatar";
+            this.pbAvatar.Size = new System.Drawing.Size(172, 246);
+            this.pbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbAvatar.TabIndex = 21;
+            this.pbAvatar.TabStop = false;
+            // 
+            // btnNewMember
+            // 
+            this.btnNewMember.Image = ((System.Drawing.Image)(resources.GetObject("btnNewMember.Image")));
+            this.btnNewMember.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNewMember.LargeImage")));
+            this.btnNewMember.MaximumSize = new System.Drawing.Size(100, 0);
+            this.btnNewMember.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
+            this.btnNewMember.Name = "btnNewMember";
+            this.btnNewMember.SmallImage = global::VRM.Properties.Resources.add_icon;
+            this.btnNewMember.Text = "Thêm hội viên";
+            this.btnNewMember.Click += new System.EventHandler(this.btnNewMember_Click);
+            // 
+            // btnUpdateMember
+            // 
+            this.btnUpdateMember.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdateMember.Image")));
+            this.btnUpdateMember.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnUpdateMember.LargeImage")));
+            this.btnUpdateMember.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
+            this.btnUpdateMember.Name = "btnUpdateMember";
+            this.btnUpdateMember.SmallImage = global::VRM.Properties.Resources.edit_icon;
+            this.btnUpdateMember.Text = "Cập nhật hội viên";
+            this.btnUpdateMember.Click += new System.EventHandler(this.btnUpdateMember_Click);
+            // 
+            // ribbonButton3
+            // 
+            this.ribbonButton3.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton3.Image")));
+            this.ribbonButton3.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton3.LargeImage")));
+            this.ribbonButton3.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
+            this.ribbonButton3.Name = "ribbonButton3";
+            this.ribbonButton3.SmallImage = global::VRM.Properties.Resources.remove_user;
+            this.ribbonButton3.Text = "Xóa hội viên";
+            this.ribbonButton3.Click += new System.EventHandler(this.ribbonButton3_Click);
+            // 
+            // btnExport
+            // 
+            this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
+            this.btnExport.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnExport.LargeImage")));
+            this.btnExport.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
+            this.btnExport.Name = "btnExport";
+            this.btnExport.SmallImage = global::VRM.Properties.Resources.financial_report;
+            this.btnExport.Text = "Xuất danh sách hội viên";
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
+            this.btnPrint.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPrint.LargeImage")));
+            this.btnPrint.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.SmallImage = global::VRM.Properties.Resources.print;
+            this.btnPrint.Text = "In giấy xin vào hội";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // btnDangNhap
+            // 
+            this.btnDangNhap.Image = ((System.Drawing.Image)(resources.GetObject("btnDangNhap.Image")));
+            this.btnDangNhap.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDangNhap.LargeImage")));
+            this.btnDangNhap.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
+            this.btnDangNhap.MinSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
+            this.btnDangNhap.Name = "btnDangNhap";
+            this.btnDangNhap.SmallImage = global::VRM.Properties.Resources.login;
+            this.btnDangNhap.Text = "Đăng nhập";
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
+            // 
+            // btnBranchManage
+            // 
+            this.btnBranchManage.Image = global::VRM.Properties.Resources.list;
+            this.btnBranchManage.LargeImage = global::VRM.Properties.Resources.list;
+            this.btnBranchManage.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
+            this.btnBranchManage.Name = "btnBranchManage";
+            this.btnBranchManage.SmallImage = global::VRM.Properties.Resources.to_do_list;
+            this.btnBranchManage.Text = "Danh mục chi hội";
+            this.btnBranchManage.Click += new System.EventHandler(this.btnBranchManage_Click);
+            // 
+            // btnQuanLyUser
+            // 
+            this.btnQuanLyUser.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanLyUser.Image")));
+            this.btnQuanLyUser.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnQuanLyUser.LargeImage")));
+            this.btnQuanLyUser.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
+            this.btnQuanLyUser.Name = "btnQuanLyUser";
+            this.btnQuanLyUser.SmallImage = global::VRM.Properties.Resources.programmer;
+            this.btnQuanLyUser.Text = "Quản lý User";
+            // 
+            // btnDoiMatKhau
+            // 
+            this.btnDoiMatKhau.Image = ((System.Drawing.Image)(resources.GetObject("btnDoiMatKhau.Image")));
+            this.btnDoiMatKhau.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDoiMatKhau.LargeImage")));
+            this.btnDoiMatKhau.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
+            this.btnDoiMatKhau.MinSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
+            this.btnDoiMatKhau.Name = "btnDoiMatKhau";
+            this.btnDoiMatKhau.SmallImage = global::VRM.Properties.Resources.padlock;
+            this.btnDoiMatKhau.Text = "Thay đổi mật khẩu";
+            this.btnDoiMatKhau.Click += new System.EventHandler(this.btnDoiMatKhau_Click);
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.Image = ((System.Drawing.Image)(resources.GetObject("btnLogin.Image")));
+            this.btnLogin.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLogin.LargeImage")));
+            this.btnLogin.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
+            this.btnLogin.MinSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.SmallImage = global::VRM.Properties.Resources.login;
+            this.btnLogin.Text = "Đăng xuất";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1468,10 +1482,10 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDateOfBirth)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dagKhangChien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dagKhenThuong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dagGiaDinh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1481,15 +1495,15 @@
         private System.Windows.Forms.Ribbon ribbon1;
         private System.Windows.Forms.RibbonTab ribbonTab1;
         private System.Windows.Forms.RibbonTab ribbonTab2;
-        private System.Windows.Forms.RibbonPanel ribbonPanel1;
-        private System.Windows.Forms.RibbonPanel ribbonPanel2;
+        private System.Windows.Forms.RibbonPanel listButtonUpdate;
+        private System.Windows.Forms.RibbonPanel listButtonExport;
         private System.Windows.Forms.RibbonButton btnNewMember;
         private System.Windows.Forms.RibbonButton btnUpdateMember;
         private System.Windows.Forms.RibbonButton ribbonButton3;
         private System.Windows.Forms.RibbonButton btnExport;
-        private System.Windows.Forms.RibbonPanel ribbonPanel3;
+        private System.Windows.Forms.RibbonPanel listDanhMuc;
         private System.Windows.Forms.RibbonPanel ribbonPanel5;
-        private System.Windows.Forms.RibbonPanel ribbonPanel4;
+        private System.Windows.Forms.RibbonPanel listUserManager;
         private System.Windows.Forms.RibbonButton btnQuanLyUser;
         private System.Windows.Forms.RibbonButton btnDoiMatKhau;
         private System.Windows.Forms.RibbonButton btnLogin;
@@ -1606,5 +1620,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn HVHoTen;
         private System.Windows.Forms.DataGridViewTextBoxColumn VNGAYSINH;
         private System.Windows.Forms.DataGridViewTextBoxColumn HVQUEQUAN;
+        private System.Windows.Forms.RibbonPanel listDangNhap;
+        private System.Windows.Forms.RibbonPanel PanelDangNhapHeThong;
+        private System.Windows.Forms.RibbonButton btnDangNhap;
     }
 }

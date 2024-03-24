@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VRM.Entities;
 using VRM.Models;
 
 namespace VRM.Utilities
@@ -67,5 +68,7 @@ namespace VRM.Utilities
                 new DropdownModel {Id = "QNCN", Name = "Quân nhân chuyên nghiệp" },
                 new DropdownModel {Id = "CNVQP", Name = "Công nhân viên Quốc phòng" }
             };
+
+        public static USER LoginUser = new USER();
     }
 }
