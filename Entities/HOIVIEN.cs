@@ -31,8 +31,8 @@ namespace VRM.Entities
         [Column(Name = "GIOITINH", DbType = "VARCHAR")]
         public string GIOITINH { get; set; }
 
-        [Column(Name = "NAMSINH", DbType = "INTEGER")]
-        public decimal NAMSINH { get; set; }
+        [Column(Name = "NAMSINH", DbType = "DATETIME")]
+        public DateTime NAMSINH { get; set; }
 
         [Column(Name = "DANTOC", DbType = "VARCHAR")]
         public string DANTOC { get; set; }

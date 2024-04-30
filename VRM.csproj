@@ -78,6 +78,11 @@
   <ItemGroup>
     <Compile Include="Database\DatabaseContext.cs" />
     <Compile Include="Database\SQLiteConfiguration.cs" />
+    <Compile Include="Datasets\DonXinVaoHoi.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DonXinVaoHoi.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Entities\CHIHOI.cs" />
     <Compile Include="Entities\KHENTHUONG.cs" />
     <Compile Include="Entities\QUATRINHCHIENDAU.cs" />
@@ -185,10 +190,73 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Templates\DonXinVaoHoi.rdlc" />
     <None Include="Database\VRM.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Datasets\DonXinVaoHoi.xsc">
+      <DependentUpon>DonXinVaoHoi.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\DonXinVaoHoi.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DonXinVaoHoi.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\DonXinVaoHoi.xss">
+      <DependentUpon>DonXinVaoHoi.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\frmMain.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\VRM.Database.DatabaseContext.datasource" />
+    <None Include="Properties\DataSources\VRM.Database.SQLiteConfiguration.datasource" />
+    <None Include="Properties\DataSources\VRM.Datasets.DonXinVaoHoi+DonXinVaoHoiDataTable.datasource" />
+    <None Include="Properties\DataSources\VRM.Datasets.DonXinVaoHoi+DonXinVaoHoiRow.datasource" />
+    <None Include="Properties\DataSources\VRM.Datasets.DonXinVaoHoi+DonXinVaoHoiRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\VRM.Datasets.DonXinVaoHoi+DonXinVaoHoiRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\VRM.Datasets.DonXinVaoHoi+KhenThuongDataTable.datasource" />
+    <None Include="Properties\DataSources\VRM.Datasets.DonXinVaoHoi+KhenThuongRow.datasource" />
+    <None Include="Properties\DataSources\VRM.Datasets.DonXinVaoHoi+KhenThuongRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\VRM.Datasets.DonXinVaoHoi+KhenThuongRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\VRM.Datasets.DonXinVaoHoi+QuaTrinhCongTacDataTable.datasource" />
+    <None Include="Properties\DataSources\VRM.Datasets.DonXinVaoHoi+QuaTrinhCongTacRow.datasource" />
+    <None Include="Properties\DataSources\VRM.Datasets.DonXinVaoHoi+QuaTrinhCongTacRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\VRM.Datasets.DonXinVaoHoi+QuaTrinhCongTacRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\VRM.Datasets.DonXinVaoHoi+ThongTinConDataTable.datasource" />
+    <None Include="Properties\DataSources\VRM.Datasets.DonXinVaoHoi+ThongTinConRow.datasource" />
+    <None Include="Properties\DataSources\VRM.Datasets.DonXinVaoHoi+ThongTinConRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\VRM.Datasets.DonXinVaoHoi+ThongTinConRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\VRM.Datasets.DonXinVaoHoi.datasource" />
+    <None Include="Properties\DataSources\VRM.Entities.CHIHOI.datasource" />
+    <None Include="Properties\DataSources\VRM.Entities.HOIVIEN.datasource" />
+    <None Include="Properties\DataSources\VRM.Entities.KHENTHUONG.datasource" />
+    <None Include="Properties\DataSources\VRM.Entities.QUATRINHCHIENDAU.datasource" />
+    <None Include="Properties\DataSources\VRM.Entities.THONGTINGIADINH.datasource" />
+    <None Include="Properties\DataSources\VRM.Entities.USER.datasource" />
+    <None Include="Properties\DataSources\VRM.Forms.Authentication.frmChangePassword.datasource" />
+    <None Include="Properties\DataSources\VRM.Forms.Authentication.frmLogin.datasource" />
+    <None Include="Properties\DataSources\VRM.Forms.frmBranch.datasource" />
+    <None Include="Properties\DataSources\VRM.Forms.frmEditBranch.datasource" />
+    <None Include="Properties\DataSources\VRM.Forms.frmKhenThuong+SaveChangedEventHandler.datasource" />
+    <None Include="Properties\DataSources\VRM.Forms.frmKhenThuong.datasource" />
+    <None Include="Properties\DataSources\VRM.Forms.frmModifyMember+SaveChangedEventHandler.datasource" />
+    <None Include="Properties\DataSources\VRM.Forms.frmModifyMember.datasource" />
+    <None Include="Properties\DataSources\VRM.Forms.frmQuaTrinhChienDau+SaveChangedEventHandler.datasource" />
+    <None Include="Properties\DataSources\VRM.Forms.frmQuaTrinhChienDau.datasource" />
+    <None Include="Properties\DataSources\VRM.Forms.frmThongTinGiaDinh+SaveChangedEventHandler.datasource" />
+    <None Include="Properties\DataSources\VRM.Forms.frmThongTinGiaDinh.datasource" />
+    <None Include="Properties\DataSources\VRM.Models.DropdownModel.datasource" />
+    <None Include="Properties\DataSources\VRM.Models.HoiVienModel.datasource" />
+    <None Include="Properties\DataSources\VRM.Models.PrintModel.datasource" />
+    <None Include="Properties\DataSources\VRM.Models.QuaTrinhCongTacChienDau.datasource" />
+    <None Include="Properties\DataSources\VRM.Models.ReportListModel.datasource" />
+    <None Include="Properties\DataSources\VRM.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\VRM.Utilities.Constant.datasource" />
+    <None Include="Properties\DataSources\VRM.Utilities.Excel.ColumnValue.datasource" />
+    <None Include="Properties\DataSources\VRM.Utilities.Excel.Emums+ExportReportType.datasource" />
+    <None Include="Properties\DataSources\VRM.Utilities.Excel.Emums+ValueDataType.datasource" />
+    <None Include="Properties\DataSources\VRM.Utilities.Excel.Emums.datasource" />
+    <None Include="Properties\DataSources\VRM.Utilities.Excel.ExcelHelper.datasource" />
     <None Include="Templates\DanhSachHoiVienFULL.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

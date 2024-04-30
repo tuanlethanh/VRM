@@ -63,6 +63,8 @@ namespace VRM.Utilities.Excel
                 styleFlag.Borders = true;
                 styleFlag.HorizontalAlignment = true;
                 styleFlag.VerticalAlignment = true;
+                styleFlag.WrapText = true;
+
 
                 var sheet = aWorkbook.Worksheets[sheetIndex];
                 int maxColumn = sheet.Cells.MaxDataColumn;

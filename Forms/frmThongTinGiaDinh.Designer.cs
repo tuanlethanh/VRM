@@ -195,6 +195,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmThongTinGiaDinh";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin gia đình";
             this.Load += new System.EventHandler(this.frmThongTinGiaDinh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtNamSinh)).EndInit();

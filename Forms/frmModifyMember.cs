@@ -86,23 +86,23 @@ namespace VRM.Forms
             {
                 Directory.CreateDirectory(Path.Combine(Application.StartupPath, "Images", hoivien.MAHOIVIEN));
             }
-            if (pbAvatar.ImageLocation == null)
+            if (pbAvatar.ImageLocation != null)
             {
-                MessageBox.Show("Bạn chưa chọn ảnh hội viên");
-                return;
-            }
-            var savePath = Path.Combine(Application.StartupPath, "Images", hoivien.MAHOIVIEN, Path.GetFileName(pbAvatar.ImageLocation));
-            if (!File.Exists(savePath))
-            {
-                File.Copy(pbAvatar.ImageLocation, savePath);
+                var savePath = Path.Combine(Application.StartupPath, "Images", hoivien.MAHOIVIEN, Path.GetFileName(pbAvatar.ImageLocation));
+                if (!File.Exists(savePath))
+                {
+                    File.Copy(pbAvatar.ImageLocation, savePath);
+                }
+                hoivien.HINHANH = savePath;
             }
             
-            hoivien.HINHANH = pbAvatar.ImageLocation;
+           
             if (hoivien.ID == 0)
             {
                 hoivien.CREATED_AT = DateTime.Now;
                 hoivien.CREATED_BY = Constant.LoginUser.ID;
                 hoivien = databaseContext.HOIVIENs.Add(hoivien);
+                databaseContext.SaveChanges();
             }
             else
             {
@@ -194,7 +194,11 @@ namespace VRM.Forms
                 txtEmail.Text = hoivien.EMAIL;
                 txtQuanlify.Text = hoivien.TRINHDOCHUYENMON;
                 txtPoliticalTheory.Text = hoivien.LYLUANCHINHTRI;
-                pbAvatar.ImageLocation = hoivien.HINHANH;
+                if (!String.IsNullOrEmpty(hoivien.HINHANH))
+                {
+                    pbAvatar.ImageLocation = hoivien.HINHANH;
+                }
+               
                 txtAcademic.Text = hoivien.TRINHDOHOCVAN;
 
                 txtNgayVaoHoi.Value = hoivien.NGAYVAOHOI;
@@ -283,7 +287,7 @@ namespace VRM.Forms
             DanhSachKhenThuong.ForEach(s =>
             {
                 var ck = Constant.DanhMucLoaiKhenThuong.FirstOrDefault(k => k.Id.Equals(s.LOAIKHENTHUONG));
-                if (ck != null) s.TENIKHENTHUONG = ck.Name;
+                if (ck != null) s.TENKHENTHUONG = ck.Name;
             });
             var bindingList = new BindingList<KHENTHUONG>(DanhSachKhenThuong);
             var source = new BindingSource(bindingList, null);

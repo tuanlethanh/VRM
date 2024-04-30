@@ -33,6 +33,6 @@ namespace VRM.Entities
         public string NOIDUNGKHENTHUONG { get; set; }
 
         [System.ComponentModel.DataAnnotations.Schema.NotMapped]
-        public string TENIKHENTHUONG { get; set; }
+        public string TENKHENTHUONG { get; set; }
     }
 }

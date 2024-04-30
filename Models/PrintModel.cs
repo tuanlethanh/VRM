@@ -23,6 +23,7 @@ namespace VRM.Models
         public string TrinhDoChuyenMon { get; set; }
         public string LyLuanChinhTri { get; set; }
         public string NgayVaoDang { get; set; }
+        public string NgayChinhThuc { get; set; }
         public string CapBac { get; set; }
         public string DonVi { get; set; }
         public string NgayNghiHuu { get; set; }

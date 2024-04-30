@@ -95,5 +95,21 @@ namespace VRM.Forms.Authentication
             Constant.LoginUser = user;
             DialogResult = DialogResult.OK;
         }
+
+        private void txtUserName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                Login();
+            }
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                Login();
+            }
+        }
     }
 }

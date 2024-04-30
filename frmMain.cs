@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Diagnostics;
 using System.Drawing;
+using System.Dynamic;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -139,23 +140,7 @@ namespace VRM
 
         private void btnUpdateMember_Click(object sender, EventArgs e)
         {
-            currentSelectedRow = this.daMembers.CurrentRow;
-            if (currentSelectedRow != null)
-            {
-                var frm = new frmModifyMember();
-                var id = int.Parse(currentSelectedRow.Cells["ID"].Value.ToString());
-                var member = databaseContext.HOIVIENs.FirstOrDefault(s => s.ID == id);
-                frm.hoivien = member;
-                if (frm.ShowDialog() == DialogResult.OK)
-                {
-                    MessageBox.Show("Chỉnh sửa viên thành công");
-                    refreshDataGridView();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn một dòng");
-            }
+            UpdateMember();
         }
 
         private void daMembers_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -193,7 +178,11 @@ namespace VRM
                         txtEmail.Text = hoivien.EMAIL;
                         txtQuanlify.Text = hoivien.TRINHDOCHUYENMON;
                         txtPoliticalTheory.Text = hoivien.LYLUANCHINHTRI;
-                        pbAvatar.ImageLocation = hoivien.HINHANH;
+                        if(!String.IsNullOrEmpty(hoivien.HINHANH))
+                        {
+                            pbAvatar.ImageLocation = hoivien.HINHANH;
+                        }
+                        
                         txtAcademic.Text = hoivien.TRINHDOHOCVAN;
 
                         txtNgayVaoHoi.Value = hoivien.NGAYVAOHOI;
@@ -249,7 +238,7 @@ namespace VRM
             DanhSachKhenThuong.ForEach(s =>
             {
                 var ck = Constant.DanhMucLoaiKhenThuong.FirstOrDefault(k => k.Id.Equals(s.LOAIKHENTHUONG));
-                if (ck != null) s.TENIKHENTHUONG = ck.Name;
+                if (ck != null) s.TENKHENTHUONG = ck.Name;
             });
             var bindingList = new BindingList<KHENTHUONG>(DanhSachKhenThuong);
             var source = new BindingSource(bindingList, null);
@@ -270,23 +259,7 @@ namespace VRM
 
         private void ribbonButton3_Click(object sender, EventArgs e)
         {
-            if (currentSelectedRow != null)
-            {
-                var dialog = MessageBox.Show("Bạn có chắc chắn muốn xóa hội viên này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dialog == DialogResult.Yes)
-                {
-                    var id = int.Parse(currentSelectedRow.Cells["ID"].Value.ToString());
-                    var member = databaseContext.HOIVIENs.FirstOrDefault(s => s.ID == id);
-                    databaseContext.HOIVIENs.Remove(member);
-                    databaseContext.SaveChanges();
-                    currentSelectedRow = null;
-                    refreshDataGridView();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn một dòng");
-            }
+            DeleteMember();
 
         }
 
@@ -468,6 +441,83 @@ namespace VRM
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            Print();
+
+        }
+
+        private void btnDangNhap_Click(object sender, EventArgs e)
+        {
+
+            frmLogin frm = new frmLogin();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                listButtonUpdate.Enabled = true;
+                listButtonExport.Enabled = true;
+                listUserManager.Enabled = true;
+                listDanhMuc.Enabled = true;
+                btnSearch.Enabled = true;
+
+
+                oldSize = base.Size;
+                refreshDataGridView();
+
+                var listChiHoi = databaseContext.CHIHOIs.ToList();
+                listChiHoi.Insert(0, new CHIHOI { ID = -1, TENCHIHOI = "------Tất cả------" });
+                cboTimKiemChiHoi.DataSource = listChiHoi;
+                cboTimKiemChiHoi.DisplayMember = "TENCHIHOI";
+                cboTimKiemChiHoi.ValueMember = "ID";
+
+                var branchs = databaseContext.CHIHOIs.ToList();
+                cboBranch.DataSource = branchs;
+                cboBranch.DisplayMember = "TENCHIHOI";
+                cboBranch.ValueMember = "ID";
+
+                cboGender.DataSource = Constant.DanhMucGioiTinh;
+                cboGender.DisplayMember = "Name";
+                cboGender.ValueMember = "Id";
+
+                cboThuongBenhBinh.DataSource = Constant.DanhMucHangThuongBinh;
+                cboThuongBenhBinh.DisplayMember = "Name";
+                cboThuongBenhBinh.ValueMember = "Id";
+
+                cboCapBac.DataSource = Constant.DanhMucCapBac;
+                cboCapBac.DisplayMember = "Name";
+                cboCapBac.ValueMember = "Id";
+            }
+        }
+
+        private void btnDoiMatKhau_Click(object sender, EventArgs e)
+        {
+            frmChangePassword frm = new frmChangePassword();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show("Thay đổi mật khẩu thành công, vui lòng đăng nhập lại để tiếp tục sử dụng chương trình");
+                listButtonUpdate.Enabled = false;
+                listButtonExport.Enabled = false;
+                listUserManager.Enabled = false;
+                listDanhMuc.Enabled = false;
+                btnSearch.Enabled = false;
+
+                frmLogin frmLogin = new frmLogin();
+                if (frmLogin.ShowDialog() == DialogResult.OK)
+                {
+                    listButtonUpdate.Enabled = true;
+                    listButtonExport.Enabled = true;
+                    listUserManager.Enabled = true;
+                    listDanhMuc.Enabled = true;
+                    btnSearch.Enabled = true;
+
+                }
+            }
+        }
+
+        private void daMembers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            UpdateMember();
+        }
+
+        void Print()
+        {
             currentSelectedRow = this.daMembers.CurrentRow;
             if (currentSelectedRow == null)
             {
@@ -487,8 +537,10 @@ namespace VRM
 
             var printModel = new PrintModel
             {
-                CapBac = hoivien.CAPBAC,
-                CapBacKhiNghiHuu = hoivien.CAPBAC,
+                CapBac = !string.IsNullOrEmpty(hoivien.CAPBAC) ? Constant.DanhMucCapBac
+                            .FirstOrDefault(s => s.Id.ToString().Equals(hoivien.CAPBAC))?.Name : "",
+                CapBacKhiNghiHuu = !string.IsNullOrEmpty(hoivien.CAPBAC) ? Constant.DanhMucCapBac
+                            .FirstOrDefault(s => s.Id.ToString().Equals(hoivien.CAPBAC))?.Name : "",
                 QueQuan = hoivien.QUEQUAN,
                 HoTen = hoivien.HOTEN,
                 NguoiKhai = hoivien.HOTEN,
@@ -505,12 +557,15 @@ namespace VRM
                 TrinhDoChuyenMon = hoivien.TRINHDOCHUYENMON,
                 LyLuanChinhTri = hoivien.LYLUANCHINHTRI,
                 NgayVaoDang = hoivien.NGAYVAODANG != null ? hoivien.NGAYVAODANG.ToString("dd/MM/yyyy") : "",
+                NgayChinhThuc = hoivien.NGAYVAODANG != null ? hoivien.NGAYVAODANG.ToString("dd/MM/yyyy") : "",
                 DonVi = hoivien.COQUANDONVI,
                 NgayNghiHuu = hoivien.NGAYNGHIHUU != null ? hoivien.NGAYNGHIHUU.ToString("dd/MM/yyyy") : "",
                 CoQuanKhiNghiHuu = hoivien.COQUANDONVI,
-                ThuongBinh = hoivien.THUONGBENHBINH,
+                ThuongBinh = !string.IsNullOrEmpty(hoivien.THUONGBENHBINH) ? Constant.DanhMucHangThuongBinh
+                            .FirstOrDefault(s => s.Id.ToString().Equals(hoivien.THUONGBENHBINH))?.Name : "",
                 GiaDinhLietSi = "",
                 TinhTrangSucKhoe = hoivien.TINHTRANGSUCKHOE,
+                KyLuat = "",
             };
 
             var listThongTinGiaDinh = databaseContext.THONGTINGIADINHs.Where(s => s.HOIVIEN_ID == hoiVienID).ToList();
@@ -596,88 +651,92 @@ namespace VRM
                 new ColumnValue{FieldName = "TrinhDoVanHoaVoChong", FieldValue = printModel.ChoOHienNayVoChong, IsValue = true, ValueType = ValueDataType.String},
                 new ColumnValue{FieldName = "NgheNghiepVoChong", FieldValue = printModel.ChoOHienNayVoChong, IsValue = true, ValueType = ValueDataType.String},
                 new ColumnValue{FieldName = "QueQuanVoChong", FieldValue = printModel.QueQuanVoChong, IsValue = true, ValueType = ValueDataType.String},
-                new ColumnValue{FieldName = "CacCon", FieldValue = printModel.CacCon, IsValue = true, ValueType = ValueDataType.String},
                 new ColumnValue{FieldName = "ChatDocMauDaCam", FieldValue = printModel.ChatDocMauDaCam, IsValue = true, ValueType = ValueDataType.String},
-                new ColumnValue{FieldName = "KhenThuong", FieldValue = printModel.ChatDocMauDaCam, IsValue = true, ValueType = ValueDataType.String},
+                new ColumnValue{FieldName = "KhenThuong", FieldValue = printModel.KhenThuong, IsValue = true, ValueType = ValueDataType.String},
                 new ColumnValue{FieldName = "TinhHinhDoiSongGiaDinh", FieldValue = printModel.TinhHinhDoiSongGiaDinh, IsValue = true, ValueType = ValueDataType.String},
                 new ColumnValue{FieldName = "QuaTrinhCongTac", FieldValue = printModel.QuaTrinhCongTac, IsValue = true, ValueType = ValueDataType.String},
+                new ColumnValue{FieldName = "KyLuat", FieldValue = printModel.KyLuat, IsValue = true, ValueType = ValueDataType.String},
+            },
+            new List<ColumnValue>() {
+               
+                new ColumnValue{FieldName = "TTCacCon", FieldValue = printModel.CacCon, IsValue = true, ValueType = ValueDataType.String},
+                new ColumnValue{FieldName = "NguoiKhai", FieldValue = printModel.NguoiKhai, IsValue = true, ValueType = ValueDataType.String},
             });
             MemoryStream mstream = new MemoryStream();
             OoxmlSaveOptions opts1 = new OoxmlSaveOptions(SaveFormat.Xlsx);
             aWorkBook.Save(mstream, opts1);
             SaveFileDialog save = new SaveFileDialog();
+            save.Filter = "Excel Files|*.xls;*.xlsx;*.xlsm";
             if (save.ShowDialog() == DialogResult.OK)
             {
-                File.WriteAllBytes(save.FileName, mstream.ToArray());
-                Process.Start(save.FileName);
-            }
-
-        }
-
-        private void btnDangNhap_Click(object sender, EventArgs e)
-        {
-
-            frmLogin frm = new frmLogin();
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                listButtonUpdate.Enabled = true;
-                listButtonExport.Enabled = true;
-                listUserManager.Enabled = true;
-                listDanhMuc.Enabled = true;
-                btnSearch.Enabled = true;
-
-
-                oldSize = base.Size;
-                refreshDataGridView();
-
-                var listChiHoi = databaseContext.CHIHOIs.ToList();
-                listChiHoi.Insert(0, new CHIHOI { ID = -1, TENCHIHOI = "------Tất cả------" });
-                cboTimKiemChiHoi.DataSource = listChiHoi;
-                cboTimKiemChiHoi.DisplayMember = "TENCHIHOI";
-                cboTimKiemChiHoi.ValueMember = "ID";
-
-                var branchs = databaseContext.CHIHOIs.ToList();
-                cboBranch.DataSource = branchs;
-                cboBranch.DisplayMember = "TENCHIHOI";
-                cboBranch.ValueMember = "ID";
-
-                cboGender.DataSource = Constant.DanhMucGioiTinh;
-                cboGender.DisplayMember = "Name";
-                cboGender.ValueMember = "Id";
-
-                cboThuongBenhBinh.DataSource = Constant.DanhMucHangThuongBinh;
-                cboThuongBenhBinh.DisplayMember = "Name";
-                cboThuongBenhBinh.ValueMember = "Id";
-
-                cboCapBac.DataSource = Constant.DanhMucCapBac;
-                cboCapBac.DisplayMember = "Name";
-                cboCapBac.ValueMember = "Id";
-            }
-        }
-
-        private void btnDoiMatKhau_Click(object sender, EventArgs e)
-        {
-            frmChangePassword frm = new frmChangePassword();
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                MessageBox.Show("Thay đổi mật khẩu thành công, vui lòng đăng nhập lại để tiếp tục sử dụng chương trình");
-                listButtonUpdate.Enabled = false;
-                listButtonExport.Enabled = false;
-                listUserManager.Enabled = false;
-                listDanhMuc.Enabled = false;
-                btnSearch.Enabled = false;
-
-                frmLogin frmLogin = new frmLogin();
-                if (frmLogin.ShowDialog() == DialogResult.OK)
+                try
                 {
-                    listButtonUpdate.Enabled = true;
-                    listButtonExport.Enabled = true;
-                    listUserManager.Enabled = true;
-                    listDanhMuc.Enabled = true;
-                    btnSearch.Enabled = true;
+                    File.WriteAllBytes(save.FileName, mstream.ToArray());
+                    Process.Start(save.FileName);
+                }
+                catch
+                {
+                    MessageBox.Show("Vui lòng đóng file đang mở, sau đó thực hiện lại.");
+                }
 
+            }
+        }
+
+        void UpdateMember()
+        {
+            currentSelectedRow = this.daMembers.CurrentRow;
+            if (currentSelectedRow != null)
+            {
+                var frm = new frmModifyMember();
+                var id = int.Parse(currentSelectedRow.Cells["HVID"].Value.ToString());
+                var member = databaseContext.HOIVIENs.FirstOrDefault(s => s.ID == id);
+                frm.hoivien = member;
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    MessageBox.Show("Chỉnh sửa viên thành công");
+                    refreshDataGridView();
                 }
             }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một dòng");
+            }
+        }
+
+        void DeleteMember()
+        {
+            if (currentSelectedRow != null)
+            {
+                var dialog = MessageBox.Show("Bạn có chắc chắn muốn xóa hội viên này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialog == DialogResult.Yes)
+                {
+                    var id = int.Parse(currentSelectedRow.Cells["HVID"].Value.ToString());
+                    var member = databaseContext.HOIVIENs.FirstOrDefault(s => s.ID == id);
+                    databaseContext.HOIVIENs.Remove(member);
+                    databaseContext.SaveChanges();
+                    currentSelectedRow = null;
+                    refreshDataGridView();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một dòng");
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            UpdateMember();
+        }
+
+        private void btnPrint2_Click(object sender, EventArgs e)
+        {
+            Print();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DeleteMember();
         }
     }
 }
