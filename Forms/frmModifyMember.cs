@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ComponentFactory.Krypton.Toolkit;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -37,11 +38,35 @@ namespace VRM.Forms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            SaveData();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            var openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                pbAvatar.ImageLocation = openFileDialog.FileName;
+            }
+        }
+
+        private void frmModifyMember_Load(object sender, EventArgs e)
+        {
+            fillFormData();
+        }
+
+        void SaveData()
+        {
             if (hoivien == null)
             {
                 hoivien = new HOIVIEN();
             }
-            
+
             hoivien.MAHOIVIEN = txtCode.Text;
             hoivien.HOTEN = txtFullName.Text;
             hoivien.NAMSINH = txtDateOfBirth.Value;
@@ -95,8 +120,8 @@ namespace VRM.Forms
                 }
                 hoivien.HINHANH = savePath;
             }
-            
-           
+
+
             if (hoivien.ID == 0)
             {
                 hoivien.CREATED_AT = DateTime.Now;
@@ -109,7 +134,7 @@ namespace VRM.Forms
                 hoivien.UPDATED_AT = DateTime.Now;
                 hoivien.UPDATED_BY = Constant.LoginUser.ID;
             }
-            
+
             DanhSachQuaTrinhChienDau.ForEach(s => s.HOIVIEN_ID = hoivien.ID);
             databaseContext.QUATRINHCHIENDAUs.AddOrUpdate(DanhSachQuaTrinhChienDau.ToArray());
             DanhSachThanhVien.ForEach(s => s.HOIVIEN_ID = hoivien.ID);
@@ -118,25 +143,6 @@ namespace VRM.Forms
             databaseContext.KHENTHUONGs.AddOrUpdate(DanhSachKhenThuong.ToArray());
             databaseContext.SaveChanges();
             DialogResult = DialogResult.OK;
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
-        }
-
-        private void btnBrowse_Click(object sender, EventArgs e)
-        {
-            var openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                pbAvatar.ImageLocation = openFileDialog.FileName;
-            }
-        }
-
-        private void frmModifyMember_Load(object sender, EventArgs e)
-        {
-            fillFormData();
         }
 
         void fillFormData()
@@ -391,6 +397,11 @@ namespace VRM.Forms
             }
             DanhSachThanhVien.Add(thongtin);
             reloadGiaDinh();
+        }
+
+        private void frmModifyMember_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // SaveData();
         }
     }
 }

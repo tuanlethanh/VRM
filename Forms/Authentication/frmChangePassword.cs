@@ -26,7 +26,7 @@ namespace VRM.Forms.Authentication
                 || string.IsNullOrEmpty(txtNewPassword.Text)
                 || string.IsNullOrEmpty(txtOldPassword.Text))
             {
-                MessageBox.Show("Vui lòng nhập đủ thông tin!");
+                MessageBox.Show("Vui lòng nhập đủ thông tin!", "Lỗi thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -36,20 +36,20 @@ namespace VRM.Forms.Authentication
 
             if (!newPass.Equals(confirmPass))
             {
-                MessageBox.Show("Xác nhận mật khẩu mới không khớp, vui lòng kiểm tra lại!");
+                MessageBox.Show("Xác nhận mật khẩu mới không khớp, vui lòng kiểm tra lại!", "Đăng nhập lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (Constant.LoginUser.Password != oldPass)
             {
-                MessageBox.Show("Mật khẩu cũ không đúng!");
+                MessageBox.Show("Mật khẩu cũ không đúng!", "Thông tin không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             var user = databaseContext.USERs.FirstOrDefault(x => x.ID == Constant.LoginUser.ID);
             if (user == null)
             {
-                MessageBox.Show("Không tìm thấy người dùng này!");
+                MessageBox.Show("Không tìm thấy người dùng này!", "Thông tin không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 

@@ -33,14 +33,14 @@ namespace VRM.Forms
         {
             if (string.IsNullOrEmpty(txtCode.Text) || string.IsNullOrEmpty(txtName.Text))
             {
-                MessageBox.Show("Vui lòng nhập đủ thông tin", "Lỗi nhập liệu");
+                MessageBox.Show("Vui lòng nhập đủ thông tin", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             var existingBranch = databaseContext.CHIHOIs.FirstOrDefault(s => s.MACHIHOI ==  txtCode.Text);
             if (existingBranch != null)
             {
-                MessageBox.Show("Mã chi bộ đã tồn tại, vui lòng kiểm tra lại", "Lỗi nhập liệu");
+                MessageBox.Show("Mã chi bộ đã tồn tại, vui lòng kiểm tra lại", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

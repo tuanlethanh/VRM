@@ -327,7 +327,7 @@ namespace VRM.Utilities.Excel
             }
             catch (Exception ex)
             {
-                MessageBox.Show(string.Format("{0}\n{1}", ex.Message, ex.StackTrace));
+                MessageBox.Show(string.Format("{0}\n{1}", ex.Message, ex.StackTrace), "Lỗi xử lý dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             aWorkbook.CalculateFormula();
             return aWorkbook;

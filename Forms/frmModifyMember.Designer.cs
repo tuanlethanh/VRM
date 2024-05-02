@@ -67,6 +67,7 @@
             this.txtNgayNhapNgu = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.txtDateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.txtNgayVaoHoi = new System.Windows.Forms.DateTimePicker();
             this.label14 = new System.Windows.Forms.Label();
             this.txtIssueCardDate = new System.Windows.Forms.DateTimePicker();
@@ -102,21 +103,17 @@
             this.btnDelKhenThuong = new System.Windows.Forms.Button();
             this.btnAddKhenThuong = new System.Windows.Forms.Button();
             this.dagKhenThuong = new System.Windows.Forms.DataGridView();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.btnDelPeople = new System.Windows.Forms.Button();
-            this.btnAddPeople = new System.Windows.Forms.Button();
-            this.dagGiaDinh = new System.Windows.Forms.DataGridView();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             this.LOAIKHENTHUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HOIVIEN_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.KTID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENKHENTHUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NAMKHENTHUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOIDUNG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.btnDelPeople = new System.Windows.Forms.Button();
+            this.btnAddPeople = new System.Windows.Forms.Button();
+            this.dagGiaDinh = new System.Windows.Forms.DataGridView();
             this.QHID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QUANHE = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -126,6 +123,10 @@
             this.CHATDOCDACAM = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.QUEQUAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DIACHIHIENNAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MEMBER_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LKC = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -135,7 +136,6 @@
             this.CHUCVU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DONVI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.THOIGIAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtDateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -541,6 +541,15 @@
             this.label17.TabIndex = 16;
             this.label17.Text = "Ngày cấp \r\nthẻ hội viên:";
             // 
+            // txtDateOfBirth
+            // 
+            this.txtDateOfBirth.CustomFormat = "dd/MM/yyyy";
+            this.txtDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtDateOfBirth.Location = new System.Drawing.Point(90, 67);
+            this.txtDateOfBirth.Name = "txtDateOfBirth";
+            this.txtDateOfBirth.Size = new System.Drawing.Size(91, 20);
+            this.txtDateOfBirth.TabIndex = 22;
+            // 
             // txtNgayVaoHoi
             // 
             this.txtNgayVaoHoi.CustomFormat = "dd/MM/yyyy";
@@ -651,7 +660,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(779, 468);
+            this.tabControl1.Size = new System.Drawing.Size(935, 468);
             this.tabControl1.TabIndex = 30;
             // 
             // tabPage1
@@ -793,7 +802,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(771, 442);
+            this.tabPage2.Size = new System.Drawing.Size(927, 442);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Quá trình chiến đấu";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -814,7 +823,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dagKhangChien);
-            this.splitContainer1.Size = new System.Drawing.Size(765, 436);
+            this.splitContainer1.Size = new System.Drawing.Size(921, 436);
             this.splitContainer1.SplitterDistance = 37;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -838,7 +847,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(184, 35);
             this.btnAdd.TabIndex = 2;
-            this.btnAdd.Text = "Bổ sung quá trình chiến đấu";
+            this.btnAdd.Text = "Thêm quá trình chiến đấu";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -869,7 +878,7 @@
             this.dagKhangChien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dagKhangChien.ShowEditingIcon = false;
             this.dagKhangChien.ShowRowErrors = false;
-            this.dagKhangChien.Size = new System.Drawing.Size(765, 395);
+            this.dagKhangChien.Size = new System.Drawing.Size(921, 395);
             this.dagKhangChien.TabIndex = 1;
             this.dagKhangChien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dagKhangChien_CellClick);
             // 
@@ -948,6 +957,47 @@
             this.dagKhenThuong.RowHeadersVisible = false;
             this.dagKhenThuong.Size = new System.Drawing.Size(765, 396);
             this.dagKhenThuong.TabIndex = 0;
+            // 
+            // LOAIKHENTHUONG
+            // 
+            this.LOAIKHENTHUONG.DataPropertyName = "LOAIKHENTHUONG";
+            this.LOAIKHENTHUONG.HeaderText = "Column1";
+            this.LOAIKHENTHUONG.Name = "LOAIKHENTHUONG";
+            this.LOAIKHENTHUONG.Visible = false;
+            // 
+            // HOIVIEN_ID
+            // 
+            this.HOIVIEN_ID.DataPropertyName = "HOIVIEN_ID";
+            this.HOIVIEN_ID.HeaderText = "Column1";
+            this.HOIVIEN_ID.Name = "HOIVIEN_ID";
+            this.HOIVIEN_ID.Visible = false;
+            // 
+            // KTID
+            // 
+            this.KTID.DataPropertyName = "ID";
+            this.KTID.HeaderText = "ID";
+            this.KTID.Name = "KTID";
+            this.KTID.Visible = false;
+            // 
+            // TENKHENTHUONG
+            // 
+            this.TENKHENTHUONG.DataPropertyName = "TENKHENTHUONG";
+            this.TENKHENTHUONG.HeaderText = "Loại khen thưởng";
+            this.TENKHENTHUONG.Name = "TENKHENTHUONG";
+            this.TENKHENTHUONG.Width = 250;
+            // 
+            // NAMKHENTHUONG
+            // 
+            this.NAMKHENTHUONG.DataPropertyName = "NAMKHENTHUONG";
+            this.NAMKHENTHUONG.HeaderText = "Năm";
+            this.NAMKHENTHUONG.Name = "NAMKHENTHUONG";
+            // 
+            // NOIDUNG
+            // 
+            this.NOIDUNG.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NOIDUNG.DataPropertyName = "NOIDUNGKHENTHUONG";
+            this.NOIDUNG.HeaderText = "Nội dung khen thưởng";
+            this.NOIDUNG.Name = "NOIDUNG";
             // 
             // tabPage4
             // 
@@ -1028,93 +1078,6 @@
             this.dagGiaDinh.Size = new System.Drawing.Size(765, 396);
             this.dagGiaDinh.TabIndex = 0;
             // 
-            // splitContainer4
-            // 
-            this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer4.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.splitContainer4.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer4.Name = "splitContainer4";
-            this.splitContainer4.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer4.Panel1
-            // 
-            this.splitContainer4.Panel1.Controls.Add(this.tabControl1);
-            // 
-            // splitContainer4.Panel2
-            // 
-            this.splitContainer4.Panel2.Controls.Add(this.btnExit);
-            this.splitContainer4.Panel2.Controls.Add(this.btnSave);
-            this.splitContainer4.Size = new System.Drawing.Size(779, 518);
-            this.splitContainer4.SplitterDistance = 468;
-            this.splitContainer4.TabIndex = 31;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Image = global::VRM.Properties.Resources.logout;
-            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(700, 5);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(71, 35);
-            this.btnExit.TabIndex = 25;
-            this.btnExit.Text = "Đóng";
-            this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Image = global::VRM.Properties.Resources.diskette;
-            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(627, 5);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(67, 35);
-            this.btnSave.TabIndex = 25;
-            this.btnSave.Text = "Lưu";
-            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // LOAIKHENTHUONG
-            // 
-            this.LOAIKHENTHUONG.DataPropertyName = "LOAIKHENTHUONG";
-            this.LOAIKHENTHUONG.HeaderText = "Column1";
-            this.LOAIKHENTHUONG.Name = "LOAIKHENTHUONG";
-            this.LOAIKHENTHUONG.Visible = false;
-            // 
-            // HOIVIEN_ID
-            // 
-            this.HOIVIEN_ID.DataPropertyName = "HOIVIEN_ID";
-            this.HOIVIEN_ID.HeaderText = "Column1";
-            this.HOIVIEN_ID.Name = "HOIVIEN_ID";
-            this.HOIVIEN_ID.Visible = false;
-            // 
-            // KTID
-            // 
-            this.KTID.DataPropertyName = "ID";
-            this.KTID.HeaderText = "ID";
-            this.KTID.Name = "KTID";
-            this.KTID.Visible = false;
-            // 
-            // TENKHENTHUONG
-            // 
-            this.TENKHENTHUONG.DataPropertyName = "TENKHENTHUONG";
-            this.TENKHENTHUONG.HeaderText = "Loại khen thưởng";
-            this.TENKHENTHUONG.Name = "TENKHENTHUONG";
-            this.TENKHENTHUONG.Width = 250;
-            // 
-            // NAMKHENTHUONG
-            // 
-            this.NAMKHENTHUONG.DataPropertyName = "NAMKHENTHUONG";
-            this.NAMKHENTHUONG.HeaderText = "Năm";
-            this.NAMKHENTHUONG.Name = "NAMKHENTHUONG";
-            // 
-            // NOIDUNG
-            // 
-            this.NOIDUNG.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NOIDUNG.DataPropertyName = "NOIDUNGKHENTHUONG";
-            this.NOIDUNG.HeaderText = "Nội dung khen thưởng";
-            this.NOIDUNG.Name = "NOIDUNG";
-            // 
             // QHID
             // 
             this.QHID.DataPropertyName = "ID";
@@ -1175,6 +1138,52 @@
             this.DIACHIHIENNAY.Name = "DIACHIHIENNAY";
             this.DIACHIHIENNAY.Width = 250;
             // 
+            // splitContainer4
+            // 
+            this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer4.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.splitContainer4.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer4.Name = "splitContainer4";
+            this.splitContainer4.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer4.Panel1
+            // 
+            this.splitContainer4.Panel1.Controls.Add(this.tabControl1);
+            // 
+            // splitContainer4.Panel2
+            // 
+            this.splitContainer4.Panel2.Controls.Add(this.btnExit);
+            this.splitContainer4.Panel2.Controls.Add(this.btnSave);
+            this.splitContainer4.Size = new System.Drawing.Size(935, 518);
+            this.splitContainer4.SplitterDistance = 468;
+            this.splitContainer4.TabIndex = 31;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Image = global::VRM.Properties.Resources.logout;
+            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExit.Location = new System.Drawing.Point(860, 8);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(71, 35);
+            this.btnExit.TabIndex = 25;
+            this.btnExit.Text = "Đóng";
+            this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Image = global::VRM.Properties.Resources.diskette;
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.Location = new System.Drawing.Point(787, 8);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(67, 35);
+            this.btnSave.TabIndex = 25;
+            this.btnSave.Text = "Lưu";
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // ID
             // 
             this.ID.DataPropertyName = "ID";
@@ -1196,6 +1205,7 @@
             // LKC
             // 
             this.LKC.DataPropertyName = "TENKHANGCHIEN";
+            this.LKC.Frozen = true;
             this.LKC.HeaderText = "Thời kỳ";
             this.LKC.Name = "LKC";
             this.LKC.ReadOnly = true;
@@ -1212,6 +1222,7 @@
             // LOAI
             // 
             this.LOAI.DataPropertyName = "CHIENDICH";
+            this.LOAI.Frozen = true;
             this.LOAI.HeaderText = "Tên chiến dịch";
             this.LOAI.Name = "LOAI";
             this.LOAI.ReadOnly = true;
@@ -1249,26 +1260,18 @@
             this.THOIGIAN.ReadOnly = true;
             this.THOIGIAN.Width = 200;
             // 
-            // txtDateOfBirth
-            // 
-            this.txtDateOfBirth.CustomFormat = "dd/MM/yyyy";
-            this.txtDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtDateOfBirth.Location = new System.Drawing.Point(90, 67);
-            this.txtDateOfBirth.Name = "txtDateOfBirth";
-            this.txtDateOfBirth.Size = new System.Drawing.Size(91, 20);
-            this.txtDateOfBirth.TabIndex = 22;
-            // 
             // frmModifyMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(779, 518);
+            this.ClientSize = new System.Drawing.Size(935, 518);
             this.Controls.Add(this.splitContainer4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmModifyMember";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin hội viên";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmModifyMember_FormClosing);
             this.Load += new System.EventHandler(this.frmModifyMember_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -1403,6 +1406,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn CHATDOCDACAM;
         private System.Windows.Forms.DataGridViewTextBoxColumn QUEQUAN;
         private System.Windows.Forms.DataGridViewTextBoxColumn DIACHIHIENNAY;
+        private System.Windows.Forms.DateTimePicker txtDateOfBirth;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn MEMBER_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn LKC;
@@ -1412,6 +1416,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CHUCVU;
         private System.Windows.Forms.DataGridViewTextBoxColumn DONVI;
         private System.Windows.Forms.DataGridViewTextBoxColumn THOIGIAN;
-        private System.Windows.Forms.DateTimePicker txtDateOfBirth;
     }
 }

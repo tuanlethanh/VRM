@@ -38,15 +38,17 @@ namespace VRM
         public List<THONGTINGIADINH> DanhSachThanhVien { get; set; } = new List<THONGTINGIADINH>();
         private void frmMain_Load(object sender, EventArgs e)
         {
-
+            clearData();
             //Chua login:
             listButtonUpdate.Enabled = false;
             listButtonExport.Enabled = false;
             listUserManager.Enabled = false;
             listDanhMuc.Enabled = false;
             btnSearch.Enabled = false;
+            btnEdit.Visible = false;
+            btnDelete.Visible = false;
 
-            frmLogin frm = new frmLogin();
+           frmLogin frm = new frmLogin();
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 listButtonUpdate.Enabled = true;
@@ -97,15 +99,18 @@ namespace VRM
             if (!string.IsNullOrEmpty(txtTimKiemTuKhoa.Text))
             {
                 var keyword = txtTimKiemTuKhoa.Text.ToLower();
-                query.Where(s => s.HOTEN.ToLower().Contains(keyword)
-                || keyword.Equals(s.NAMSINH) || s.QUEQUAN.ToLower().Contains(keyword)
+
+                query = query.Where(s => s.HOTEN.ToLower().Contains(keyword)
+                || s.QUEQUAN.ToLower().Contains(keyword)
                 || s.DIACHI.ToLower().Contains(keyword) || s.SODIENTHOAI.Contains(keyword));
             }
 
             if (!string.IsNullOrEmpty(txtTimKiemNamSinh.Text))
             {
                 var keyword = txtTimKiemNamSinh.Text;
-                query.Where(s => keyword.Equals(s.NAMSINH));
+                int nam = 0;
+                int.TryParse(keyword, out nam);
+                query = query.Where(s => nam.Equals(s.NAMSINH.Year));
             }
 
             var data = query.Join(databaseContext.CHIHOIs, hoivien => hoivien.CHIHOI_ID, chihoi => chihoi.ID,
@@ -133,7 +138,7 @@ namespace VRM
 
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("Tạo hội viên thành công");
+                MessageBox.Show("Tạo hội viên thành công", "Lưu thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 refreshDataGridView();
             }
         }
@@ -210,6 +215,9 @@ namespace VRM
                         reloadKhenThuong();
                         reloadGiaDinh();
                         #endregion
+
+                        btnEdit.Visible = true;
+                        btnDelete.Visible = true;
                     }
 
                 }
@@ -260,7 +268,7 @@ namespace VRM
         private void ribbonButton3_Click(object sender, EventArgs e)
         {
             DeleteMember();
-
+            clearData();
         }
 
         private void daMembers_SelectionChanged(object sender, EventArgs e)
@@ -433,7 +441,7 @@ namespace VRM
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Có lỗi xảy ra trong quá trình xử lý");
+                MessageBox.Show("Có lỗi xảy ra trong quá trình xử lý", "Lỗi cập nhật thông tin", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 
@@ -491,7 +499,7 @@ namespace VRM
             frmChangePassword frm = new frmChangePassword();
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("Thay đổi mật khẩu thành công, vui lòng đăng nhập lại để tiếp tục sử dụng chương trình");
+                MessageBox.Show("Thay đổi mật khẩu thành công, vui lòng đăng nhập lại để tiếp tục sử dụng chương trình", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 listButtonUpdate.Enabled = false;
                 listButtonExport.Enabled = false;
                 listUserManager.Enabled = false;
@@ -521,7 +529,7 @@ namespace VRM
             currentSelectedRow = this.daMembers.CurrentRow;
             if (currentSelectedRow == null)
             {
-                MessageBox.Show("Vui lòng lựa chọn một bản ghi");
+                MessageBox.Show("Vui lòng lựa chọn một bản ghi", "Lỗi thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -531,7 +539,7 @@ namespace VRM
 
             if (hoivien == null)
             {
-                MessageBox.Show("Không tìm thấy thông tin hội viên");
+                MessageBox.Show("Không tìm thấy thông tin hội viên", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -676,7 +684,7 @@ namespace VRM
                 }
                 catch
                 {
-                    MessageBox.Show("Vui lòng đóng file đang mở, sau đó thực hiện lại.");
+                    MessageBox.Show("Vui lòng đóng file đang mở, sau đó thực hiện lại.", "Lỗi xử lý dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
@@ -693,13 +701,13 @@ namespace VRM
                 frm.hoivien = member;
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    MessageBox.Show("Chỉnh sửa viên thành công");
+                    MessageBox.Show("Chỉnh sửa viên thành công", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     refreshDataGridView();
                 }
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn một dòng");
+                MessageBox.Show("Vui lòng chọn một dòng", "Lỗi thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -724,6 +732,91 @@ namespace VRM
             }
         }
 
+        void clearData()
+        {
+            DanhSachQuaTrinhChienDau = new List<QUATRINHCHIENDAU>();
+            var bindingList = new BindingList<QUATRINHCHIENDAU>(DanhSachQuaTrinhChienDau);
+            var source = new BindingSource(bindingList, null);
+            dagKhangChien.DataSource = source;
+
+            DanhSachKhenThuong = new List<KHENTHUONG>();
+            var bindingList1 = new BindingList<KHENTHUONG>(DanhSachKhenThuong);
+            var source1 = new BindingSource(bindingList1, null);
+            dagKhenThuong.DataSource = source1;
+
+
+            DanhSachThanhVien = new List<THONGTINGIADINH>();
+            var bindingList2 = new BindingList<THONGTINGIADINH>(DanhSachThanhVien);
+            var source2 = new BindingSource(bindingList2, null);
+            dagGiaDinh.DataSource = source2;
+
+            foreach (var item in this.groupBox1.Controls)
+            {
+                if (item is TextBox)
+                {
+                    var control = item as TextBox;
+                    control.Text = "";
+                }
+
+                if (item is DateTimePicker)
+                {
+                    var control = item as DateTimePicker;
+                    control.Value = new DateTime(1900,1,1);
+                }
+
+                if (item is CheckBox)
+                {
+                    var control = item as CheckBox;
+                    control.Checked = false;
+                }
+
+                if (item is ComboBox)
+                {
+                    var control = item as ComboBox;
+                    control.SelectedItem = null;
+                }
+
+                if (item is PictureBox)
+                {
+                    var control = item as PictureBox;
+                    control.Image = null;
+                }
+            }
+
+            foreach (var item in this.groupBox2.Controls)
+            {
+                if (item is TextBox)
+                {
+                    var control = item as TextBox;
+                    control.Text = "";
+                }
+
+                if (item is DateTimePicker)
+                {
+                    var control = item as DateTimePicker;
+                    control.Value = new DateTime(1900, 1, 1);
+                }
+
+                if (item is CheckBox)
+                {
+                    var control = item as CheckBox;
+                    control.Checked = false;
+                }
+
+                if (item is ComboBox)
+                {
+                    var control = item as ComboBox;
+                    control.SelectedItem = null;
+                }
+
+                if (item is PictureBox)
+                {
+                    var control = item as PictureBox;
+                    control.Image = null;
+                }
+            }
+        }
+
         private void btnEdit_Click(object sender, EventArgs e)
         {
             UpdateMember();
@@ -737,6 +830,9 @@ namespace VRM
         private void btnDelete_Click(object sender, EventArgs e)
         {
             DeleteMember();
+            clearData();
+            btnEdit.Visible = false;
+            btnDelete.Visible = false;
         }
     }
 }

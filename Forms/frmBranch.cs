@@ -49,7 +49,7 @@ namespace VRM.Forms
             editBranch.branch = branch;
             if (editBranch.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("Cập nhật thành công", "Thông báo");
+                MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 refreshGrid();
             }
         }
@@ -62,10 +62,18 @@ namespace VRM.Forms
         private void btnDelete_Click(object sender, EventArgs e)
         {
 
-            var confirm = MessageBox.Show("Bạn có chắc chắn muốn xóa bản ghi này", "Xác nhận xóa", MessageBoxButtons.YesNo);
+            var confirm = MessageBox.Show("Bạn có chắc chắn muốn xóa bản ghi này", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm == DialogResult.Yes)
             {
                 var id = int.Parse(currentSelectedRow.Cells["ID"].Value.ToString());
+
+                var hoiviens = databaseContext.HOIVIENs.Where(s => s.CHIHOI_ID == id).Count();
+                if (hoiviens > 0)
+                {
+                    MessageBox.Show("Chi hội này đã có hội viên, vui lòng xóa các hội viên thuộc chi hội hoặc chuyển hội viên sang chi hội khác", "Lỗi xóa", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 var branch = databaseContext.CHIHOIs.FirstOrDefault(r => r.ID == id);
                 if (branch != null)
                 {

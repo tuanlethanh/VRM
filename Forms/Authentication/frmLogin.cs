@@ -79,7 +79,7 @@ namespace VRM.Forms.Authentication
         {
             if (string.IsNullOrEmpty(txtUserName.Text) || string.IsNullOrEmpty(txtPassword.Text))
             {
-                MessageBox.Show("Vui lòng nhập tên đăng nhập và mật khẩu!");
+                MessageBox.Show("Vui lòng nhập tên đăng nhập và mật khẩu!", "Lỗi thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -89,7 +89,7 @@ namespace VRM.Forms.Authentication
             var user = databaseContext.USERs.FirstOrDefault(s => s.UserName.ToLower().Equals(userName) && s.Password.Equals(password));
             if (user == null)
             {
-                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác!");
+                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác!", "Lỗi thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             Constant.LoginUser = user;

@@ -36,6 +36,7 @@ namespace VRM.Forms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+
             if (KhangChien == null || KhangChien.ID == 0)
             {
                 KhangChien = new QUATRINHCHIENDAU();
@@ -50,6 +51,7 @@ namespace VRM.Forms
             KhangChien.DONVI = txtDonVi.Text;
             KhangChien.CHIENDICH = txtTenChienDich.Text;
             KhangChien.LOAIKHANGCHIEN = cboLoaiKhangChien.SelectedValue.ToString();
+            KhangChien.TENKHANGCHIEN = Constant.DanhMucLoaiKhangChien.FirstOrDefault(s => s.Id.ToString() == KhangChien.LOAIKHANGCHIEN)?.Name;
             SaveChanged(KhangChien);
             DialogResult = DialogResult.OK;
         }
