@@ -36,6 +36,10 @@ namespace VRM.Forms
         public List<KHENTHUONG> DanhSachKhenThuong { get; set; } = new List<KHENTHUONG>();
         public List<THONGTINGIADINH> DanhSachThanhVien { get; set; } = new List<THONGTINGIADINH>();
 
+        bool QTCHDChanged = false;
+        bool TTGDChanged = false;
+        bool TDKTChanged = false;
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             SaveData();
@@ -142,12 +146,15 @@ namespace VRM.Forms
             DanhSachKhenThuong.ForEach(s => s.HOIVIEN_ID = hoivien.ID);
             databaseContext.KHENTHUONGs.AddOrUpdate(DanhSachKhenThuong.ToArray());
             databaseContext.SaveChanges();
+            QTCHDChanged = false;
+            TTGDChanged = false;
+            TDKTChanged = false;
             DialogResult = DialogResult.OK;
         }
 
         void fillFormData()
         {
-            
+
             var branchs = databaseContext.CHIHOIs.ToList();
             cboBranch.DataSource = branchs;
             cboBranch.DisplayMember = "TENCHIHOI";
@@ -204,7 +211,7 @@ namespace VRM.Forms
                 {
                     pbAvatar.ImageLocation = hoivien.HINHANH;
                 }
-               
+
                 txtAcademic.Text = hoivien.TRINHDOHOCVAN;
 
                 txtNgayVaoHoi.Value = hoivien.NGAYVAOHOI;
@@ -251,6 +258,7 @@ namespace VRM.Forms
             }
             DanhSachQuaTrinhChienDau.Add(quatrinh);
             reloadQuaTrinhChienDau();
+            QTCHDChanged = true;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -258,7 +266,7 @@ namespace VRM.Forms
             var selectedItem = dagKhangChien.CurrentRow;
             var selectedRowIndex = selectedItem.Index;
             var quatrinh = DanhSachQuaTrinhChienDau[selectedRowIndex];
-            
+
             if (quatrinh != null)
             {
                 var dialog = MessageBox.Show("Bạn có chắc chắn muốn xóa quá trình chiến đấu này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -273,10 +281,10 @@ namespace VRM.Forms
                     reloadQuaTrinhChienDau();
                 }
             }
-            
+
         }
 
-       void reloadQuaTrinhChienDau()
+        void reloadQuaTrinhChienDau()
         {
             DanhSachQuaTrinhChienDau.ForEach(s =>
             {
@@ -333,6 +341,7 @@ namespace VRM.Forms
             }
             DanhSachKhenThuong.Add(khenthuong);
             reloadKhenThuong();
+            TDKTChanged = true;
         }
 
         private void btnDelKhenThuong_Click(object sender, EventArgs e)
@@ -397,11 +406,19 @@ namespace VRM.Forms
             }
             DanhSachThanhVien.Add(thongtin);
             reloadGiaDinh();
+            TTGDChanged = true;
         }
 
         private void frmModifyMember_FormClosing(object sender, FormClosingEventArgs e)
         {
-            // SaveData();
+            if (QTCHDChanged || TTGDChanged || TDKTChanged)
+            {
+                var dialog = MessageBox.Show("Một số thông tin đã được thay đổi, bạn có muốn lưu lại thông tin không?", "Thay đổi thông tin", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialog == DialogResult.Yes)
+                {
+                    SaveData();
+                }
+            }
         }
     }
 }

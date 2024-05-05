@@ -98,6 +98,15 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dagKhangChien = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MEMBER_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LKC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LOAIKHANGCHIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CAPBAC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHUCVU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DONVI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.THOIGIAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.btnDelKhenThuong = new System.Windows.Forms.Button();
@@ -127,15 +136,6 @@
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MEMBER_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LKC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LOAIKHANGCHIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CAPBAC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHUCVU = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DONVI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.THOIGIAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -436,7 +436,7 @@
             this.groupBox1.Controls.Add(this.txtPhoneNumber);
             this.groupBox1.Location = new System.Drawing.Point(7, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(760, 323);
+            this.groupBox1.Size = new System.Drawing.Size(754, 323);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin hội viên";
@@ -660,7 +660,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(935, 468);
+            this.tabControl1.Size = new System.Drawing.Size(777, 468);
             this.tabControl1.TabIndex = 30;
             // 
             // tabPage1
@@ -670,7 +670,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(771, 442);
+            this.tabPage1.Size = new System.Drawing.Size(769, 442);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Thông tin chung";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -691,7 +691,7 @@
             this.groupBox2.Controls.Add(this.label21);
             this.groupBox2.Location = new System.Drawing.Point(7, 330);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(760, 101);
+            this.groupBox2.Size = new System.Drawing.Size(754, 101);
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin hưu trí";
@@ -802,7 +802,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(927, 442);
+            this.tabPage2.Size = new System.Drawing.Size(769, 442);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Quá trình chiến đấu";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -823,7 +823,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dagKhangChien);
-            this.splitContainer1.Size = new System.Drawing.Size(921, 436);
+            this.splitContainer1.Size = new System.Drawing.Size(763, 436);
             this.splitContainer1.SplitterDistance = 37;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -831,7 +831,7 @@
             // 
             this.btnDelete.Image = global::VRM.Properties.Resources.delete;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(700, 1);
+            this.btnDelete.Location = new System.Drawing.Point(698, 0);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(62, 35);
             this.btnDelete.TabIndex = 1;
@@ -878,9 +878,85 @@
             this.dagKhangChien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dagKhangChien.ShowEditingIcon = false;
             this.dagKhangChien.ShowRowErrors = false;
-            this.dagKhangChien.Size = new System.Drawing.Size(921, 395);
+            this.dagKhangChien.Size = new System.Drawing.Size(763, 395);
             this.dagKhangChien.TabIndex = 1;
             this.dagKhangChien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dagKhangChien_CellClick);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.Frozen = true;
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // MEMBER_ID
+            // 
+            this.MEMBER_ID.DataPropertyName = "HOIVIEN_ID";
+            this.MEMBER_ID.Frozen = true;
+            this.MEMBER_ID.HeaderText = "HOIVIEN_ID";
+            this.MEMBER_ID.Name = "MEMBER_ID";
+            this.MEMBER_ID.ReadOnly = true;
+            this.MEMBER_ID.Visible = false;
+            // 
+            // LKC
+            // 
+            this.LKC.DataPropertyName = "TENKHANGCHIEN";
+            this.LKC.Frozen = true;
+            this.LKC.HeaderText = "Thời kỳ";
+            this.LKC.Name = "LKC";
+            this.LKC.ReadOnly = true;
+            this.LKC.Width = 200;
+            // 
+            // LOAIKHANGCHIEN
+            // 
+            this.LOAIKHANGCHIEN.DataPropertyName = "LOAIKHANGCHIEN";
+            this.LOAIKHANGCHIEN.HeaderText = "LOAIKHANGCHIEN";
+            this.LOAIKHANGCHIEN.Name = "LOAIKHANGCHIEN";
+            this.LOAIKHANGCHIEN.ReadOnly = true;
+            this.LOAIKHANGCHIEN.Visible = false;
+            // 
+            // LOAI
+            // 
+            this.LOAI.DataPropertyName = "CHIENDICH";
+            this.LOAI.Frozen = true;
+            this.LOAI.HeaderText = "Tên chiến dịch";
+            this.LOAI.Name = "LOAI";
+            this.LOAI.ReadOnly = true;
+            this.LOAI.Width = 200;
+            // 
+            // CAPBAC
+            // 
+            this.CAPBAC.DataPropertyName = "CAPBAC";
+            this.CAPBAC.HeaderText = "Cấp bậc";
+            this.CAPBAC.Name = "CAPBAC";
+            this.CAPBAC.ReadOnly = true;
+            this.CAPBAC.Width = 150;
+            // 
+            // CHUCVU
+            // 
+            this.CHUCVU.DataPropertyName = "CHUCVU";
+            this.CHUCVU.HeaderText = "Chức vụ";
+            this.CHUCVU.Name = "CHUCVU";
+            this.CHUCVU.ReadOnly = true;
+            this.CHUCVU.Width = 200;
+            // 
+            // DONVI
+            // 
+            this.DONVI.DataPropertyName = "DONVI";
+            this.DONVI.HeaderText = "Đơn vị";
+            this.DONVI.Name = "DONVI";
+            this.DONVI.ReadOnly = true;
+            this.DONVI.Width = 200;
+            // 
+            // THOIGIAN
+            // 
+            this.THOIGIAN.DataPropertyName = "THOIGIAN";
+            this.THOIGIAN.HeaderText = "Thời gian";
+            this.THOIGIAN.Name = "THOIGIAN";
+            this.THOIGIAN.ReadOnly = true;
+            this.THOIGIAN.Width = 200;
             // 
             // tabPage3
             // 
@@ -888,7 +964,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(771, 442);
+            this.tabPage3.Size = new System.Drawing.Size(769, 442);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Thi đua, khen thưởng";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -909,7 +985,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.dagKhenThuong);
-            this.splitContainer2.Size = new System.Drawing.Size(765, 436);
+            this.splitContainer2.Size = new System.Drawing.Size(763, 436);
             this.splitContainer2.SplitterDistance = 36;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -917,9 +993,9 @@
             // 
             this.btnDelKhenThuong.Image = global::VRM.Properties.Resources.delete;
             this.btnDelKhenThuong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelKhenThuong.Location = new System.Drawing.Point(685, 1);
+            this.btnDelKhenThuong.Location = new System.Drawing.Point(695, 0);
             this.btnDelKhenThuong.Name = "btnDelKhenThuong";
-            this.btnDelKhenThuong.Size = new System.Drawing.Size(75, 35);
+            this.btnDelKhenThuong.Size = new System.Drawing.Size(67, 35);
             this.btnDelKhenThuong.TabIndex = 3;
             this.btnDelKhenThuong.Text = "Xóa";
             this.btnDelKhenThuong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -955,7 +1031,7 @@
             this.dagKhenThuong.Location = new System.Drawing.Point(0, 0);
             this.dagKhenThuong.Name = "dagKhenThuong";
             this.dagKhenThuong.RowHeadersVisible = false;
-            this.dagKhenThuong.Size = new System.Drawing.Size(765, 396);
+            this.dagKhenThuong.Size = new System.Drawing.Size(763, 396);
             this.dagKhenThuong.TabIndex = 0;
             // 
             // LOAIKHENTHUONG
@@ -1005,7 +1081,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(771, 442);
+            this.tabPage4.Size = new System.Drawing.Size(769, 442);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Thông tin gia đình";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1026,7 +1102,7 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.dagGiaDinh);
-            this.splitContainer3.Size = new System.Drawing.Size(765, 436);
+            this.splitContainer3.Size = new System.Drawing.Size(763, 436);
             this.splitContainer3.SplitterDistance = 36;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -1034,9 +1110,9 @@
             // 
             this.btnDelPeople.Image = global::VRM.Properties.Resources.delete;
             this.btnDelPeople.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelPeople.Location = new System.Drawing.Point(689, 1);
+            this.btnDelPeople.Location = new System.Drawing.Point(695, 0);
             this.btnDelPeople.Name = "btnDelPeople";
-            this.btnDelPeople.Size = new System.Drawing.Size(71, 35);
+            this.btnDelPeople.Size = new System.Drawing.Size(63, 35);
             this.btnDelPeople.TabIndex = 5;
             this.btnDelPeople.Text = "Xóa";
             this.btnDelPeople.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1075,7 +1151,7 @@
             this.dagGiaDinh.Location = new System.Drawing.Point(0, 0);
             this.dagGiaDinh.Name = "dagGiaDinh";
             this.dagGiaDinh.RowHeadersVisible = false;
-            this.dagGiaDinh.Size = new System.Drawing.Size(765, 396);
+            this.dagGiaDinh.Size = new System.Drawing.Size(763, 396);
             this.dagGiaDinh.TabIndex = 0;
             // 
             // QHID
@@ -1154,7 +1230,7 @@
             // 
             this.splitContainer4.Panel2.Controls.Add(this.btnExit);
             this.splitContainer4.Panel2.Controls.Add(this.btnSave);
-            this.splitContainer4.Size = new System.Drawing.Size(935, 518);
+            this.splitContainer4.Size = new System.Drawing.Size(777, 518);
             this.splitContainer4.SplitterDistance = 468;
             this.splitContainer4.TabIndex = 31;
             // 
@@ -1162,7 +1238,7 @@
             // 
             this.btnExit.Image = global::VRM.Properties.Resources.logout;
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(860, 8);
+            this.btnExit.Location = new System.Drawing.Point(702, 8);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(71, 35);
             this.btnExit.TabIndex = 25;
@@ -1175,7 +1251,7 @@
             // 
             this.btnSave.Image = global::VRM.Properties.Resources.diskette;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(787, 8);
+            this.btnSave.Location = new System.Drawing.Point(629, 8);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(67, 35);
             this.btnSave.TabIndex = 25;
@@ -1184,87 +1260,11 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.Frozen = true;
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
-            // MEMBER_ID
-            // 
-            this.MEMBER_ID.DataPropertyName = "HOIVIEN_ID";
-            this.MEMBER_ID.Frozen = true;
-            this.MEMBER_ID.HeaderText = "HOIVIEN_ID";
-            this.MEMBER_ID.Name = "MEMBER_ID";
-            this.MEMBER_ID.ReadOnly = true;
-            this.MEMBER_ID.Visible = false;
-            // 
-            // LKC
-            // 
-            this.LKC.DataPropertyName = "TENKHANGCHIEN";
-            this.LKC.Frozen = true;
-            this.LKC.HeaderText = "Thời kỳ";
-            this.LKC.Name = "LKC";
-            this.LKC.ReadOnly = true;
-            this.LKC.Width = 200;
-            // 
-            // LOAIKHANGCHIEN
-            // 
-            this.LOAIKHANGCHIEN.DataPropertyName = "LOAIKHANGCHIEN";
-            this.LOAIKHANGCHIEN.HeaderText = "LOAIKHANGCHIEN";
-            this.LOAIKHANGCHIEN.Name = "LOAIKHANGCHIEN";
-            this.LOAIKHANGCHIEN.ReadOnly = true;
-            this.LOAIKHANGCHIEN.Visible = false;
-            // 
-            // LOAI
-            // 
-            this.LOAI.DataPropertyName = "CHIENDICH";
-            this.LOAI.Frozen = true;
-            this.LOAI.HeaderText = "Tên chiến dịch";
-            this.LOAI.Name = "LOAI";
-            this.LOAI.ReadOnly = true;
-            this.LOAI.Width = 200;
-            // 
-            // CAPBAC
-            // 
-            this.CAPBAC.DataPropertyName = "CAPBAC";
-            this.CAPBAC.HeaderText = "Cấp bậc";
-            this.CAPBAC.Name = "CAPBAC";
-            this.CAPBAC.ReadOnly = true;
-            this.CAPBAC.Width = 150;
-            // 
-            // CHUCVU
-            // 
-            this.CHUCVU.DataPropertyName = "CHUCVU";
-            this.CHUCVU.HeaderText = "Chức vụ";
-            this.CHUCVU.Name = "CHUCVU";
-            this.CHUCVU.ReadOnly = true;
-            this.CHUCVU.Width = 200;
-            // 
-            // DONVI
-            // 
-            this.DONVI.DataPropertyName = "DONVI";
-            this.DONVI.HeaderText = "Đơn vị";
-            this.DONVI.Name = "DONVI";
-            this.DONVI.ReadOnly = true;
-            this.DONVI.Width = 200;
-            // 
-            // THOIGIAN
-            // 
-            this.THOIGIAN.DataPropertyName = "THOIGIAN";
-            this.THOIGIAN.HeaderText = "Thời gian";
-            this.THOIGIAN.Name = "THOIGIAN";
-            this.THOIGIAN.ReadOnly = true;
-            this.THOIGIAN.Width = 200;
-            // 
             // frmModifyMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(935, 518);
+            this.ClientSize = new System.Drawing.Size(777, 518);
             this.Controls.Add(this.splitContainer4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

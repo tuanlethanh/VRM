@@ -83,7 +83,7 @@ namespace VRM.Forms.Authentication
                 return;
             }
 
-            string userName = txtUserName.Text;
+            string userName = txtUserName.Text.ToLower();
             string password = CalculateMD5(txtPassword.Text);
 
             var user = databaseContext.USERs.FirstOrDefault(s => s.UserName.ToLower().Equals(userName) && s.Password.Equals(password));
