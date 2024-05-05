@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Data.Entity.Migrations;
 using System.Drawing;
@@ -69,6 +70,10 @@ namespace VRM.Forms
             if (hoivien == null)
             {
                 hoivien = new HOIVIEN();
+            } 
+            else
+            {
+                hoivien = databaseContext.HOIVIENs.FirstOrDefault(s => s.ID == hoivien.ID);
             }
 
             hoivien.MAHOIVIEN = txtCode.Text;
@@ -138,7 +143,7 @@ namespace VRM.Forms
                 hoivien.UPDATED_AT = DateTime.Now;
                 hoivien.UPDATED_BY = Constant.LoginUser.ID;
             }
-
+            
             DanhSachQuaTrinhChienDau.ForEach(s => s.HOIVIEN_ID = hoivien.ID);
             databaseContext.QUATRINHCHIENDAUs.AddOrUpdate(DanhSachQuaTrinhChienDau.ToArray());
             DanhSachThanhVien.ForEach(s => s.HOIVIEN_ID = hoivien.ID);

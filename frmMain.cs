@@ -138,7 +138,7 @@ namespace VRM
             {
                 query = query.Where(s => s.CHATDOCDACAM == true);
             }
-
+    
             var data = query.Join(databaseContext.CHIHOIs, hoivien => hoivien.CHIHOI_ID, chihoi => chihoi.ID,
                 (hoivien, chihoi) => new { hoivien, chihoi }).ToList();
 
