@@ -28,31 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.ribbon1 = new System.Windows.Forms.Ribbon();
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.listButtonUpdate = new System.Windows.Forms.RibbonPanel();
-            this.btnNewMember = new System.Windows.Forms.RibbonButton();
-            this.btnUpdateMember = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton3 = new System.Windows.Forms.RibbonButton();
             this.listButtonExport = new System.Windows.Forms.RibbonPanel();
-            this.btnExport = new System.Windows.Forms.RibbonButton();
-            this.btnPrint = new System.Windows.Forms.RibbonButton();
             this.PanelDangNhapHeThong = new System.Windows.Forms.RibbonPanel();
-            this.btnDangNhap = new System.Windows.Forms.RibbonButton();
             this.ribbonTab2 = new System.Windows.Forms.RibbonTab();
             this.listDanhMuc = new System.Windows.Forms.RibbonPanel();
-            this.btnBranchManage = new System.Windows.Forms.RibbonButton();
             this.listUserManager = new System.Windows.Forms.RibbonPanel();
-            this.btnQuanLyUser = new System.Windows.Forms.RibbonButton();
-            this.btnDoiMatKhau = new System.Windows.Forms.RibbonButton();
-            this.btnLogin = new System.Windows.Forms.RibbonButton();
             this.daMembers = new System.Windows.Forms.DataGridView();
             this.HVID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HVCHIHOI = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,7 +53,6 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.txtTimKiemNamSinh = new System.Windows.Forms.TextBox();
             this.txtTimKiemTuKhoa = new System.Windows.Forms.TextBox();
             this.cboTimKiemChiHoi = new System.Windows.Forms.ComboBox();
@@ -73,7 +62,6 @@
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.btnPrint2 = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -115,7 +103,6 @@
             this.chkDanTocItNguoi = new System.Windows.Forms.CheckBox();
             this.chkConLietSi = new System.Windows.Forms.CheckBox();
             this.chkDangVien = new System.Windows.Forms.CheckBox();
-            this.pbAvatar = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -140,6 +127,15 @@
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dagKhangChien = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MEMBER_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LOAIKHANGCHIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LKC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CAPBAC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHUCVU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DONVI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.THOIGIAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dagKhenThuong = new System.Windows.Forms.DataGridView();
             this.LOAIKHENTHUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -150,15 +146,6 @@
             this.NOIDUNG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dagGiaDinh = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MEMBER_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LOAIKHANGCHIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LKC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CAPBAC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHUCVU = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DONVI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.THOIGIAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QHID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -168,6 +155,26 @@
             this.CHATDOCDACAM = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.QUEQUAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DIACHIHIENNAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.pbAvatar = new System.Windows.Forms.PictureBox();
+            this.btnNewMember = new System.Windows.Forms.RibbonButton();
+            this.btnUpdateMember = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton3 = new System.Windows.Forms.RibbonButton();
+            this.btnExport = new System.Windows.Forms.RibbonButton();
+            this.btnPrint = new System.Windows.Forms.RibbonButton();
+            this.btnDangNhap = new System.Windows.Forms.RibbonButton();
+            this.btnBranchManage = new System.Windows.Forms.RibbonButton();
+            this.btnQuanLyUser = new System.Windows.Forms.RibbonButton();
+            this.btnDoiMatKhau = new System.Windows.Forms.RibbonButton();
+            this.btnLogin = new System.Windows.Forms.RibbonButton();
+            this.chkDangVienSearch = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.txtNamNhapNguSearch = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.txtNamXuatNguSearch = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.daMembers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -183,13 +190,13 @@
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dagKhangChien)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dagKhenThuong)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dagGiaDinh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon1
@@ -229,37 +236,6 @@
             this.listButtonUpdate.Name = "listButtonUpdate";
             this.listButtonUpdate.Text = "Quản lý thông tin";
             // 
-            // btnNewMember
-            // 
-            this.btnNewMember.Image = ((System.Drawing.Image)(resources.GetObject("btnNewMember.Image")));
-            this.btnNewMember.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNewMember.LargeImage")));
-            this.btnNewMember.MaximumSize = new System.Drawing.Size(100, 0);
-            this.btnNewMember.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
-            this.btnNewMember.Name = "btnNewMember";
-            this.btnNewMember.SmallImage = global::VRM.Properties.Resources.add_icon;
-            this.btnNewMember.Text = "Thêm hội viên";
-            this.btnNewMember.Click += new System.EventHandler(this.btnNewMember_Click);
-            // 
-            // btnUpdateMember
-            // 
-            this.btnUpdateMember.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdateMember.Image")));
-            this.btnUpdateMember.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnUpdateMember.LargeImage")));
-            this.btnUpdateMember.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
-            this.btnUpdateMember.Name = "btnUpdateMember";
-            this.btnUpdateMember.SmallImage = global::VRM.Properties.Resources.edit_icon;
-            this.btnUpdateMember.Text = "Cập nhật hội viên";
-            this.btnUpdateMember.Click += new System.EventHandler(this.btnUpdateMember_Click);
-            // 
-            // ribbonButton3
-            // 
-            this.ribbonButton3.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton3.Image")));
-            this.ribbonButton3.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton3.LargeImage")));
-            this.ribbonButton3.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
-            this.ribbonButton3.Name = "ribbonButton3";
-            this.ribbonButton3.SmallImage = global::VRM.Properties.Resources.remove_user;
-            this.ribbonButton3.Text = "Xóa hội viên";
-            this.ribbonButton3.Click += new System.EventHandler(this.ribbonButton3_Click);
-            // 
             // listButtonExport
             // 
             this.listButtonExport.Items.Add(this.btnExport);
@@ -267,42 +243,11 @@
             this.listButtonExport.Name = "listButtonExport";
             this.listButtonExport.Text = "Lập biểu mẫu";
             // 
-            // btnExport
-            // 
-            this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
-            this.btnExport.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnExport.LargeImage")));
-            this.btnExport.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
-            this.btnExport.Name = "btnExport";
-            this.btnExport.SmallImage = global::VRM.Properties.Resources.financial_report;
-            this.btnExport.Text = "Xuất danh sách hội viên";
-            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
-            this.btnPrint.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPrint.LargeImage")));
-            this.btnPrint.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.SmallImage = global::VRM.Properties.Resources.print;
-            this.btnPrint.Text = "In giấy xin vào hội";
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
             // PanelDangNhapHeThong
             // 
             this.PanelDangNhapHeThong.Items.Add(this.btnDangNhap);
             this.PanelDangNhapHeThong.Name = "PanelDangNhapHeThong";
             this.PanelDangNhapHeThong.Text = "Đăng nhập ứng dụng";
-            // 
-            // btnDangNhap
-            // 
-            this.btnDangNhap.Image = ((System.Drawing.Image)(resources.GetObject("btnDangNhap.Image")));
-            this.btnDangNhap.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDangNhap.LargeImage")));
-            this.btnDangNhap.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
-            this.btnDangNhap.MinSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
-            this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.SmallImage = global::VRM.Properties.Resources.login;
-            this.btnDangNhap.Text = "Đăng nhập";
-            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
             // ribbonTab2
             // 
@@ -317,16 +262,6 @@
             this.listDanhMuc.Name = "listDanhMuc";
             this.listDanhMuc.Text = "Quản lý danh mục";
             // 
-            // btnBranchManage
-            // 
-            this.btnBranchManage.Image = global::VRM.Properties.Resources.list;
-            this.btnBranchManage.LargeImage = global::VRM.Properties.Resources.list;
-            this.btnBranchManage.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
-            this.btnBranchManage.Name = "btnBranchManage";
-            this.btnBranchManage.SmallImage = global::VRM.Properties.Resources.to_do_list;
-            this.btnBranchManage.Text = "Danh mục chi hội";
-            this.btnBranchManage.Click += new System.EventHandler(this.btnBranchManage_Click);
-            // 
             // listUserManager
             // 
             this.listUserManager.Items.Add(this.btnQuanLyUser);
@@ -334,36 +269,6 @@
             this.listUserManager.Items.Add(this.btnLogin);
             this.listUserManager.Name = "listUserManager";
             this.listUserManager.Text = "Quản lý tài khoản đăng nhập";
-            // 
-            // btnQuanLyUser
-            // 
-            this.btnQuanLyUser.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanLyUser.Image")));
-            this.btnQuanLyUser.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnQuanLyUser.LargeImage")));
-            this.btnQuanLyUser.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
-            this.btnQuanLyUser.Name = "btnQuanLyUser";
-            this.btnQuanLyUser.SmallImage = global::VRM.Properties.Resources.programmer;
-            this.btnQuanLyUser.Text = "Quản lý User";
-            // 
-            // btnDoiMatKhau
-            // 
-            this.btnDoiMatKhau.Image = ((System.Drawing.Image)(resources.GetObject("btnDoiMatKhau.Image")));
-            this.btnDoiMatKhau.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDoiMatKhau.LargeImage")));
-            this.btnDoiMatKhau.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
-            this.btnDoiMatKhau.MinSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
-            this.btnDoiMatKhau.Name = "btnDoiMatKhau";
-            this.btnDoiMatKhau.SmallImage = global::VRM.Properties.Resources.padlock;
-            this.btnDoiMatKhau.Text = "Thay đổi mật khẩu";
-            this.btnDoiMatKhau.Click += new System.EventHandler(this.btnDoiMatKhau_Click);
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.Image = ((System.Drawing.Image)(resources.GetObject("btnLogin.Image")));
-            this.btnLogin.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLogin.LargeImage")));
-            this.btnLogin.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
-            this.btnLogin.MinSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.SmallImage = global::VRM.Properties.Resources.login;
-            this.btnLogin.Text = "Đăng xuất";
             // 
             // daMembers
             // 
@@ -383,7 +288,7 @@
             this.daMembers.ReadOnly = true;
             this.daMembers.RowHeadersVisible = false;
             this.daMembers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.daMembers.Size = new System.Drawing.Size(452, 387);
+            this.daMembers.Size = new System.Drawing.Size(452, 410);
             this.daMembers.TabIndex = 1;
             this.daMembers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.daMembers_CellClick);
             this.daMembers.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.daMembers_CellDoubleClick);
@@ -449,7 +354,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
-            this.splitContainer1.Size = new System.Drawing.Size(1241, 506);
+            this.splitContainer1.Size = new System.Drawing.Size(1241, 565);
             this.splitContainer1.SplitterDistance = 458;
             this.splitContainer1.TabIndex = 2;
             // 
@@ -468,12 +373,19 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.groupBox10);
-            this.splitContainer2.Size = new System.Drawing.Size(458, 506);
-            this.splitContainer2.SplitterDistance = 96;
+            this.splitContainer2.Size = new System.Drawing.Size(458, 565);
+            this.splitContainer2.SplitterDistance = 132;
             this.splitContainer2.TabIndex = 0;
             // 
             // groupBox9
             // 
+            this.groupBox9.Controls.Add(this.linkLabel1);
+            this.groupBox9.Controls.Add(this.txtNamXuatNguSearch);
+            this.groupBox9.Controls.Add(this.label30);
+            this.groupBox9.Controls.Add(this.txtNamNhapNguSearch);
+            this.groupBox9.Controls.Add(this.label29);
+            this.groupBox9.Controls.Add(this.checkBox1);
+            this.groupBox9.Controls.Add(this.chkDangVienSearch);
             this.groupBox9.Controls.Add(this.btnSearch);
             this.groupBox9.Controls.Add(this.txtTimKiemNamSinh);
             this.groupBox9.Controls.Add(this.txtTimKiemTuKhoa);
@@ -484,30 +396,19 @@
             this.groupBox9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox9.Location = new System.Drawing.Point(0, 0);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(458, 96);
+            this.groupBox9.Size = new System.Drawing.Size(458, 132);
             this.groupBox9.TabIndex = 0;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Tìm kiếm";
             // 
-            // btnSearch
-            // 
-            this.btnSearch.Image = global::VRM.Properties.Resources.search;
-            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSearch.Location = new System.Drawing.Point(369, 55);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(83, 35);
-            this.btnSearch.TabIndex = 3;
-            this.btnSearch.Text = "Tìm kiếm";
-            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
             // txtTimKiemNamSinh
             // 
             this.txtTimKiemNamSinh.Location = new System.Drawing.Point(77, 70);
+            this.txtTimKiemNamSinh.MaxLength = 4;
             this.txtTimKiemNamSinh.Name = "txtTimKiemNamSinh";
-            this.txtTimKiemNamSinh.Size = new System.Drawing.Size(273, 20);
+            this.txtTimKiemNamSinh.Size = new System.Drawing.Size(83, 20);
             this.txtTimKiemNamSinh.TabIndex = 2;
+            this.txtTimKiemNamSinh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTimKiemNamSinh_KeyPress);
             // 
             // txtTimKiemTuKhoa
             // 
@@ -557,7 +458,7 @@
             this.groupBox10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox10.Location = new System.Drawing.Point(0, 0);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(458, 406);
+            this.groupBox10.Size = new System.Drawing.Size(458, 429);
             this.groupBox10.TabIndex = 0;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Danh sách hội viên";
@@ -573,7 +474,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(779, 506);
+            this.tabControl1.Size = new System.Drawing.Size(779, 565);
             this.tabControl1.TabIndex = 56;
             // 
             // tabPage1
@@ -586,24 +487,10 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(771, 480);
+            this.tabPage1.Size = new System.Drawing.Size(771, 539);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Thông tin hội viên";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Image = global::VRM.Properties.Resources.delete;
-            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(320, 437);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(115, 35);
-            this.btnDelete.TabIndex = 31;
-            this.btnDelete.Text = "Xóa hội viên";
-            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnPrint2
             // 
@@ -1025,16 +912,6 @@
             this.chkDangVien.Text = "Đảng viên";
             this.chkDangVien.UseVisualStyleBackColor = true;
             // 
-            // pbAvatar
-            // 
-            this.pbAvatar.BackColor = System.Drawing.Color.Gray;
-            this.pbAvatar.Location = new System.Drawing.Point(578, 19);
-            this.pbAvatar.Name = "pbAvatar";
-            this.pbAvatar.Size = new System.Drawing.Size(172, 246);
-            this.pbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbAvatar.TabIndex = 21;
-            this.pbAvatar.TabStop = false;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -1275,6 +1152,77 @@
             this.dagKhangChien.Size = new System.Drawing.Size(765, 474);
             this.dagKhangChien.TabIndex = 2;
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // MEMBER_ID
+            // 
+            this.MEMBER_ID.DataPropertyName = "MEMBER_ID";
+            this.MEMBER_ID.HeaderText = "MEMBER_ID";
+            this.MEMBER_ID.Name = "MEMBER_ID";
+            this.MEMBER_ID.ReadOnly = true;
+            this.MEMBER_ID.Visible = false;
+            // 
+            // LOAIKHANGCHIEN
+            // 
+            this.LOAIKHANGCHIEN.HeaderText = "LOAIKHANGCHIEN";
+            this.LOAIKHANGCHIEN.Name = "LOAIKHANGCHIEN";
+            this.LOAIKHANGCHIEN.ReadOnly = true;
+            this.LOAIKHANGCHIEN.Visible = false;
+            // 
+            // LKC
+            // 
+            this.LKC.DataPropertyName = "TENKHANGCHIEN";
+            this.LKC.HeaderText = "Thời kỳ";
+            this.LKC.Name = "LKC";
+            this.LKC.ReadOnly = true;
+            this.LKC.Width = 200;
+            // 
+            // LOAI
+            // 
+            this.LOAI.DataPropertyName = "TENCHIENDICH";
+            this.LOAI.HeaderText = "Tên chiến dịch";
+            this.LOAI.Name = "LOAI";
+            this.LOAI.ReadOnly = true;
+            this.LOAI.Width = 200;
+            // 
+            // CAPBAC
+            // 
+            this.CAPBAC.DataPropertyName = "CAPBAC";
+            this.CAPBAC.HeaderText = "Cấp bậc";
+            this.CAPBAC.Name = "CAPBAC";
+            this.CAPBAC.ReadOnly = true;
+            this.CAPBAC.Width = 150;
+            // 
+            // CHUCVU
+            // 
+            this.CHUCVU.DataPropertyName = "CHUCVU";
+            this.CHUCVU.HeaderText = "Chức vụ";
+            this.CHUCVU.Name = "CHUCVU";
+            this.CHUCVU.ReadOnly = true;
+            this.CHUCVU.Width = 200;
+            // 
+            // DONVI
+            // 
+            this.DONVI.DataPropertyName = "DONVI";
+            this.DONVI.HeaderText = "Đơn vị";
+            this.DONVI.Name = "DONVI";
+            this.DONVI.ReadOnly = true;
+            this.DONVI.Width = 200;
+            // 
+            // THOIGIAN
+            // 
+            this.THOIGIAN.DataPropertyName = "THOIGIAN";
+            this.THOIGIAN.HeaderText = "Thời gian";
+            this.THOIGIAN.Name = "THOIGIAN";
+            this.THOIGIAN.ReadOnly = true;
+            this.THOIGIAN.Width = 200;
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.dagKhenThuong);
@@ -1411,77 +1359,6 @@
             this.dagGiaDinh.Size = new System.Drawing.Size(765, 474);
             this.dagGiaDinh.TabIndex = 1;
             // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
-            // MEMBER_ID
-            // 
-            this.MEMBER_ID.DataPropertyName = "MEMBER_ID";
-            this.MEMBER_ID.HeaderText = "MEMBER_ID";
-            this.MEMBER_ID.Name = "MEMBER_ID";
-            this.MEMBER_ID.ReadOnly = true;
-            this.MEMBER_ID.Visible = false;
-            // 
-            // LOAIKHANGCHIEN
-            // 
-            this.LOAIKHANGCHIEN.HeaderText = "LOAIKHANGCHIEN";
-            this.LOAIKHANGCHIEN.Name = "LOAIKHANGCHIEN";
-            this.LOAIKHANGCHIEN.ReadOnly = true;
-            this.LOAIKHANGCHIEN.Visible = false;
-            // 
-            // LKC
-            // 
-            this.LKC.DataPropertyName = "TENKHANGCHIEN";
-            this.LKC.HeaderText = "Thời kỳ";
-            this.LKC.Name = "LKC";
-            this.LKC.ReadOnly = true;
-            this.LKC.Width = 200;
-            // 
-            // LOAI
-            // 
-            this.LOAI.DataPropertyName = "TENCHIENDICH";
-            this.LOAI.HeaderText = "Tên chiến dịch";
-            this.LOAI.Name = "LOAI";
-            this.LOAI.ReadOnly = true;
-            this.LOAI.Width = 200;
-            // 
-            // CAPBAC
-            // 
-            this.CAPBAC.DataPropertyName = "CAPBAC";
-            this.CAPBAC.HeaderText = "Cấp bậc";
-            this.CAPBAC.Name = "CAPBAC";
-            this.CAPBAC.ReadOnly = true;
-            this.CAPBAC.Width = 150;
-            // 
-            // CHUCVU
-            // 
-            this.CHUCVU.DataPropertyName = "CHUCVU";
-            this.CHUCVU.HeaderText = "Chức vụ";
-            this.CHUCVU.Name = "CHUCVU";
-            this.CHUCVU.ReadOnly = true;
-            this.CHUCVU.Width = 200;
-            // 
-            // DONVI
-            // 
-            this.DONVI.DataPropertyName = "DONVI";
-            this.DONVI.HeaderText = "Đơn vị";
-            this.DONVI.Name = "DONVI";
-            this.DONVI.ReadOnly = true;
-            this.DONVI.Width = 200;
-            // 
-            // THOIGIAN
-            // 
-            this.THOIGIAN.DataPropertyName = "THOIGIAN";
-            this.THOIGIAN.HeaderText = "Thời gian";
-            this.THOIGIAN.Name = "THOIGIAN";
-            this.THOIGIAN.ReadOnly = true;
-            this.THOIGIAN.Width = 200;
-            // 
             // QHID
             // 
             this.QHID.DataPropertyName = "ID";
@@ -1542,11 +1419,217 @@
             this.DIACHIHIENNAY.Name = "DIACHIHIENNAY";
             this.DIACHIHIENNAY.Width = 250;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Image = global::VRM.Properties.Resources.search;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSearch.Location = new System.Drawing.Point(369, 91);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(83, 35);
+            this.btnSearch.TabIndex = 3;
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Image = global::VRM.Properties.Resources.delete;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.Location = new System.Drawing.Point(320, 437);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(115, 35);
+            this.btnDelete.TabIndex = 31;
+            this.btnDelete.Text = "Xóa hội viên";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // pbAvatar
+            // 
+            this.pbAvatar.BackColor = System.Drawing.Color.Gray;
+            this.pbAvatar.Location = new System.Drawing.Point(578, 19);
+            this.pbAvatar.Name = "pbAvatar";
+            this.pbAvatar.Size = new System.Drawing.Size(172, 246);
+            this.pbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbAvatar.TabIndex = 21;
+            this.pbAvatar.TabStop = false;
+            // 
+            // btnNewMember
+            // 
+            this.btnNewMember.Image = ((System.Drawing.Image)(resources.GetObject("btnNewMember.Image")));
+            this.btnNewMember.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNewMember.LargeImage")));
+            this.btnNewMember.MaximumSize = new System.Drawing.Size(100, 0);
+            this.btnNewMember.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
+            this.btnNewMember.Name = "btnNewMember";
+            this.btnNewMember.SmallImage = global::VRM.Properties.Resources.add_icon;
+            this.btnNewMember.Text = "Thêm hội viên";
+            this.btnNewMember.Click += new System.EventHandler(this.btnNewMember_Click);
+            // 
+            // btnUpdateMember
+            // 
+            this.btnUpdateMember.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdateMember.Image")));
+            this.btnUpdateMember.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnUpdateMember.LargeImage")));
+            this.btnUpdateMember.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
+            this.btnUpdateMember.Name = "btnUpdateMember";
+            this.btnUpdateMember.SmallImage = global::VRM.Properties.Resources.edit_icon;
+            this.btnUpdateMember.Text = "Cập nhật hội viên";
+            this.btnUpdateMember.Click += new System.EventHandler(this.btnUpdateMember_Click);
+            // 
+            // ribbonButton3
+            // 
+            this.ribbonButton3.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton3.Image")));
+            this.ribbonButton3.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton3.LargeImage")));
+            this.ribbonButton3.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
+            this.ribbonButton3.Name = "ribbonButton3";
+            this.ribbonButton3.SmallImage = global::VRM.Properties.Resources.remove_user;
+            this.ribbonButton3.Text = "Xóa hội viên";
+            this.ribbonButton3.Click += new System.EventHandler(this.ribbonButton3_Click);
+            // 
+            // btnExport
+            // 
+            this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
+            this.btnExport.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnExport.LargeImage")));
+            this.btnExport.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
+            this.btnExport.Name = "btnExport";
+            this.btnExport.SmallImage = global::VRM.Properties.Resources.financial_report;
+            this.btnExport.Text = "Xuất danh sách hội viên";
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
+            this.btnPrint.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPrint.LargeImage")));
+            this.btnPrint.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.SmallImage = global::VRM.Properties.Resources.print;
+            this.btnPrint.Text = "In giấy xin vào hội";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // btnDangNhap
+            // 
+            this.btnDangNhap.Image = ((System.Drawing.Image)(resources.GetObject("btnDangNhap.Image")));
+            this.btnDangNhap.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDangNhap.LargeImage")));
+            this.btnDangNhap.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
+            this.btnDangNhap.MinSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
+            this.btnDangNhap.Name = "btnDangNhap";
+            this.btnDangNhap.SmallImage = global::VRM.Properties.Resources.login;
+            this.btnDangNhap.Text = "Đăng nhập";
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
+            // 
+            // btnBranchManage
+            // 
+            this.btnBranchManage.Image = global::VRM.Properties.Resources.list;
+            this.btnBranchManage.LargeImage = global::VRM.Properties.Resources.list;
+            this.btnBranchManage.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
+            this.btnBranchManage.Name = "btnBranchManage";
+            this.btnBranchManage.SmallImage = global::VRM.Properties.Resources.to_do_list;
+            this.btnBranchManage.Text = "Danh mục chi hội";
+            this.btnBranchManage.Click += new System.EventHandler(this.btnBranchManage_Click);
+            // 
+            // btnQuanLyUser
+            // 
+            this.btnQuanLyUser.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanLyUser.Image")));
+            this.btnQuanLyUser.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnQuanLyUser.LargeImage")));
+            this.btnQuanLyUser.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
+            this.btnQuanLyUser.Name = "btnQuanLyUser";
+            this.btnQuanLyUser.SmallImage = global::VRM.Properties.Resources.programmer;
+            this.btnQuanLyUser.Text = "Quản lý User";
+            // 
+            // btnDoiMatKhau
+            // 
+            this.btnDoiMatKhau.Image = ((System.Drawing.Image)(resources.GetObject("btnDoiMatKhau.Image")));
+            this.btnDoiMatKhau.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDoiMatKhau.LargeImage")));
+            this.btnDoiMatKhau.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
+            this.btnDoiMatKhau.MinSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
+            this.btnDoiMatKhau.Name = "btnDoiMatKhau";
+            this.btnDoiMatKhau.SmallImage = global::VRM.Properties.Resources.padlock;
+            this.btnDoiMatKhau.Text = "Thay đổi mật khẩu";
+            this.btnDoiMatKhau.Click += new System.EventHandler(this.btnDoiMatKhau_Click);
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.Image = ((System.Drawing.Image)(resources.GetObject("btnLogin.Image")));
+            this.btnLogin.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLogin.LargeImage")));
+            this.btnLogin.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
+            this.btnLogin.MinSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.SmallImage = global::VRM.Properties.Resources.login;
+            this.btnLogin.Text = "Đăng xuất";
+            // 
+            // chkDangVienSearch
+            // 
+            this.chkDangVienSearch.AutoSize = true;
+            this.chkDangVienSearch.Location = new System.Drawing.Point(177, 72);
+            this.chkDangVienSearch.Name = "chkDangVienSearch";
+            this.chkDangVienSearch.Size = new System.Drawing.Size(75, 17);
+            this.chkDangVienSearch.TabIndex = 4;
+            this.chkDangVienSearch.Text = "Đảng viên";
+            this.chkDangVienSearch.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(258, 73);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(108, 17);
+            this.checkBox1.TabIndex = 5;
+            this.checkBox1.Text = "Chất độc da cam";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // txtNamNhapNguSearch
+            // 
+            this.txtNamNhapNguSearch.Location = new System.Drawing.Point(77, 99);
+            this.txtNamNhapNguSearch.MaxLength = 4;
+            this.txtNamNhapNguSearch.Name = "txtNamNhapNguSearch";
+            this.txtNamNhapNguSearch.Size = new System.Drawing.Size(83, 20);
+            this.txtNamNhapNguSearch.TabIndex = 7;
+            this.txtNamNhapNguSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNamNhapNguSearch_KeyPress);
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(12, 93);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(55, 26);
+            this.label29.TabIndex = 6;
+            this.label29.Text = "Năm \r\nnhập ngũ:";
+            // 
+            // txtNamXuatNguSearch
+            // 
+            this.txtNamXuatNguSearch.Location = new System.Drawing.Point(236, 99);
+            this.txtNamXuatNguSearch.MaxLength = 4;
+            this.txtNamXuatNguSearch.Name = "txtNamXuatNguSearch";
+            this.txtNamXuatNguSearch.Size = new System.Drawing.Size(114, 20);
+            this.txtNamXuatNguSearch.TabIndex = 9;
+            this.txtNamXuatNguSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNamXuatNguSearch_KeyPress);
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(171, 93);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(51, 26);
+            this.label30.TabIndex = 8;
+            this.label30.Text = "Năm \r\nxuất ngũ:";
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(356, 50);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(54, 13);
+            this.linkLabel1.TabIndex = 10;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Chú thích";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1241, 641);
+            this.ClientSize = new System.Drawing.Size(1241, 700);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.ribbon1);
             this.KeyPreview = true;
@@ -1575,13 +1658,13 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dagKhangChien)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dagKhenThuong)).EndInit();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dagGiaDinh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1723,5 +1806,12 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn CHATDOCDACAM;
         private System.Windows.Forms.DataGridViewTextBoxColumn QUEQUAN;
         private System.Windows.Forms.DataGridViewTextBoxColumn DIACHIHIENNAY;
+        private System.Windows.Forms.CheckBox chkDangVienSearch;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox txtNamNhapNguSearch;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox txtNamXuatNguSearch;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

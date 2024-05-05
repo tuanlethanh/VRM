@@ -113,6 +113,32 @@ namespace VRM
                 query = query.Where(s => nam.Equals(s.NAMSINH.Year));
             }
 
+            if (!string.IsNullOrEmpty(txtNamNhapNguSearch.Text))
+            {
+                var keyword = txtNamNhapNguSearch.Text;
+                int nam = 0;
+                int.TryParse(keyword, out nam);
+                query = query.Where(s => nam.Equals(s.NGAYNHAPNGU.Year));
+            }
+
+            if (!string.IsNullOrEmpty(txtNamXuatNguSearch.Text))
+            {
+                var keyword = txtNamXuatNguSearch.Text;
+                int nam = 0;
+                int.TryParse(keyword, out nam);
+                query = query.Where(s => nam.Equals(s.NGAYXUATNGU.Year));
+            }
+
+            if (chkDangVien.Checked)
+            {
+                query = query.Where(s => s.DANGVIEN == true);
+            }
+
+            if (chkChatDocDaCam.Checked)
+            {
+                query = query.Where(s => s.CHATDOCDACAM == true);
+            }
+
             var data = query.Join(databaseContext.CHIHOIs, hoivien => hoivien.CHIHOI_ID, chihoi => chihoi.ID,
                 (hoivien, chihoi) => new { hoivien, chihoi }).ToList();
 
@@ -432,11 +458,16 @@ namespace VRM
                 MemoryStream mstream = new MemoryStream();
                 OoxmlSaveOptions opts1 = new OoxmlSaveOptions(SaveFormat.Xlsx);
                 aWorkBook.Save(mstream, opts1);
-                SaveFileDialog save = new SaveFileDialog();
-                if (save.ShowDialog() == DialogResult.OK)
+                SaveFileDialog saveDlg = new SaveFileDialog();
+                saveDlg.InitialDirectory = @"C:\";
+                saveDlg.Filter = "Excel files (*.xlsx)|*.xlsx";
+                saveDlg.FilterIndex = 0;
+                saveDlg.RestoreDirectory = true;
+                saveDlg.Title = "Export Excel File To";
+                if (saveDlg.ShowDialog() == DialogResult.OK)
                 {
-                    File.WriteAllBytes(save.FileName, mstream.ToArray());
-                    Process.Start(save.FileName);
+                    File.WriteAllBytes(saveDlg.FileName, mstream.ToArray());
+                    Process.Start(saveDlg.FileName);
                 }
             }
             catch (Exception ex)
@@ -833,6 +864,53 @@ namespace VRM
             clearData();
             btnEdit.Visible = false;
             btnDelete.Visible = false;
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show("Mục từ khóa có thể tìm kiếm theo các trường:\n Họ tên; Quê quán; Địa chỉ hiện tại; Số điện thoại liên hệ", "Hướng dẫn", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void txtTimKiemNamSinh_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&  (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNamXuatNguSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNamNhapNguSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
