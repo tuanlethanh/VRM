@@ -181,13 +181,13 @@
   <data name="btnDangNhap.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAABpJREFUWEftwQEBAAAAgiD/r25IQAAAAMC5GhAgAAGdeElDAAAAAElFTkSuQmCC
+        vAAADrwBlbxySQAAABpJREFUWEftwQEBAAAAgiD/r25IQAAAAMC5GhAgAAGdeElDAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="btnDangNhap.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAABpJREFUWEftwQEBAAAAgiD/r25IQAAAAMC5GhAgAAGdeElDAAAAAElFTkSuQmCC
+        vAAADrwBlbxySQAAABpJREFUWEftwQEBAAAAgiD/r25IQAAAAMC5GhAgAAGdeElDAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="btnQuanLyUser.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

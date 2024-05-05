@@ -129,12 +129,12 @@ namespace VRM
                 query = query.Where(s => nam.Equals(s.NGAYXUATNGU.Year));
             }
 
-            if (chkDangVien.Checked)
+            if (chkDangVienSearch.Checked)
             {
                 query = query.Where(s => s.DANGVIEN == true);
             }
 
-            if (chkChatDocDaCam.Checked)
+            if (chkChatDocDaCamSearch.Checked)
             {
                 query = query.Where(s => s.CHATDOCDACAM == true);
             }
@@ -373,6 +373,32 @@ namespace VRM
                 {
                     var keyword = txtTimKiemNamSinh.Text;
                     query.Where(s => keyword.Equals(s.NAMSINH));
+                }
+
+                if (!string.IsNullOrEmpty(txtNamNhapNguSearch.Text))
+                {
+                    var keyword = txtNamNhapNguSearch.Text;
+                    int nam = 0;
+                    int.TryParse(keyword, out nam);
+                    query = query.Where(s => nam.Equals(s.NGAYNHAPNGU.Year));
+                }
+
+                if (!string.IsNullOrEmpty(txtNamXuatNguSearch.Text))
+                {
+                    var keyword = txtNamXuatNguSearch.Text;
+                    int nam = 0;
+                    int.TryParse(keyword, out nam);
+                    query = query.Where(s => nam.Equals(s.NGAYXUATNGU.Year));
+                }
+
+                if (chkDangVienSearch.Checked)
+                {
+                    query = query.Where(s => s.DANGVIEN == true);
+                }
+
+                if (chkChatDocDaCamSearch.Checked)
+                {
+                    query = query.Where(s => s.CHATDOCDACAM == true);
                 }
 
                 var listHoiVien = query.Join(databaseContext.CHIHOIs, hv => hv.CHIHOI_ID, ch => ch.ID, (hv, ch) => new
