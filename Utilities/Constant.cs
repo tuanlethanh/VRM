@@ -43,7 +43,10 @@ namespace VRM.Utilities
 
         public static List<DropdownModel> DanhMucHangThuongBinh = new List<DropdownModel>
             {
-                new DropdownModel {Id = "BENHBINH", Name = "Bệnh binh" }, 
+                new DropdownModel {Id = "KHONG", Name = "Không" },
+                new DropdownModel {Id = "BENHBINH1", Name = "Bệnh binh hạng 1/3" },
+                new DropdownModel {Id = "BENHBINH2", Name = "Bệnh binh hạng 2/3" },
+                new DropdownModel {Id = "BENHBINH3", Name = "Bệnh binh hạng 3/3" },
                 new DropdownModel {Id = "HANG1", Name = "Thương binh hạng 1" },
                 new DropdownModel {Id = "HANG2", Name = "Thương binh hạng 2" },
                 new DropdownModel {Id = "HANG3", Name = "Thương binh hạng 3" },
@@ -62,8 +65,8 @@ namespace VRM.Utilities
                 new DropdownModel {Id = "CAPTA4", Name = "Thiếu tá" },
                 new DropdownModel {Id = "CAPUY1", Name = "Đại úy" },
                 new DropdownModel {Id = "CAPUY2", Name = "Thượng úy" },
-                new DropdownModel {Id = "CAPUY2", Name = "Trung úy" },
-                new DropdownModel {Id = "CAPUY2", Name = "Thiếu úy" },
+                new DropdownModel {Id = "CAPUY3", Name = "Trung úy" },
+                new DropdownModel {Id = "CAPUY4", Name = "Thiếu úy" },
                 new DropdownModel {Id = "HSQCS", Name = "HSQCS" },
                 new DropdownModel {Id = "QNCN", Name = "Quân nhân chuyên nghiệp" },
                 new DropdownModel {Id = "CNVQP", Name = "Công nhân viên Quốc phòng" }

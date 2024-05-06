@@ -760,6 +760,8 @@ namespace VRM
                 {
                     MessageBox.Show("Chỉnh sửa viên thành công", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     refreshDataGridView();
+                    currentSelectedRow = this.daMembers.CurrentRow;
+                    bindingData(currentSelectedRow);
                 }
             }
             else

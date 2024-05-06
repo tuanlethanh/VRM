@@ -57,20 +57,14 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtCoQuanKhiXuatNgu = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.txtNgayVaoDang = new System.Windows.Forms.DateTimePicker();
             this.label18 = new System.Windows.Forms.Label();
             this.txtResidence = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtHomtown = new System.Windows.Forms.TextBox();
-            this.txtNgayXuatNgu = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtNgayNhapNgu = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.txtDateOfBirth = new System.Windows.Forms.DateTimePicker();
-            this.txtNgayVaoHoi = new System.Windows.Forms.DateTimePicker();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtIssueCardDate = new System.Windows.Forms.DateTimePicker();
             this.chkCongGiao = new System.Windows.Forms.CheckBox();
             this.chkChatDocDaCam = new System.Windows.Forms.CheckBox();
             this.chkDanTocItNguoi = new System.Windows.Forms.CheckBox();
@@ -89,7 +83,6 @@
             this.label22 = new System.Windows.Forms.Label();
             this.cboCapBac = new System.Windows.Forms.ComboBox();
             this.cboThuongBenhBinh = new System.Windows.Forms.ComboBox();
-            this.txtNgayNghiHuu = new System.Windows.Forms.DateTimePicker();
             this.label24 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -136,6 +129,13 @@
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.txtNgayVaoDang = new System.Windows.Forms.MaskedTextBox();
+            this.txtNgayXuatNgu = new System.Windows.Forms.MaskedTextBox();
+            this.txtNgayNhapNgu = new System.Windows.Forms.MaskedTextBox();
+            this.txtNgayNghiHuu = new System.Windows.Forms.MaskedTextBox();
+            this.txtDateOfBirth = new System.Windows.Forms.MaskedTextBox();
+            this.txtNgayVaoHoi = new System.Windows.Forms.MaskedTextBox();
+            this.txtIssueCardDate = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -338,9 +338,9 @@
             // 
             // txtAcademic
             // 
-            this.txtAcademic.Location = new System.Drawing.Point(107, 200);
+            this.txtAcademic.Location = new System.Drawing.Point(108, 200);
             this.txtAcademic.Name = "txtAcademic";
-            this.txtAcademic.Size = new System.Drawing.Size(108, 20);
+            this.txtAcademic.Size = new System.Drawing.Size(107, 20);
             this.txtAcademic.TabIndex = 10;
             // 
             // txtQuanlify
@@ -361,9 +361,9 @@
             // 
             // txtPoliticalTheory
             // 
-            this.txtPoliticalTheory.Location = new System.Drawing.Point(107, 226);
+            this.txtPoliticalTheory.Location = new System.Drawing.Point(108, 226);
             this.txtPoliticalTheory.Name = "txtPoliticalTheory";
-            this.txtPoliticalTheory.Size = new System.Drawing.Size(465, 20);
+            this.txtPoliticalTheory.Size = new System.Drawing.Size(464, 20);
             this.txtPoliticalTheory.TabIndex = 10;
             // 
             // label11
@@ -385,24 +385,24 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtIssueCardDate);
+            this.groupBox1.Controls.Add(this.txtNgayVaoHoi);
+            this.groupBox1.Controls.Add(this.txtDateOfBirth);
+            this.groupBox1.Controls.Add(this.txtNgayNhapNgu);
+            this.groupBox1.Controls.Add(this.txtNgayXuatNgu);
+            this.groupBox1.Controls.Add(this.txtNgayVaoDang);
             this.groupBox1.Controls.Add(this.txtCoQuanKhiXuatNgu);
             this.groupBox1.Controls.Add(this.label19);
-            this.groupBox1.Controls.Add(this.txtNgayVaoDang);
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.txtResidence);
             this.groupBox1.Controls.Add(this.txtAddress);
             this.groupBox1.Controls.Add(this.txtHomtown);
-            this.groupBox1.Controls.Add(this.txtNgayXuatNgu);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.cboBranch);
-            this.groupBox1.Controls.Add(this.txtNgayNhapNgu);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.txtDateOfBirth);
-            this.groupBox1.Controls.Add(this.txtNgayVaoHoi);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.txtIssueCardDate);
             this.groupBox1.Controls.Add(this.chkCongGiao);
             this.groupBox1.Controls.Add(this.txtCode);
             this.groupBox1.Controls.Add(this.lblCode);
@@ -457,15 +457,6 @@
             this.label19.TabIndex = 40;
             this.label19.Text = "Đơn vị khi xuất ngũ:";
             // 
-            // txtNgayVaoDang
-            // 
-            this.txtNgayVaoDang.CustomFormat = "dd/MM/yyyy";
-            this.txtNgayVaoDang.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtNgayVaoDang.Location = new System.Drawing.Point(312, 252);
-            this.txtNgayVaoDang.Name = "txtNgayVaoDang";
-            this.txtNgayVaoDang.Size = new System.Drawing.Size(108, 20);
-            this.txtNgayVaoDang.TabIndex = 39;
-            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -496,15 +487,6 @@
             this.txtHomtown.Size = new System.Drawing.Size(482, 20);
             this.txtHomtown.TabIndex = 35;
             // 
-            // txtNgayXuatNgu
-            // 
-            this.txtNgayXuatNgu.CustomFormat = "dd/MM/yyyy";
-            this.txtNgayXuatNgu.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtNgayXuatNgu.Location = new System.Drawing.Point(312, 278);
-            this.txtNgayXuatNgu.Name = "txtNgayXuatNgu";
-            this.txtNgayXuatNgu.Size = new System.Drawing.Size(109, 20);
-            this.txtNgayXuatNgu.TabIndex = 32;
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -513,15 +495,6 @@
             this.label13.Size = new System.Drawing.Size(79, 13);
             this.label13.TabIndex = 30;
             this.label13.Text = "Ngày xuất ngũ:";
-            // 
-            // txtNgayNhapNgu
-            // 
-            this.txtNgayNhapNgu.CustomFormat = "dd/MM/yyyy";
-            this.txtNgayNhapNgu.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtNgayNhapNgu.Location = new System.Drawing.Point(107, 276);
-            this.txtNgayNhapNgu.Name = "txtNgayNhapNgu";
-            this.txtNgayNhapNgu.Size = new System.Drawing.Size(108, 20);
-            this.txtNgayNhapNgu.TabIndex = 33;
             // 
             // label12
             // 
@@ -541,24 +514,6 @@
             this.label17.TabIndex = 16;
             this.label17.Text = "Ngày cấp \r\nthẻ hội viên:";
             // 
-            // txtDateOfBirth
-            // 
-            this.txtDateOfBirth.CustomFormat = "dd/MM/yyyy";
-            this.txtDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtDateOfBirth.Location = new System.Drawing.Point(90, 67);
-            this.txtDateOfBirth.Name = "txtDateOfBirth";
-            this.txtDateOfBirth.Size = new System.Drawing.Size(91, 20);
-            this.txtDateOfBirth.TabIndex = 22;
-            // 
-            // txtNgayVaoHoi
-            // 
-            this.txtNgayVaoHoi.CustomFormat = "dd/MM/yyyy";
-            this.txtNgayVaoHoi.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtNgayVaoHoi.Location = new System.Drawing.Point(273, 15);
-            this.txtNgayVaoHoi.Name = "txtNgayVaoHoi";
-            this.txtNgayVaoHoi.Size = new System.Drawing.Size(108, 20);
-            this.txtNgayVaoHoi.TabIndex = 22;
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -567,15 +522,6 @@
             this.label14.Size = new System.Drawing.Size(73, 13);
             this.label14.TabIndex = 16;
             this.label14.Text = "Ngày vào hội:";
-            // 
-            // txtIssueCardDate
-            // 
-            this.txtIssueCardDate.CustomFormat = "dd/MM/yyyy";
-            this.txtIssueCardDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtIssueCardDate.Location = new System.Drawing.Point(458, 14);
-            this.txtIssueCardDate.Name = "txtIssueCardDate";
-            this.txtIssueCardDate.Size = new System.Drawing.Size(114, 20);
-            this.txtIssueCardDate.TabIndex = 22;
             // 
             // chkCongGiao
             // 
@@ -677,6 +623,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtNgayNghiHuu);
             this.groupBox2.Controls.Add(this.label25);
             this.groupBox2.Controls.Add(this.txtChucVu);
             this.groupBox2.Controls.Add(this.txtCoQuanDonViKhiNghiHuu);
@@ -685,7 +632,6 @@
             this.groupBox2.Controls.Add(this.label22);
             this.groupBox2.Controls.Add(this.cboCapBac);
             this.groupBox2.Controls.Add(this.cboThuongBenhBinh);
-            this.groupBox2.Controls.Add(this.txtNgayNghiHuu);
             this.groupBox2.Controls.Add(this.label24);
             this.groupBox2.Controls.Add(this.label20);
             this.groupBox2.Controls.Add(this.label21);
@@ -730,9 +676,9 @@
             // 
             // txtTinhTrangSucKhoe
             // 
-            this.txtTinhTrangSucKhoe.Location = new System.Drawing.Point(107, 75);
+            this.txtTinhTrangSucKhoe.Location = new System.Drawing.Point(108, 75);
             this.txtTinhTrangSucKhoe.Name = "txtTinhTrangSucKhoe";
-            this.txtTinhTrangSucKhoe.Size = new System.Drawing.Size(369, 20);
+            this.txtTinhTrangSucKhoe.Size = new System.Drawing.Size(368, 20);
             this.txtTinhTrangSucKhoe.TabIndex = 41;
             // 
             // label22
@@ -759,15 +705,6 @@
             this.cboThuongBenhBinh.Name = "cboThuongBenhBinh";
             this.cboThuongBenhBinh.Size = new System.Drawing.Size(162, 21);
             this.cboThuongBenhBinh.TabIndex = 42;
-            // 
-            // txtNgayNghiHuu
-            // 
-            this.txtNgayNghiHuu.CustomFormat = "dd/MM/yyyy";
-            this.txtNgayNghiHuu.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtNgayNghiHuu.Location = new System.Drawing.Point(107, 20);
-            this.txtNgayNghiHuu.Name = "txtNgayNghiHuu";
-            this.txtNgayNghiHuu.Size = new System.Drawing.Size(108, 20);
-            this.txtNgayNghiHuu.TabIndex = 33;
             // 
             // label24
             // 
@@ -1260,6 +1197,69 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // txtNgayVaoDang
+            // 
+            this.txtNgayVaoDang.Location = new System.Drawing.Point(312, 252);
+            this.txtNgayVaoDang.Mask = "00/00/0000";
+            this.txtNgayVaoDang.Name = "txtNgayVaoDang";
+            this.txtNgayVaoDang.Size = new System.Drawing.Size(110, 20);
+            this.txtNgayVaoDang.TabIndex = 42;
+            this.txtNgayVaoDang.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtNgayXuatNgu
+            // 
+            this.txtNgayXuatNgu.Location = new System.Drawing.Point(311, 275);
+            this.txtNgayXuatNgu.Mask = "00/00/0000";
+            this.txtNgayXuatNgu.Name = "txtNgayXuatNgu";
+            this.txtNgayXuatNgu.Size = new System.Drawing.Size(110, 20);
+            this.txtNgayXuatNgu.TabIndex = 43;
+            this.txtNgayXuatNgu.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtNgayNhapNgu
+            // 
+            this.txtNgayNhapNgu.Location = new System.Drawing.Point(108, 275);
+            this.txtNgayNhapNgu.Mask = "00/00/0000";
+            this.txtNgayNhapNgu.Name = "txtNgayNhapNgu";
+            this.txtNgayNhapNgu.Size = new System.Drawing.Size(107, 20);
+            this.txtNgayNhapNgu.TabIndex = 44;
+            this.txtNgayNhapNgu.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtNgayNghiHuu
+            // 
+            this.txtNgayNghiHuu.Location = new System.Drawing.Point(108, 19);
+            this.txtNgayNghiHuu.Mask = "00/00/0000";
+            this.txtNgayNghiHuu.Name = "txtNgayNghiHuu";
+            this.txtNgayNghiHuu.Size = new System.Drawing.Size(110, 20);
+            this.txtNgayNghiHuu.TabIndex = 45;
+            this.txtNgayNghiHuu.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtDateOfBirth
+            // 
+            this.txtDateOfBirth.Location = new System.Drawing.Point(90, 67);
+            this.txtDateOfBirth.Mask = "00/00/0000";
+            this.txtDateOfBirth.Name = "txtDateOfBirth";
+            this.txtDateOfBirth.Size = new System.Drawing.Size(91, 20);
+            this.txtDateOfBirth.TabIndex = 45;
+            this.txtDateOfBirth.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtNgayVaoHoi
+            // 
+            this.txtNgayVaoHoi.Location = new System.Drawing.Point(273, 15);
+            this.txtNgayVaoHoi.Mask = "00/00/0000";
+            this.txtNgayVaoHoi.Name = "txtNgayVaoHoi";
+            this.txtNgayVaoHoi.Size = new System.Drawing.Size(112, 20);
+            this.txtNgayVaoHoi.TabIndex = 46;
+            this.txtNgayVaoHoi.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtIssueCardDate
+            // 
+            this.txtIssueCardDate.Location = new System.Drawing.Point(458, 14);
+            this.txtIssueCardDate.Mask = "00/00/0000";
+            this.txtIssueCardDate.Name = "txtIssueCardDate";
+            this.txtIssueCardDate.Size = new System.Drawing.Size(114, 20);
+            this.txtIssueCardDate.TabIndex = 47;
+            this.txtIssueCardDate.ValidatingType = typeof(System.DateTime);
+            // 
             // frmModifyMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1343,18 +1343,14 @@
         private System.Windows.Forms.CheckBox chkDanTocItNguoi;
         private System.Windows.Forms.CheckBox chkConLietSi;
         private System.Windows.Forms.CheckBox chkCongGiao;
-        private System.Windows.Forms.DateTimePicker txtNgayVaoHoi;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.DateTimePicker txtIssueCardDate;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.DateTimePicker txtNgayXuatNgu;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DateTimePicker txtNgayNhapNgu;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Button btnDelete;
@@ -1363,7 +1359,6 @@
         private System.Windows.Forms.TextBox txtHomtown;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtResidence;
-        private System.Windows.Forms.DateTimePicker txtNgayVaoDang;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
@@ -1379,7 +1374,6 @@
         private System.Windows.Forms.CheckBox chkChatDocDaCam;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txtCoQuanKhiXuatNgu;
-        private System.Windows.Forms.DateTimePicker txtNgayNghiHuu;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ComboBox cboThuongBenhBinh;
         private System.Windows.Forms.Label label21;
@@ -1406,7 +1400,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn CHATDOCDACAM;
         private System.Windows.Forms.DataGridViewTextBoxColumn QUEQUAN;
         private System.Windows.Forms.DataGridViewTextBoxColumn DIACHIHIENNAY;
-        private System.Windows.Forms.DateTimePicker txtDateOfBirth;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn MEMBER_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn LKC;
@@ -1416,5 +1409,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CHUCVU;
         private System.Windows.Forms.DataGridViewTextBoxColumn DONVI;
         private System.Windows.Forms.DataGridViewTextBoxColumn THOIGIAN;
+        private System.Windows.Forms.MaskedTextBox txtNgayVaoDang;
+        private System.Windows.Forms.MaskedTextBox txtNgayXuatNgu;
+        private System.Windows.Forms.MaskedTextBox txtNgayNhapNgu;
+        private System.Windows.Forms.MaskedTextBox txtNgayNghiHuu;
+        private System.Windows.Forms.MaskedTextBox txtDateOfBirth;
+        private System.Windows.Forms.MaskedTextBox txtIssueCardDate;
+        private System.Windows.Forms.MaskedTextBox txtNgayVaoHoi;
     }
 }
