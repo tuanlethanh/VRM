@@ -187,7 +187,7 @@ namespace VRM
                 if (row != null)
                 {
                     var id = int.Parse(row.Cells["HVID"].Value.ToString());
-                    var hoivien = databaseContext.HOIVIENs.FirstOrDefault(s => s.ID == id);
+                    var hoivien = databaseContext.HOIVIENs.AsNoTracking().FirstOrDefault(s => s.ID == id);
 
                     if (hoivien != null)
                     {
