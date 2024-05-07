@@ -7,6 +7,7 @@ using System.Data.Entity;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Data.Entity.Migrations;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
@@ -69,6 +70,48 @@ namespace VRM.Forms
         void SaveData()
         {
 
+            if (!isValidDate(txtDateOfBirth.Text))
+            {
+                MessageBox.Show("Vui lòng nhập \"ngày sinh\" đúng định dạng dd/MM/yyyy");
+                return;
+            }
+
+            if (!isValidDate(txtNgayVaoHoi.Text))
+            {
+                MessageBox.Show("Vui lòng nhập \"ngày vào hội\" đúng định dạng dd/MM/yyyy");
+                return;
+            }
+
+            if (!isValidDate(txtIssueCardDate.Text))
+            {
+                MessageBox.Show("Vui lòng nhập \"ngày cấp thẻ hội viên\" đúng định dạng dd/MM/yyyy");
+                return;
+            }
+
+            if (!isValidDate(txtNgayNghiHuu.Text))
+            {
+                MessageBox.Show("Vui lòng nhập \"Ngày nghỉ hưu\" đúng định dạng dd/MM/yyyy");
+                return;
+            }
+
+            if (!isValidDate(txtNgayNhapNgu.Text))
+            {
+                MessageBox.Show("Vui lòng nhập \"Ngày nhập ngũ\" đúng định dạng dd/MM/yyyy");
+                return;
+            }
+
+            if (!isValidDate(txtNgayXuatNgu.Text))
+            {
+                MessageBox.Show("Vui lòng nhập \"Ngày xuất ngũ\" đúng định dạng dd/MM/yyyy");
+                return;
+            }
+
+            if (!isValidDate(txtNgayVaoDang.Text))
+            {
+                MessageBox.Show("Vui lòng nhập \"Ngày vào đảng\" đúng định dạng dd/MM/yyyy");
+                return;
+            }
+
             if (hoivien == null)
             {
                 hoivien = new HOIVIEN();
@@ -81,8 +124,7 @@ namespace VRM.Forms
             
             hoivien.MAHOIVIEN = txtCode.Text;
             hoivien.HOTEN = txtFullName.Text;
-            hoivien.NAMSINH = !String.IsNullOrEmpty(txtDateOfBirth.Text) 
-                ? DateTime.ParseExact(txtDateOfBirth.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture) : DateTime.MinValue;
+            hoivien.NAMSINH = DateTime.ParseExact(txtDateOfBirth.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
             hoivien.GIOITINH = cboGender.SelectedText;
             hoivien.DANTOC = txtethnic.Text;
             hoivien.TONGIAO = txtCode.Text;
@@ -165,6 +207,12 @@ namespace VRM.Forms
             TTGDChanged = false;
             TDKTChanged = false;
             DialogResult = DialogResult.OK;
+        }
+
+        bool isValidDate(string input)
+        {
+            DateTime date = DateTime.MinValue;
+            return DateTime.TryParseExact(input, "dd/MM/yyyy", DateTimeFormatInfo.InvariantInfo, DateTimeStyles.None, out date);
         }
 
         void fillFormData()

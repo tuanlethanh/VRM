@@ -28,8 +28,8 @@ namespace VRM.Utilities
 
         public static List<DropdownModel> DanhMucGioiTinh = new List<DropdownModel>
             {
-                new DropdownModel {Id = "HUANCHUONG", Name = "Huân chương" },
-                new DropdownModel {Id = "HUYCHUONG", Name = "Huy chương" },
+                new DropdownModel {Id = "NAM", Name = "Nam" },
+                new DropdownModel {Id = "NU", Name = "Nữ" },
                 new DropdownModel {Id = "KHAC", Name = "Khác" },
             };
 
@@ -44,13 +44,11 @@ namespace VRM.Utilities
         public static List<DropdownModel> DanhMucHangThuongBinh = new List<DropdownModel>
             {
                 new DropdownModel {Id = "KHONG", Name = "Không" },
-                new DropdownModel {Id = "BENHBINH1", Name = "Bệnh binh hạng 1/3" },
-                new DropdownModel {Id = "BENHBINH2", Name = "Bệnh binh hạng 2/3" },
-                new DropdownModel {Id = "BENHBINH3", Name = "Bệnh binh hạng 3/3" },
-                new DropdownModel {Id = "HANG1", Name = "Thương binh hạng 1" },
-                new DropdownModel {Id = "HANG2", Name = "Thương binh hạng 2" },
-                new DropdownModel {Id = "HANG3", Name = "Thương binh hạng 3" },
-                new DropdownModel {Id = "HANG4", Name = "Thương binh hạng 4" },
+                new DropdownModel {Id = "BENHBINH", Name = "Bệnh binh" },
+                new DropdownModel {Id = "HANG1", Name = "Thương binh hạng 1/4" },
+                new DropdownModel {Id = "HANG2", Name = "Thương binh hạng 2/4" },
+                new DropdownModel {Id = "HANG3", Name = "Thương binh hạng 3/4" },
+                new DropdownModel {Id = "HANG4", Name = "Thương binh hạng 4/4" },
             };
 
         public static List<DropdownModel> DanhMucCapBac = new List<DropdownModel>
