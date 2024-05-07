@@ -125,7 +125,7 @@ namespace VRM.Forms
             hoivien.MAHOIVIEN = txtCode.Text;
             hoivien.HOTEN = txtFullName.Text;
             hoivien.NAMSINH = DateTime.ParseExact(txtDateOfBirth.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-            hoivien.GIOITINH = cboGender.SelectedText;
+            hoivien.GIOITINH = cboGender.SelectedValue.ToString();
             hoivien.DANTOC = txtethnic.Text;
             hoivien.TONGIAO = txtCode.Text;
             hoivien.QUEQUAN = txtHomtown.Text;
