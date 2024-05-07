@@ -70,47 +70,7 @@ namespace VRM.Forms
         void SaveData()
         {
 
-            if (!isValidDate(txtDateOfBirth.Text))
-            {
-                MessageBox.Show("Vui lòng nhập \"ngày sinh\" đúng định dạng dd/MM/yyyy");
-                return;
-            }
-
-            if (!isValidDate(txtNgayVaoHoi.Text))
-            {
-                MessageBox.Show("Vui lòng nhập \"ngày vào hội\" đúng định dạng dd/MM/yyyy");
-                return;
-            }
-
-            if (!isValidDate(txtIssueCardDate.Text))
-            {
-                MessageBox.Show("Vui lòng nhập \"ngày cấp thẻ hội viên\" đúng định dạng dd/MM/yyyy");
-                return;
-            }
-
-            if (!isValidDate(txtNgayNghiHuu.Text))
-            {
-                MessageBox.Show("Vui lòng nhập \"Ngày nghỉ hưu\" đúng định dạng dd/MM/yyyy");
-                return;
-            }
-
-            if (!isValidDate(txtNgayNhapNgu.Text))
-            {
-                MessageBox.Show("Vui lòng nhập \"Ngày nhập ngũ\" đúng định dạng dd/MM/yyyy");
-                return;
-            }
-
-            if (!isValidDate(txtNgayXuatNgu.Text))
-            {
-                MessageBox.Show("Vui lòng nhập \"Ngày xuất ngũ\" đúng định dạng dd/MM/yyyy");
-                return;
-            }
-
-            if (!isValidDate(txtNgayVaoDang.Text))
-            {
-                MessageBox.Show("Vui lòng nhập \"Ngày vào đảng\" đúng định dạng dd/MM/yyyy");
-                return;
-            }
+            
 
             if (hoivien == null)
             {
@@ -121,10 +81,10 @@ namespace VRM.Forms
                 hoivien = databaseContext.HOIVIENs.FirstOrDefault(s => s.ID == hoivien.ID);
             }
 
-            
+            Nullable<DateTime> date = null;
             hoivien.MAHOIVIEN = txtCode.Text;
             hoivien.HOTEN = txtFullName.Text;
-            hoivien.NAMSINH = DateTime.ParseExact(txtDateOfBirth.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            hoivien.NAMSINH = isValidDate(txtDateOfBirth.Text) ? DateTime.ParseExact(txtDateOfBirth.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture) : date;
             hoivien.GIOITINH = cboGender.SelectedValue.ToString();
             hoivien.DANTOC = txtethnic.Text;
             hoivien.TONGIAO = txtCode.Text;
@@ -137,10 +97,8 @@ namespace VRM.Forms
             hoivien.TRINHDOHOCVAN = txtAcademic.Text;
             hoivien.LYLUANCHINHTRI = txtPoliticalTheory.Text;
             hoivien.TRINHDOHOCVAN = txtAcademic.Text;
-            hoivien.NGAYVAOHOI = !String.IsNullOrEmpty(txtNgayVaoHoi.Text)
-                ? DateTime.ParseExact(txtNgayVaoHoi.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture): DateTime.MinValue;
-            hoivien.NGAYCAPTHE = !String.IsNullOrEmpty(txtIssueCardDate.Text)
-                ? DateTime.ParseExact(txtIssueCardDate.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture): DateTime.MinValue;
+            hoivien.NGAYVAOHOI = isValidDate(txtNgayVaoHoi.Text) ? DateTime.ParseExact(txtNgayVaoHoi.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture) : date;
+            hoivien.NGAYCAPTHE = isValidDate(txtIssueCardDate.Text) ? DateTime.ParseExact(txtIssueCardDate.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture) : date;
             hoivien.DANGVIEN = chkDangVien.Checked;
             hoivien.CONGGIAO = chkCongGiao.Checked;
             hoivien.DANTOCITNGUOI = chkDanTocItNguoi.Checked;
@@ -153,14 +111,14 @@ namespace VRM.Forms
             hoivien.COQUANDONVI = txtCoQuanDonViKhiNghiHuu.Text;
             hoivien.CAPBAC = cboCapBac.SelectedValue.ToString();
             hoivien.CHUCVU = txtChucVu.Text;
-            hoivien.NGAYNGHIHUU = !String.IsNullOrEmpty(txtNgayNghiHuu.Text)
-                ? DateTime.ParseExact(txtNgayNghiHuu.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture): DateTime.MinValue;
-            hoivien.NGAYNHAPNGU = !String.IsNullOrEmpty(txtNgayNhapNgu.Text)
-                ? DateTime.ParseExact(txtNgayNhapNgu.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture): DateTime.MinValue;
-            hoivien.NGAYXUATNGU = !String.IsNullOrEmpty(txtNgayXuatNgu.Text)
-                ? DateTime.ParseExact(txtNgayXuatNgu.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture): DateTime.MinValue;
-            hoivien.NGAYVAODANG = !String.IsNullOrEmpty(txtNgayVaoDang.Text)
-                ? DateTime.ParseExact(txtNgayVaoDang.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture): DateTime.MinValue;
+            hoivien.NGAYNGHIHUU = isValidDate(txtNgayNghiHuu.Text)
+                ? DateTime.ParseExact(txtNgayNghiHuu.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture): date;
+            hoivien.NGAYNHAPNGU = isValidDate(txtNgayNhapNgu.Text)
+                ? DateTime.ParseExact(txtNgayNhapNgu.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture): date;
+            hoivien.NGAYXUATNGU = isValidDate(txtNgayXuatNgu.Text)
+                ? DateTime.ParseExact(txtNgayXuatNgu.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture): date;
+            hoivien.NGAYVAODANG = isValidDate(txtNgayVaoDang.Text)
+                ? DateTime.ParseExact(txtNgayVaoDang.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture): date;
             hoivien.COQUANKHIXUATNGU = txtCoQuanKhiXuatNgu.Text;
 
             hoivien.CHIHOI_ID = cboBranch.SelectedValue != null ? int.Parse(cboBranch.SelectedValue.ToString()) : 0;
@@ -267,7 +225,7 @@ namespace VRM.Forms
 
                 txtCode.Text = hoivien.MAHOIVIEN;
                 txtFullName.Text = hoivien.HOTEN;
-                txtDateOfBirth.Text = hoivien.NAMSINH.ToString("dd/MM/yyyy");
+                txtDateOfBirth.Text = hoivien.NAMSINH?.ToString("dd/MM/yyyy");
                 txtethnic.Text = hoivien.DANTOC;
                 txtReligon.Text = hoivien.TONGIAO;
                 txtHomtown.Text = hoivien.QUEQUAN;
@@ -284,16 +242,16 @@ namespace VRM.Forms
 
                 txtAcademic.Text = hoivien.TRINHDOHOCVAN;
 
-                txtNgayVaoHoi.Text = hoivien.NGAYVAOHOI.ToString("dd/MM/yyyy");
-                txtIssueCardDate.Text = hoivien.NGAYCAPTHE.ToString("dd/MM/yyyy");
+                txtNgayVaoHoi.Text = hoivien.NGAYVAOHOI?.ToString("dd/MM/yyyy");
+                txtIssueCardDate.Text = hoivien.NGAYCAPTHE?.ToString("dd/MM/yyyy");
                 chkDangVien.Checked = hoivien.DANGVIEN;
                 chkCongGiao.Checked = hoivien.CONGGIAO;
                 chkDanTocItNguoi.Checked = hoivien.DANTOCITNGUOI;
                 chkConLietSi.Checked = hoivien.CONLIETSI;
-                txtNgayNghiHuu.Text = hoivien.NGAYNGHIHUU.ToString("dd/MM/yyyy");
-                txtNgayNhapNgu.Text = hoivien.NGAYNHAPNGU.ToString("dd/MM/yyyy");
-                txtNgayVaoDang.Text = hoivien.NGAYVAODANG.ToString("dd/MM/yyyy");
-                txtNgayXuatNgu.Text = hoivien.NGAYXUATNGU.ToString("dd/MM/yyyy");
+                txtNgayNghiHuu.Text = hoivien.NGAYNGHIHUU?.ToString("dd/MM/yyyy");
+                txtNgayNhapNgu.Text = hoivien.NGAYNHAPNGU?.ToString("dd/MM/yyyy");
+                txtNgayVaoDang.Text = hoivien.NGAYVAODANG?.ToString("dd/MM/yyyy");
+                txtNgayXuatNgu.Text = hoivien.NGAYXUATNGU?.ToString("dd/MM/yyyy");
                 txtCoQuanKhiXuatNgu.Text = hoivien.COQUANKHIXUATNGU;
                 txtChucVu.Text = hoivien.CHUCVU;
                 txtCoQuanDonViKhiNghiHuu.Text = hoivien.COQUANDONVI;

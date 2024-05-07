@@ -12,6 +12,6 @@ namespace VRM.Models
         public string TENCHIHOI {  get; set; }
         public string MAHOIVIEN {  get; set; }
         public string HOTEN {  get; set; }
-        public DateTime NAMSINH {  get; set; }
+        public DateTime? NAMSINH {  get; set; }
     }
 }

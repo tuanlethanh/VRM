@@ -110,7 +110,7 @@ namespace VRM
                 var keyword = txtTimKiemNamSinh.Text;
                 int nam = 0;
                 int.TryParse(keyword, out nam);
-                query = query.Where(s => nam.Equals(s.NAMSINH.Year));
+                query = query.Where(s => s.NAMSINH.HasValue && nam.Equals(s.NAMSINH.Value.Year));
             }
 
             if (!string.IsNullOrEmpty(txtNamNhapNguSearch.Text))
@@ -118,7 +118,7 @@ namespace VRM
                 var keyword = txtNamNhapNguSearch.Text;
                 int nam = 0;
                 int.TryParse(keyword, out nam);
-                query = query.Where(s => nam.Equals(s.NGAYNHAPNGU.Year));
+                query = query.Where(s => s.NGAYNHAPNGU.HasValue && nam.Equals(s.NGAYNHAPNGU.Value.Year));
             }
 
             if (!string.IsNullOrEmpty(txtNamXuatNguSearch.Text))
@@ -126,7 +126,7 @@ namespace VRM
                 var keyword = txtNamXuatNguSearch.Text;
                 int nam = 0;
                 int.TryParse(keyword, out nam);
-                query = query.Where(s => nam.Equals(s.NGAYXUATNGU.Year));
+                query = query.Where(s => s.NGAYXUATNGU.HasValue && nam.Equals(s.NGAYXUATNGU.Value.Year));
             }
 
             if (chkDangVienSearch.Checked)
@@ -199,7 +199,7 @@ namespace VRM
 
                         txtCode.Text = hoivien.MAHOIVIEN;
                         txtFullName.Text = hoivien.HOTEN;
-                        txtDateOfBirth.Value = hoivien.NAMSINH;
+                        txtDateOfBirth.Text = hoivien.NAMSINH?.ToString("dd/MM/yyyy");
                         txtethnic.Text = hoivien.DANTOC;
                         txtReligon.Text = hoivien.TONGIAO;
                         txtHomtown.Text = hoivien.QUEQUAN;
@@ -216,16 +216,16 @@ namespace VRM
                         
                         txtAcademic.Text = hoivien.TRINHDOHOCVAN;
 
-                        txtNgayVaoHoi.Value = hoivien.NGAYVAOHOI;
-                        txtIssueCardDate.Value = hoivien.NGAYCAPTHE;
+                        txtNgayVaoHoi.Text = hoivien.NGAYVAOHOI?.ToString("dd/MM/yyyy");
+                        txtIssueCardDate.Text = hoivien.NGAYCAPTHE?.ToString("dd/MM/yyyy");
                         chkDangVien.Checked = hoivien.DANGVIEN;
                         chkCongGiao.Checked = hoivien.CONGGIAO;
                         chkDanTocItNguoi.Checked = hoivien.DANTOCITNGUOI;
                         chkConLietSi.Checked = hoivien.CONLIETSI;
-                        txtNgayNghiHuu.Value = hoivien.NGAYNGHIHUU;
-                        txtNgayNhapNgu.Value = hoivien.NGAYNHAPNGU;
-                        txtNgayVaoDang.Value = hoivien.NGAYVAODANG;
-                        txtNgayXuatNgu.Value = hoivien.NGAYXUATNGU;
+                        txtNgayNghiHuu.Text = hoivien.NGAYNGHIHUU?.ToString("dd/MM/yyyy");
+                        txtNgayNhapNgu.Text = hoivien.NGAYNHAPNGU?.ToString("dd/MM/yyyy"); ;
+                        txtNgayVaoDang.Text = hoivien.NGAYVAODANG?.ToString("dd/MM/yyyy");
+                        txtNgayXuatNgu.Text = hoivien.NGAYXUATNGU?.ToString("dd/MM/yyyy");
                         txtCoQuanKhiXuatNgu.Text = hoivien.COQUANKHIXUATNGU;
                         txtChucVu.Text = hoivien.CHUCVU;
                         txtCoQuanDonViKhiNghiHuu.Text = hoivien.COQUANDONVI;
@@ -380,7 +380,7 @@ namespace VRM
                     var keyword = txtNamNhapNguSearch.Text;
                     int nam = 0;
                     int.TryParse(keyword, out nam);
-                    query = query.Where(s => nam.Equals(s.NGAYNHAPNGU.Year));
+                    query = query.Where(s => s.NGAYNHAPNGU.HasValue && nam.Equals(s.NGAYNHAPNGU.Value.Year));
                 }
 
                 if (!string.IsNullOrEmpty(txtNamXuatNguSearch.Text))
@@ -388,7 +388,7 @@ namespace VRM
                     var keyword = txtNamXuatNguSearch.Text;
                     int nam = 0;
                     int.TryParse(keyword, out nam);
-                    query = query.Where(s => nam.Equals(s.NGAYXUATNGU.Year));
+                    query = query.Where(s => s.NGAYXUATNGU.HasValue && nam.Equals(s.NGAYXUATNGU.Value.Year));
                 }
 
                 if (chkDangVienSearch.Checked)
@@ -420,15 +420,15 @@ namespace VRM
                     {
                         HoTen = s.HoiVien.HOTEN,
                         NamSinh = s.HoiVien.NAMSINH,
-                        NgayNhapNgu = s.HoiVien.NGAYNHAPNGU == null ? "" : s.HoiVien.NGAYNHAPNGU.ToString("MM/yyyy"),
-                        NgayXuatNgu = s.HoiVien.NGAYXUATNGU == null ? "" : s.HoiVien.NGAYXUATNGU.ToString("MM/yyyy"),
+                        NgayNhapNgu = s.HoiVien.NGAYNHAPNGU == null ? "" : s.HoiVien.NGAYNHAPNGU?.ToString("MM/yyyy"),
+                        NgayXuatNgu = s.HoiVien.NGAYXUATNGU == null ? "" : s.HoiVien.NGAYXUATNGU?.ToString("MM/yyyy"),
                         DangVien = s.HoiVien.DANGVIEN ? "x" : "",
                         CapTuong = !string.IsNullOrEmpty(s.HoiVien.CAPBAC) ? s.HoiVien.CAPBAC.Contains("CAPTUONG") ? "x" : "" : "",
                         BonGach = s.HoiVien.CAPBAC == "CAPTA1" ? "x" : "",
                         BaGach = s.HoiVien.CAPBAC == "CAPTA2" ? "x" : "",
                         HaiGach = s.HoiVien.CAPBAC == "CAPTA3" ? "x" : "",
                         MotGach = s.HoiVien.CAPBAC == "CAPTA4" ? "x" : "",
-                        CapUy = string.IsNullOrEmpty(s.HoiVien.CAPBAC) ? s.HoiVien.CAPBAC.Contains("CAPUY") ? "x" : "" : "",
+                        CapUy = !string.IsNullOrEmpty(s.HoiVien.CAPBAC) ? s.HoiVien.CAPBAC.Contains("CAPUY") ? "x" : "" : "",
                         HSQCS = s.HoiVien.CAPBAC == "HSQCS" ? "x" : "",
                         QNCN = s.HoiVien.CAPBAC == "QNCN" ? "x" : "",
                         CNVQP = s.HoiVien.CAPBAC == "CNVQP" ? "x" : "",
@@ -439,8 +439,8 @@ namespace VRM
                         ConLietSi = s.HoiVien.CONLIETSI ? "x" : "",
                         DanTocItNguoi = s.HoiVien.DANTOCITNGUOI ? "x" : "",
                         CongGiao = s.HoiVien.CONGGIAO ? "x" : "",
-                        NgayVaoHoi = s.HoiVien.NGAYVAOHOI == null ? "" : s.HoiVien.NGAYVAOHOI.ToString("dd/MM/yyyy"),
-                        NamCapTheHoiVien = s.HoiVien.NGAYCAPTHE == null ? "" : s.HoiVien.NGAYCAPTHE.ToString("yyyy"),
+                        NgayVaoHoi = s.HoiVien.NGAYVAOHOI == null ? "" : s.HoiVien.NGAYVAOHOI?.ToString("dd/MM/yyyy"),
+                        NamCapTheHoiVien = s.HoiVien.NGAYCAPTHE == null ? "" : s.HoiVien.NGAYCAPTHE?.ToString("yyyy"),
                         SoTheHoiVien = s.HoiVien.MAHOIVIEN,
                         TenChiHoi = s.TenChiHoi
                     };
@@ -615,16 +615,16 @@ namespace VRM
                 TonGiao = hoivien.TONGIAO,
                 HoKhauThuongTru = hoivien.NOICUTRU,
                 DiaChi = hoivien.DIACHI,
-                NgayNhapNgu = hoivien.NGAYNHAPNGU != null ? hoivien.NGAYNHAPNGU.ToString("dd/MM/yyyy") : "",
-                NgayXuatNgu = hoivien.NGAYXUATNGU != null ? hoivien.NGAYXUATNGU.ToString("dd/MM/yyyy") : "",
+                NgayNhapNgu = hoivien.NGAYNHAPNGU != null ? hoivien.NGAYNHAPNGU?.ToString("dd/MM/yyyy") : "",
+                NgayXuatNgu = hoivien.NGAYXUATNGU != null ? hoivien.NGAYXUATNGU?.ToString("dd/MM/yyyy") : "",
                 TrinhDoVanHoa = hoivien.TRINHDOHOCVAN,
                 SoDienThoai = hoivien.SODIENTHOAI,
                 TrinhDoChuyenMon = hoivien.TRINHDOCHUYENMON,
                 LyLuanChinhTri = hoivien.LYLUANCHINHTRI,
-                NgayVaoDang = hoivien.NGAYVAODANG != null ? hoivien.NGAYVAODANG.ToString("dd/MM/yyyy") : "",
-                NgayChinhThuc = hoivien.NGAYVAODANG != null ? hoivien.NGAYVAODANG.ToString("dd/MM/yyyy") : "",
+                NgayVaoDang = hoivien.NGAYVAODANG != null ? hoivien.NGAYVAODANG?.ToString("dd/MM/yyyy") : "",
+                NgayChinhThuc = hoivien.NGAYVAODANG != null ? hoivien.NGAYVAODANG?.ToString("dd/MM/yyyy") : "",
                 DonVi = hoivien.COQUANDONVI,
-                NgayNghiHuu = hoivien.NGAYNGHIHUU != null ? hoivien.NGAYNGHIHUU.ToString("dd/MM/yyyy") : "",
+                NgayNghiHuu = hoivien.NGAYNGHIHUU != null ? hoivien.NGAYNGHIHUU?.ToString("dd/MM/yyyy") : "",
                 CoQuanKhiNghiHuu = hoivien.COQUANDONVI,
                 ThuongBinh = !string.IsNullOrEmpty(hoivien.THUONGBENHBINH) ? Constant.DanhMucHangThuongBinh
                             .FirstOrDefault(s => s.Id.ToString().Equals(hoivien.THUONGBENHBINH))?.Name : "",

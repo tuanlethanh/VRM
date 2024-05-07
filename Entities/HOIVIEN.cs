@@ -32,7 +32,7 @@ namespace VRM.Entities
         public string GIOITINH { get; set; }
 
         [Column(Name = "NAMSINH", DbType = "DATETIME")]
-        public DateTime NAMSINH { get; set; }
+        public DateTime? NAMSINH { get; set; }
 
         [Column(Name = "DANTOC", DbType = "VARCHAR")]
         public string DANTOC { get; set; }
@@ -68,7 +68,7 @@ namespace VRM.Entities
         public string HINHANH { get; set; }
 
         [Column(Name = "NGAYCAPTHE", DbType = "DATE")]
-        public DateTime NGAYCAPTHE { get; set; }
+        public DateTime? NGAYCAPTHE { get; set; }
 
         [Column(Name = "DANGVIEN", DbType = "BOOLEAN")]
         public bool DANGVIEN { get; set; }
@@ -92,13 +92,13 @@ namespace VRM.Entities
         public bool CHATDOCDACAM { get; set; }
 
         [Column(Name = "NGAYVAOHOI", DbType = "DATE")]
-        public DateTime NGAYVAOHOI { get; set; }
+        public DateTime? NGAYVAOHOI { get; set; }
 
         [Column(Name = "CREATED_AT", DbType = "DATETIME")]
-        public DateTime CREATED_AT { get; set; }
+        public DateTime? CREATED_AT { get; set; }
 
         [Column(Name = "UPDATED_AT", DbType = "DATETIME")]
-        public DateTime UPDATED_AT { get; set; }
+        public DateTime? UPDATED_AT { get; set; }
 
         [Column(Name = "CREATED_BY", DbType = "INTEGER")]
         public int CREATED_BY { get; set; }
@@ -107,16 +107,16 @@ namespace VRM.Entities
         public int UPDATED_BY { get; set; }
 
         [Column(Name = "NGAYNHAPNGU", DbType = "DATE")]
-        public DateTime NGAYNHAPNGU { get; set; }
+        public DateTime? NGAYNHAPNGU { get; set; }
 
         [Column(Name = "NGAYXUATNGU", DbType = "DATE")]
-        public DateTime NGAYXUATNGU { get; set; }
+        public DateTime? NGAYXUATNGU { get; set; }
 
         [Column(Name = "NGAYNGHIHUU", DbType = "DATE")]
-        public DateTime NGAYNGHIHUU { get; set; }
+        public DateTime? NGAYNGHIHUU { get; set; }
         
         [Column(Name = "NGAYVAODANG", DbType = "DATE")]
-        public DateTime NGAYVAODANG { get; set; }
+        public DateTime? NGAYVAODANG { get; set; }
 
         [Column(Name = "CAPBAC", DbType = "VARCHAR")]
         public string CAPBAC { get; set; }

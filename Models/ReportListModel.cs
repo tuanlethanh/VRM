@@ -13,7 +13,7 @@ namespace VRM.Models
 
         public string TenChiHoi {  get; set; }
         public string HoTen {  get; set; }
-        public DateTime NamSinh {  get; set; }
+        public DateTime? NamSinh {  get; set; }
         public string NgayNhapNgu {  get; set; }
         public string NgayXuatNgu {  get; set; }
         public string DangVien {  get; set; }
