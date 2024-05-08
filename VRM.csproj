@@ -119,6 +119,12 @@
     <Compile Include="Forms\frmKhenThuong.Designer.cs">
       <DependentUpon>frmKhenThuong.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmPrintType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPrintType.Designer.cs">
+      <DependentUpon>frmPrintType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmQuaTrinhChienDau.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmKhenThuong.resx">
       <DependentUpon>frmKhenThuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPrintType.resx">
+      <DependentUpon>frmPrintType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmQuaTrinhChienDau.resx">
       <DependentUpon>frmQuaTrinhChienDau.cs</DependentUpon>
@@ -257,6 +266,12 @@
     <None Include="Properties\DataSources\VRM.Utilities.Excel.Emums+ValueDataType.datasource" />
     <None Include="Properties\DataSources\VRM.Utilities.Excel.Emums.datasource" />
     <None Include="Properties\DataSources\VRM.Utilities.Excel.ExcelHelper.datasource" />
+    <None Include="Templates\DanhSachHoiVienSHORT.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\DanhSachHoiVienRUTGON.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Templates\DanhSachHoiVienFULL.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

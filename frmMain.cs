@@ -151,7 +151,10 @@ namespace VRM
                     HOTEN = item.hoivien.HOTEN,
                     MAHOIVIEN = item.hoivien.MAHOIVIEN,
                     NAMSINH = item.hoivien.NAMSINH,
-                    TENCHIHOI = item.chihoi.TENCHIHOI
+                    TENCHIHOI = item.chihoi.TENCHIHOI,
+                    NAMNGHIHUU = item.hoivien.NGAYNGHIHUU?.Year.ToString(),
+                    NAMNHAPNGU = item.hoivien.NGAYNHAPNGU?.Year.ToString(),
+                    NAMXUATNGU = item.hoivien.NGAYXUATNGU?.Year.ToString(),
                 });
             }
 
@@ -351,155 +354,178 @@ namespace VRM
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            try
+            var frmPrintType = new frmPrintType();
+            if (frmPrintType.ShowDialog() ==  DialogResult.OK)
             {
-                var query = databaseContext.HOIVIENs.AsQueryable();
-                if (cboTimKiemChiHoi.SelectedValue != null
-                    && decimal.Parse(cboTimKiemChiHoi.SelectedValue.ToString()) != -1)
+                var printType = frmPrintType.PrintType;
+
+
+                try
                 {
-                    var id = decimal.Parse(cboTimKiemChiHoi.SelectedValue.ToString());
-                    query = query.Where(s => s.CHIHOI_ID == id);
-                }
-
-                if (!string.IsNullOrEmpty(txtTimKiemTuKhoa.Text))
-                {
-                    var keyword = txtTimKiemTuKhoa.Text.ToLower();
-                    query.Where(s => s.HOTEN.ToLower().Contains(keyword)
-                    || keyword.Equals(s.NAMSINH) || s.QUEQUAN.ToLower().Contains(keyword)
-                    || s.DIACHI.ToLower().Contains(keyword) || s.SODIENTHOAI.Contains(keyword));
-                }
-
-                if (!string.IsNullOrEmpty(txtTimKiemNamSinh.Text))
-                {
-                    var keyword = txtTimKiemNamSinh.Text;
-                    query.Where(s => keyword.Equals(s.NAMSINH));
-                }
-
-                if (!string.IsNullOrEmpty(txtNamNhapNguSearch.Text))
-                {
-                    var keyword = txtNamNhapNguSearch.Text;
-                    int nam = 0;
-                    int.TryParse(keyword, out nam);
-                    query = query.Where(s => s.NGAYNHAPNGU.HasValue && nam.Equals(s.NGAYNHAPNGU.Value.Year));
-                }
-
-                if (!string.IsNullOrEmpty(txtNamXuatNguSearch.Text))
-                {
-                    var keyword = txtNamXuatNguSearch.Text;
-                    int nam = 0;
-                    int.TryParse(keyword, out nam);
-                    query = query.Where(s => s.NGAYXUATNGU.HasValue && nam.Equals(s.NGAYXUATNGU.Value.Year));
-                }
-
-                if (chkDangVienSearch.Checked)
-                {
-                    query = query.Where(s => s.DANGVIEN == true);
-                }
-
-                if (chkChatDocDaCamSearch.Checked)
-                {
-                    query = query.Where(s => s.CHATDOCDACAM == true);
-                }
-
-                var listHoiVien = query.Join(databaseContext.CHIHOIs, hv => hv.CHIHOI_ID, ch => ch.ID, (hv, ch) => new
-                {
-                    HoiVien = hv,
-                    TenChiHoi = ch.TENCHIHOI
-                }).ToList();
-
-                var listHoiVienIds = listHoiVien.Select(s => s.HoiVien.ID).ToList();
-                var listQuaTrinhChienDaus = databaseContext.QUATRINHCHIENDAUs.Where(s => listHoiVienIds.Contains(s.HOIVIEN_ID)).ToList();
-                //var listKhenThuongs = databaseContext.KHENTHUONGs.Where(s => listHoiVienIds.Contains(s.HOIVIEN_ID)).ToList();
-                var listTTGiaDinhs = databaseContext.THONGTINGIADINHs.Where(s => listHoiVienIds.Contains(s.HOIVIEN_ID)).ToList();
-
-
-                var listReport = new List<ReportListModel>();
-                listHoiVien.AsParallel().ForAll(s =>
-                {
-                    var hoivien = new ReportListModel
+                    var query = databaseContext.HOIVIENs.AsQueryable();
+                    if (cboTimKiemChiHoi.SelectedValue != null
+                        && decimal.Parse(cboTimKiemChiHoi.SelectedValue.ToString()) != -1)
                     {
-                        HoTen = s.HoiVien.HOTEN,
-                        NamSinh = s.HoiVien.NAMSINH,
-                        NgayNhapNgu = s.HoiVien.NGAYNHAPNGU == null ? "" : s.HoiVien.NGAYNHAPNGU?.ToString("MM/yyyy"),
-                        NgayXuatNgu = s.HoiVien.NGAYXUATNGU == null ? "" : s.HoiVien.NGAYXUATNGU?.ToString("MM/yyyy"),
-                        DangVien = s.HoiVien.DANGVIEN ? "x" : "",
-                        CapTuong = !string.IsNullOrEmpty(s.HoiVien.CAPBAC) ? s.HoiVien.CAPBAC.Contains("CAPTUONG") ? "x" : "" : "",
-                        BonGach = s.HoiVien.CAPBAC == "CAPTA1" ? "x" : "",
-                        BaGach = s.HoiVien.CAPBAC == "CAPTA2" ? "x" : "",
-                        HaiGach = s.HoiVien.CAPBAC == "CAPTA3" ? "x" : "",
-                        MotGach = s.HoiVien.CAPBAC == "CAPTA4" ? "x" : "",
-                        CapUy = !string.IsNullOrEmpty(s.HoiVien.CAPBAC) ? s.HoiVien.CAPBAC.Contains("CAPUY") ? "x" : "" : "",
-                        HSQCS = s.HoiVien.CAPBAC == "HSQCS" ? "x" : "",
-                        QNCN = s.HoiVien.CAPBAC == "QNCN" ? "x" : "",
-                        CNVQP = s.HoiVien.CAPBAC == "CNVQP" ? "x" : "",
-                        ChucVu = s.HoiVien.CHUCVU,
-                        ThuongBinh = s.HoiVien.THUONGBINH ? "x" : "",
-                        BenhBinh = s.HoiVien.BENHBINH ? "x" : "",
-                        ChatDocDaCam_BanThan = s.HoiVien.CHATDOCDACAM ? "x" : "",
-                        ConLietSi = s.HoiVien.CONLIETSI ? "x" : "",
-                        DanTocItNguoi = s.HoiVien.DANTOCITNGUOI ? "x" : "",
-                        CongGiao = s.HoiVien.CONGGIAO ? "x" : "",
-                        NgayVaoHoi = s.HoiVien.NGAYVAOHOI == null ? "" : s.HoiVien.NGAYVAOHOI?.ToString("dd/MM/yyyy"),
-                        NamCapTheHoiVien = s.HoiVien.NGAYCAPTHE == null ? "" : s.HoiVien.NGAYCAPTHE?.ToString("yyyy"),
-                        SoTheHoiVien = s.HoiVien.MAHOIVIEN,
-                        TenChiHoi = s.TenChiHoi
-                    };
-                    hoivien.ChatDocDaCam_Con = listTTGiaDinhs.Any(k => k.HOIVIEN_ID == s.HoiVien.ID && k.CHATDOCDACAM && k.QUANHE == "CON") ? "x" : "";
-                    var chienDichDienBienPhu = listQuaTrinhChienDaus.FirstOrDefault(k => k.HOIVIEN_ID == s.HoiVien.ID && k.LOAIKHANGCHIEN == "CHIEN_DICH_DIEN_BIEN_PHU");
-                    if (chienDichDienBienPhu != null)
-                    {
-                        hoivien.ChucVu_CDDienBienPhu = string.Format("Cấp bậc: {0}, Chức vụ: {1}", chienDichDienBienPhu.CAPBAC, chienDichDienBienPhu.CHUCVU);
-                        hoivien.DonVi_CDDienBienPhu = string.Format("Đơn vị: {0}, Thời gian: {1}", chienDichDienBienPhu.DONVI, chienDichDienBienPhu.THOIGIAN);
+                        var id = decimal.Parse(cboTimKiemChiHoi.SelectedValue.ToString());
+                        query = query.Where(s => s.CHIHOI_ID == id);
                     }
-                    var GPThuDo = listQuaTrinhChienDaus.FirstOrDefault(k => k.HOIVIEN_ID == s.HoiVien.ID && k.LOAIKHANGCHIEN == "GIAI_PHONG_THU_DO");
-                    if (GPThuDo != null)
+
+                    if (!string.IsNullOrEmpty(txtTimKiemTuKhoa.Text))
                     {
-                        hoivien.ChucVu_GPThuDo = string.Format("Cấp bậc: {0}, Chức vụ: {1}", GPThuDo.CAPBAC, GPThuDo.CHUCVU);
-                        hoivien.DonVi_GPThuDo = string.Format("Đơn vị: {0}, Thời gian: {1}", GPThuDo.DONVI, GPThuDo.THOIGIAN);
+                        var keyword = txtTimKiemTuKhoa.Text.ToLower();
+                        query.Where(s => s.HOTEN.ToLower().Contains(keyword)
+                        || keyword.Equals(s.NAMSINH) || s.QUEQUAN.ToLower().Contains(keyword)
+                        || s.DIACHI.ToLower().Contains(keyword) || s.SODIENTHOAI.Contains(keyword));
                     }
-                    hoivien.ChongMy = listQuaTrinhChienDaus.Any(k => k.HOIVIEN_ID == s.HoiVien.ID && k.LOAIKHANGCHIEN == "KHANG_CHIEN_CHONG_MY") ? "x" : "";
-                    hoivien.CCB_sau304 = listQuaTrinhChienDaus.Any(k => k.HOIVIEN_ID == s.HoiVien.ID && k.LOAIKHANGCHIEN == "CCCB_SAU_30_4") ? "x" : "";
 
-                    var CHIEN_DICH_HO_CHI_MINH = listQuaTrinhChienDaus.FirstOrDefault(k => k.HOIVIEN_ID == s.HoiVien.ID && k.LOAIKHANGCHIEN == "CHIEN_DICH_HO_CHI_MINH");
-                    if (CHIEN_DICH_HO_CHI_MINH != null)
+                    if (!string.IsNullOrEmpty(txtTimKiemNamSinh.Text))
                     {
-                        hoivien.ChucVu_HCM = string.Format("Cấp bậc: {0}, Chức vụ: {1}", CHIEN_DICH_HO_CHI_MINH.CAPBAC, CHIEN_DICH_HO_CHI_MINH.CHUCVU);
-                        hoivien.DonVi_HCM = string.Format("Đơn vị: {0}, Thời gian: {1}", CHIEN_DICH_HO_CHI_MINH.DONVI, CHIEN_DICH_HO_CHI_MINH.THOIGIAN);
+                        var keyword = txtTimKiemNamSinh.Text;
+                        query.Where(s => keyword.Equals(s.NAMSINH));
                     }
-                    listReport.Add(hoivien);
-                });
 
-                var templateFile = $"{Application.StartupPath}\\Templates\\DanhSachHoiVienFULL.xlsx";
-                if (cboTimKiemChiHoi.SelectedValue != null
-                    && decimal.Parse(cboTimKiemChiHoi.SelectedValue.ToString()) != -1)
-                {
-                    templateFile = $"{Application.StartupPath}\\Templates\\DanhSachHoiVien.xlsx";
-                }
+                    if (!string.IsNullOrEmpty(txtNamNhapNguSearch.Text))
+                    {
+                        var keyword = txtNamNhapNguSearch.Text;
+                        int nam = 0;
+                        int.TryParse(keyword, out nam);
+                        query = query.Where(s => s.NGAYNHAPNGU.HasValue && nam.Equals(s.NGAYNHAPNGU.Value.Year));
+                    }
+
+                    if (!string.IsNullOrEmpty(txtNamXuatNguSearch.Text))
+                    {
+                        var keyword = txtNamXuatNguSearch.Text;
+                        int nam = 0;
+                        int.TryParse(keyword, out nam);
+                        query = query.Where(s => s.NGAYXUATNGU.HasValue && nam.Equals(s.NGAYXUATNGU.Value.Year));
+                    }
+
+                    if (chkDangVienSearch.Checked)
+                    {
+                        query = query.Where(s => s.DANGVIEN == true);
+                    }
+
+                    if (chkChatDocDaCamSearch.Checked)
+                    {
+                        query = query.Where(s => s.CHATDOCDACAM == true);
+                    }
+
+                    var listHoiVien = query.Join(databaseContext.CHIHOIs, hv => hv.CHIHOI_ID, ch => ch.ID, (hv, ch) => new
+                    {
+                        HoiVien = hv,
+                        TenChiHoi = ch.TENCHIHOI
+                    }).ToList();
+
+                    var listHoiVienIds = listHoiVien.Select(s => s.HoiVien.ID).ToList();
+                    var listQuaTrinhChienDaus = databaseContext.QUATRINHCHIENDAUs.Where(s => listHoiVienIds.Contains(s.HOIVIEN_ID)).ToList();
+                    //var listKhenThuongs = databaseContext.KHENTHUONGs.Where(s => listHoiVienIds.Contains(s.HOIVIEN_ID)).ToList();
+                    var listTTGiaDinhs = databaseContext.THONGTINGIADINHs.Where(s => listHoiVienIds.Contains(s.HOIVIEN_ID)).ToList();
 
 
-                var aWorkBook = ExcelHelper.GetWorkbook(templateFile);
-                aWorkBook = ExcelHelper.ExportExcel(listReport, aWorkBook, 0, new List<ColumnValue>() {
+                    var listReport = new List<ReportListModel>();
+                    listHoiVien.AsParallel().ForAll(s =>
+                    {
+                        var hoivien = new ReportListModel
+                        {
+                            HoTen = s.HoiVien.HOTEN,
+                            NamSinh = s.HoiVien.NAMSINH,
+                            NgayNhapNgu = s.HoiVien.NGAYNHAPNGU == null ? "" : s.HoiVien.NGAYNHAPNGU?.ToString("MM/yyyy"),
+                            NgayXuatNgu = s.HoiVien.NGAYXUATNGU == null ? "" : s.HoiVien.NGAYXUATNGU?.ToString("MM/yyyy"),
+                            DangVien = s.HoiVien.DANGVIEN ? "x" : "",
+                            CapTuong = !string.IsNullOrEmpty(s.HoiVien.CAPBAC) ? s.HoiVien.CAPBAC.Contains("CAPTUONG") ? "x" : "" : "",
+                            BonGach = s.HoiVien.CAPBAC == "CAPTA1" ? "x" : "",
+                            BaGach = s.HoiVien.CAPBAC == "CAPTA2" ? "x" : "",
+                            HaiGach = s.HoiVien.CAPBAC == "CAPTA3" ? "x" : "",
+                            MotGach = s.HoiVien.CAPBAC == "CAPTA4" ? "x" : "",
+                            CapUy = !string.IsNullOrEmpty(s.HoiVien.CAPBAC) ? s.HoiVien.CAPBAC.Contains("CAPUY") ? "x" : "" : "",
+                            HSQCS = s.HoiVien.CAPBAC == "HSQCS" ? "x" : "",
+                            QNCN = s.HoiVien.CAPBAC == "QNCN" ? "x" : "",
+                            CNVQP = s.HoiVien.CAPBAC == "CNVQP" ? "x" : "",
+                            ChucVu = s.HoiVien.CHUCVU,
+                            ThuongBinh = s.HoiVien.THUONGBINH ? "x" : "",
+                            BenhBinh = s.HoiVien.BENHBINH ? "x" : "",
+                            ChatDocDaCam_BanThan = s.HoiVien.CHATDOCDACAM ? "x" : "",
+                            ConLietSi = s.HoiVien.CONLIETSI ? "x" : "",
+                            DanTocItNguoi = s.HoiVien.DANTOCITNGUOI ? "x" : "",
+                            CongGiao = s.HoiVien.CONGGIAO ? "x" : "",
+                            NgayVaoHoi = s.HoiVien.NGAYVAOHOI == null ? "" : s.HoiVien.NGAYVAOHOI?.ToString("dd/MM/yyyy"),
+                            NamCapTheHoiVien = s.HoiVien.NGAYCAPTHE == null ? "" : s.HoiVien.NGAYCAPTHE?.ToString("yyyy"),
+                            SoTheHoiVien = s.HoiVien.MAHOIVIEN,
+                            TenChiHoi = s.TenChiHoi
+                        };
+                        hoivien.ChatDocDaCam_Con = listTTGiaDinhs.Any(k => k.HOIVIEN_ID == s.HoiVien.ID && k.CHATDOCDACAM && k.QUANHE == "CON") ? "x" : "";
+                        var chienDichDienBienPhu = listQuaTrinhChienDaus.FirstOrDefault(k => k.HOIVIEN_ID == s.HoiVien.ID && k.LOAIKHANGCHIEN == "CHIEN_DICH_DIEN_BIEN_PHU");
+                        if (chienDichDienBienPhu != null)
+                        {
+                            hoivien.ChucVu_CDDienBienPhu = string.Format("Cấp bậc: {0}, Chức vụ: {1}", chienDichDienBienPhu.CAPBAC, chienDichDienBienPhu.CHUCVU);
+                            hoivien.DonVi_CDDienBienPhu = string.Format("Đơn vị: {0}, Thời gian: {1}", chienDichDienBienPhu.DONVI, chienDichDienBienPhu.THOIGIAN);
+                        }
+                        var GPThuDo = listQuaTrinhChienDaus.FirstOrDefault(k => k.HOIVIEN_ID == s.HoiVien.ID && k.LOAIKHANGCHIEN == "GIAI_PHONG_THU_DO");
+                        if (GPThuDo != null)
+                        {
+                            hoivien.ChucVu_GPThuDo = string.Format("Cấp bậc: {0}, Chức vụ: {1}", GPThuDo.CAPBAC, GPThuDo.CHUCVU);
+                            hoivien.DonVi_GPThuDo = string.Format("Đơn vị: {0}, Thời gian: {1}", GPThuDo.DONVI, GPThuDo.THOIGIAN);
+                        }
+                        hoivien.ChongMy = listQuaTrinhChienDaus.Any(k => k.HOIVIEN_ID == s.HoiVien.ID && k.LOAIKHANGCHIEN == "KHANG_CHIEN_CHONG_MY") ? "x" : "";
+                        hoivien.CCB_sau304 = listQuaTrinhChienDaus.Any(k => k.HOIVIEN_ID == s.HoiVien.ID && k.LOAIKHANGCHIEN == "CCCB_SAU_30_4") ? "x" : "";
+
+                        var CHIEN_DICH_HO_CHI_MINH = listQuaTrinhChienDaus.FirstOrDefault(k => k.HOIVIEN_ID == s.HoiVien.ID && k.LOAIKHANGCHIEN == "CHIEN_DICH_HO_CHI_MINH");
+                        if (CHIEN_DICH_HO_CHI_MINH != null)
+                        {
+                            hoivien.ChucVu_HCM = string.Format("Cấp bậc: {0}, Chức vụ: {1}", CHIEN_DICH_HO_CHI_MINH.CAPBAC, CHIEN_DICH_HO_CHI_MINH.CHUCVU);
+                            hoivien.DonVi_HCM = string.Format("Đơn vị: {0}, Thời gian: {1}", CHIEN_DICH_HO_CHI_MINH.DONVI, CHIEN_DICH_HO_CHI_MINH.THOIGIAN);
+                        }
+                        listReport.Add(hoivien);
+                    });
+                    var templateFile = $"{Application.StartupPath}\\Templates\\DanhSachHoiVienFULL.xlsx";
+                    switch (printType)
+                    {
+                        case "FULL":
+                            templateFile = $"{Application.StartupPath}\\Templates\\DanhSachHoiVienFULL.xlsx";
+                            if (cboTimKiemChiHoi.SelectedValue != null
+                                && decimal.Parse(cboTimKiemChiHoi.SelectedValue.ToString()) != -1)
+                            {
+                                templateFile = $"{Application.StartupPath}\\Templates\\DanhSachHoiVien.xlsx";
+                            }
+                            break;
+                        case "SHORT":
+                            templateFile = $"{Application.StartupPath}\\Templates\\DanhSachHoiVienRUTGON.xlsx";
+                            if (cboTimKiemChiHoi.SelectedValue != null
+                                && decimal.Parse(cboTimKiemChiHoi.SelectedValue.ToString()) != -1)
+                            {
+                                templateFile = $"{Application.StartupPath}\\Templates\\DanhSachHoiVienSHORT.xlsx";
+                            }
+                            break;
+                            break;
+                    }
+                    
+
+
+                    var aWorkBook = ExcelHelper.GetWorkbook(templateFile);
+                    aWorkBook = ExcelHelper.ExportExcel(listReport, aWorkBook, 0, new List<ColumnValue>() {
                 new ColumnValue{FieldName = "CHIHOI", FieldValue = listReport.Count > 0 ? listReport[0].TenChiHoi : "", IsValue = true, ValueType = ValueDataType.String},
             });
-                MemoryStream mstream = new MemoryStream();
-                OoxmlSaveOptions opts1 = new OoxmlSaveOptions(SaveFormat.Xlsx);
-                aWorkBook.Save(mstream, opts1);
-                SaveFileDialog saveDlg = new SaveFileDialog();
-                saveDlg.InitialDirectory = @"C:\";
-                saveDlg.Filter = "Excel files (*.xlsx)|*.xlsx";
-                saveDlg.FilterIndex = 0;
-                saveDlg.RestoreDirectory = true;
-                saveDlg.Title = "Export Excel File To";
-                if (saveDlg.ShowDialog() == DialogResult.OK)
+                    MemoryStream mstream = new MemoryStream();
+                    OoxmlSaveOptions opts1 = new OoxmlSaveOptions(SaveFormat.Xlsx);
+                    aWorkBook.Save(mstream, opts1);
+                    SaveFileDialog saveDlg = new SaveFileDialog();
+                    saveDlg.InitialDirectory = @"C:\";
+                    saveDlg.Filter = "Excel files (*.xlsx)|*.xlsx";
+                    saveDlg.FilterIndex = 0;
+                    saveDlg.RestoreDirectory = true;
+                    saveDlg.Title = "Export Excel File To";
+                    if (saveDlg.ShowDialog() == DialogResult.OK)
+                    {
+                        File.WriteAllBytes(saveDlg.FileName, mstream.ToArray());
+                        Process.Start(saveDlg.FileName);
+                    }
+                }
+                catch (Exception ex)
                 {
-                    File.WriteAllBytes(saveDlg.FileName, mstream.ToArray());
-                    Process.Start(saveDlg.FileName);
+                    MessageBox.Show("Có lỗi xảy ra trong quá trình xử lý", "Lỗi cập nhật thông tin", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Có lỗi xảy ra trong quá trình xử lý", "Lỗi cập nhật thông tin", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
 
 
         }

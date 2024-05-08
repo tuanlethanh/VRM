@@ -71,5 +71,8 @@ namespace VRM.Utilities
             };
 
         public static USER LoginUser = new USER();
+
+        public static string PRINT_MEMBER_LIST_FULL = "FULL";
+        public static string PRINT_MEMBER_LIST_SHORT = "SHORT";
     }
 }
