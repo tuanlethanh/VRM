@@ -374,15 +374,18 @@ namespace VRM
                     if (!string.IsNullOrEmpty(txtTimKiemTuKhoa.Text))
                     {
                         var keyword = txtTimKiemTuKhoa.Text.ToLower();
-                        query.Where(s => s.HOTEN.ToLower().Contains(keyword)
-                        || keyword.Equals(s.NAMSINH) || s.QUEQUAN.ToLower().Contains(keyword)
+
+                        query = query.Where(s => s.HOTEN.ToLower().Contains(keyword)
+                        || s.QUEQUAN.ToLower().Contains(keyword)
                         || s.DIACHI.ToLower().Contains(keyword) || s.SODIENTHOAI.Contains(keyword));
                     }
 
                     if (!string.IsNullOrEmpty(txtTimKiemNamSinh.Text))
                     {
                         var keyword = txtTimKiemNamSinh.Text;
-                        query.Where(s => keyword.Equals(s.NAMSINH));
+                        int nam = 0;
+                        int.TryParse(keyword, out nam);
+                        query = query.Where(s => s.NAMSINH.HasValue && nam.Equals(s.NAMSINH.Value.Year));
                     }
 
                     if (!string.IsNullOrEmpty(txtNamNhapNguSearch.Text))
@@ -429,7 +432,7 @@ namespace VRM
                         var hoivien = new ReportListModel
                         {
                             HoTen = s.HoiVien.HOTEN,
-                            NamSinh = s.HoiVien.NAMSINH,
+                            NamSinh = s.HoiVien.NAMSINH?.ToString("dd/MM/yyyy"),
                             NgayNhapNgu = s.HoiVien.NGAYNHAPNGU == null ? "" : s.HoiVien.NGAYNHAPNGU?.ToString("MM/yyyy"),
                             NgayXuatNgu = s.HoiVien.NGAYXUATNGU == null ? "" : s.HoiVien.NGAYXUATNGU?.ToString("MM/yyyy"),
                             DangVien = s.HoiVien.DANGVIEN ? "x" : "",
@@ -496,7 +499,6 @@ namespace VRM
                             {
                                 templateFile = $"{Application.StartupPath}\\Templates\\DanhSachHoiVienSHORT.xlsx";
                             }
-                            break;
                             break;
                     }
                     
