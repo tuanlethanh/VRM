@@ -83,7 +83,7 @@
             this.btnDelete.Location = new System.Drawing.Point(467, 3);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(66, 35);
-            this.btnDelete.TabIndex = 1;
+            this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -96,7 +96,7 @@
             this.btnNew.Location = new System.Drawing.Point(373, 2);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(88, 35);
-            this.btnNew.TabIndex = 1;
+            this.btnNew.TabIndex = 3;
             this.btnNew.Text = "Thêm mới";
             this.btnNew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNew.UseVisualStyleBackColor = true;
@@ -109,7 +109,7 @@
             this.btnSearch.Location = new System.Drawing.Point(245, 3);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(83, 35);
-            this.btnSearch.TabIndex = 1;
+            this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSearch.UseVisualStyleBackColor = true;

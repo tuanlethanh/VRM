@@ -46,7 +46,7 @@
             this.btnExit.Location = new System.Drawing.Point(275, 169);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 35);
-            this.btnExit.TabIndex = 40;
+            this.btnExit.TabIndex = 5;
             this.btnExit.Text = "Đóng";
             this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExit.UseVisualStyleBackColor = true;
@@ -59,7 +59,7 @@
             this.btnSave.Location = new System.Drawing.Point(194, 169);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 35);
-            this.btnSave.TabIndex = 41;
+            this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Lưu";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSave.UseVisualStyleBackColor = true;
@@ -71,7 +71,7 @@
             this.cboLoaiKhenThuong.Location = new System.Drawing.Point(133, 9);
             this.cboLoaiKhenThuong.Name = "cboLoaiKhenThuong";
             this.cboLoaiKhenThuong.Size = new System.Drawing.Size(217, 21);
-            this.cboLoaiKhenThuong.TabIndex = 34;
+            this.cboLoaiKhenThuong.TabIndex = 1;
             // 
             // label3
             // 
@@ -115,7 +115,7 @@
             0});
             this.txtNamKhenThuong.Name = "txtNamKhenThuong";
             this.txtNamKhenThuong.Size = new System.Drawing.Size(217, 20);
-            this.txtNamKhenThuong.TabIndex = 42;
+            this.txtNamKhenThuong.TabIndex = 2;
             this.txtNamKhenThuong.Value = new decimal(new int[] {
             1900,
             0,
@@ -127,7 +127,7 @@
             this.txtNoiDungKhenThuong.Location = new System.Drawing.Point(133, 68);
             this.txtNoiDungKhenThuong.Name = "txtNoiDungKhenThuong";
             this.txtNoiDungKhenThuong.Size = new System.Drawing.Size(217, 96);
-            this.txtNoiDungKhenThuong.TabIndex = 43;
+            this.txtNoiDungKhenThuong.TabIndex = 3;
             this.txtNoiDungKhenThuong.Text = "";
             // 
             // frmKhenThuong

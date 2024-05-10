@@ -92,7 +92,8 @@ namespace VRM.Forms
             hoivien.NOICUTRU = txtResidence.Text;
             hoivien.DIACHI = txtAddress.Text;
             hoivien.SODIENTHOAI = txtPhoneNumber.Text;
-            hoivien.EMAIL = txtEmail.Text;
+            hoivien.BHYT = txtBHYT.Text;
+            hoivien.CCCD = txtCCCD.Text;
             hoivien.TRINHDOCHUYENMON = txtQuanlify.Text;
             hoivien.TRINHDOHOCVAN = txtAcademic.Text;
             hoivien.LYLUANCHINHTRI = txtPoliticalTheory.Text;
@@ -232,7 +233,7 @@ namespace VRM.Forms
                 txtResidence.Text = hoivien.NOICUTRU;
                 txtAddress.Text = hoivien.DIACHI;
                 txtPhoneNumber.Text = hoivien.SODIENTHOAI;
-                txtEmail.Text = hoivien.EMAIL;
+                txtBHYT.Text = hoivien.EMAIL;
                 txtQuanlify.Text = hoivien.TRINHDOCHUYENMON;
                 txtPoliticalTheory.Text = hoivien.LYLUANCHINHTRI;
                 if (!String.IsNullOrEmpty(hoivien.HINHANH))
@@ -447,6 +448,11 @@ namespace VRM.Forms
                     SaveData();
                 }
             }
+        }
+
+        private void txtethnic_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

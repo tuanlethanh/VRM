@@ -209,7 +209,8 @@ namespace VRM
                         txtResidence.Text = hoivien.NOICUTRU;
                         txtAddress.Text = hoivien.DIACHI;
                         txtPhoneNumber.Text = hoivien.SODIENTHOAI;
-                        txtEmail.Text = hoivien.EMAIL;
+                        txtBHYT.Text = hoivien.BHYT;
+                        txtCCCD.Text = hoivien.CCCD;
                         txtQuanlify.Text = hoivien.TRINHDOCHUYENMON;
                         txtPoliticalTheory.Text = hoivien.LYLUANCHINHTRI;
                         if(!String.IsNullOrEmpty(hoivien.HINHANH))

@@ -104,14 +104,14 @@
             this.cboLoaiKhangChien.Location = new System.Drawing.Point(107, 9);
             this.cboLoaiKhangChien.Name = "cboLoaiKhangChien";
             this.cboLoaiKhangChien.Size = new System.Drawing.Size(245, 21);
-            this.cboLoaiKhangChien.TabIndex = 2;
+            this.cboLoaiKhangChien.TabIndex = 1;
             // 
             // txtTenChienDich
             // 
             this.txtTenChienDich.Location = new System.Drawing.Point(107, 36);
             this.txtTenChienDich.Name = "txtTenChienDich";
             this.txtTenChienDich.Size = new System.Drawing.Size(245, 20);
-            this.txtTenChienDich.TabIndex = 3;
+            this.txtTenChienDich.TabIndex = 2;
             // 
             // txtCapBac
             // 
@@ -125,21 +125,21 @@
             this.txtChucVu.Location = new System.Drawing.Point(107, 88);
             this.txtChucVu.Name = "txtChucVu";
             this.txtChucVu.Size = new System.Drawing.Size(245, 20);
-            this.txtChucVu.TabIndex = 3;
+            this.txtChucVu.TabIndex = 4;
             // 
             // txtDonVi
             // 
             this.txtDonVi.Location = new System.Drawing.Point(107, 114);
             this.txtDonVi.Name = "txtDonVi";
             this.txtDonVi.Size = new System.Drawing.Size(245, 20);
-            this.txtDonVi.TabIndex = 3;
+            this.txtDonVi.TabIndex = 5;
             // 
             // txtThoiGian
             // 
             this.txtThoiGian.Location = new System.Drawing.Point(107, 140);
             this.txtThoiGian.Name = "txtThoiGian";
             this.txtThoiGian.Size = new System.Drawing.Size(245, 20);
-            this.txtThoiGian.TabIndex = 3;
+            this.txtThoiGian.TabIndex = 6;
             // 
             // btnExit
             // 
@@ -148,7 +148,7 @@
             this.btnExit.Location = new System.Drawing.Point(277, 166);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 35);
-            this.btnExit.TabIndex = 26;
+            this.btnExit.TabIndex = 8;
             this.btnExit.Text = "Đóng";
             this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExit.UseVisualStyleBackColor = true;
@@ -161,7 +161,7 @@
             this.btnSave.Location = new System.Drawing.Point(196, 166);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 35);
-            this.btnSave.TabIndex = 27;
+            this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Lưu";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSave.UseVisualStyleBackColor = true;

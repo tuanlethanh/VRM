@@ -51,7 +51,7 @@
             this.btnExit.Location = new System.Drawing.Point(239, 163);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 35);
-            this.btnExit.TabIndex = 40;
+            this.btnExit.TabIndex = 8;
             this.btnExit.Text = "Đóng";
             this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExit.UseVisualStyleBackColor = true;
@@ -64,7 +64,7 @@
             this.btnSave.Location = new System.Drawing.Point(158, 163);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 35);
-            this.btnSave.TabIndex = 41;
+            this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Lưu";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSave.UseVisualStyleBackColor = true;
@@ -75,21 +75,21 @@
             this.txtDiaChi.Location = new System.Drawing.Point(69, 114);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(245, 20);
-            this.txtDiaChi.TabIndex = 36;
+            this.txtDiaChi.TabIndex = 5;
             // 
             // txtQueQuan
             // 
             this.txtQueQuan.Location = new System.Drawing.Point(69, 88);
             this.txtQueQuan.Name = "txtQueQuan";
             this.txtQueQuan.Size = new System.Drawing.Size(245, 20);
-            this.txtQueQuan.TabIndex = 37;
+            this.txtQueQuan.TabIndex = 4;
             // 
             // txtHoTen
             // 
             this.txtHoTen.Location = new System.Drawing.Point(69, 36);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(245, 20);
-            this.txtHoTen.TabIndex = 38;
+            this.txtHoTen.TabIndex = 2;
             // 
             // cboQuanHe
             // 
@@ -97,7 +97,7 @@
             this.cboQuanHe.Location = new System.Drawing.Point(69, 9);
             this.cboQuanHe.Name = "cboQuanHe";
             this.cboQuanHe.Size = new System.Drawing.Size(245, 21);
-            this.cboQuanHe.TabIndex = 34;
+            this.cboQuanHe.TabIndex = 1;
             // 
             // label5
             // 
@@ -150,7 +150,7 @@
             this.chkChatDocDaCam.Location = new System.Drawing.Point(69, 140);
             this.chkChatDocDaCam.Name = "chkChatDocDaCam";
             this.chkChatDocDaCam.Size = new System.Drawing.Size(131, 17);
-            this.chkChatDocDaCam.TabIndex = 42;
+            this.chkChatDocDaCam.TabIndex = 6;
             this.chkChatDocDaCam.Text = "Chất độc màu da cam";
             this.chkChatDocDaCam.UseVisualStyleBackColor = true;
             // 
@@ -169,7 +169,7 @@
             0});
             this.txtNamSinh.Name = "txtNamSinh";
             this.txtNamSinh.Size = new System.Drawing.Size(245, 20);
-            this.txtNamSinh.TabIndex = 43;
+            this.txtNamSinh.TabIndex = 3;
             this.txtNamSinh.Value = new decimal(new int[] {
             1900,
             0,

@@ -50,14 +50,14 @@
             this.txtCode.Location = new System.Drawing.Point(77, 12);
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(174, 20);
-            this.txtCode.TabIndex = 3;
+            this.txtCode.TabIndex = 1;
             // 
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(77, 38);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(174, 20);
-            this.txtName.TabIndex = 3;
+            this.txtName.TabIndex = 2;
             // 
             // label2
             // 
@@ -75,7 +75,7 @@
             this.btnClose.Location = new System.Drawing.Point(181, 64);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(70, 35);
-            this.btnClose.TabIndex = 5;
+            this.btnClose.TabIndex = 4;
             this.btnClose.Text = "Đóng";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
@@ -88,7 +88,7 @@
             this.btnSave.Location = new System.Drawing.Point(112, 64);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(63, 35);
-            this.btnSave.TabIndex = 5;
+            this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Lưu";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSave.UseVisualStyleBackColor = true;

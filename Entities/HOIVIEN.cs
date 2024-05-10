@@ -135,5 +135,13 @@ namespace VRM.Entities
 
         [Column(Name = "COQUANKHIXUATNGU", DbType = "VARCHAR")]
         public string COQUANKHIXUATNGU { get; set; }
+
+        [Column(Name = "CCCD", DbType = "VARCHAR")]
+        public string CCCD { get; set; }
+
+        [Column(Name = "BHYT", DbType = "VARCHAR")]
+        public string BHYT { get; set; }
     }
+
+
 }
