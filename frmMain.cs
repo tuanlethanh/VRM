@@ -155,6 +155,7 @@ namespace VRM
                     NAMNGHIHUU = item.hoivien.NGAYNGHIHUU?.Year.ToString(),
                     NAMNHAPNGU = item.hoivien.NGAYNHAPNGU?.Year.ToString(),
                     NAMXUATNGU = item.hoivien.NGAYXUATNGU?.Year.ToString(),
+                    QUEQUAN = item.hoivien.QUEQUAN
                 });
             }
 
