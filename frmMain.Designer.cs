@@ -180,6 +180,8 @@
             this.CHATDOCDACAM = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.QUEQUAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DIACHIHIENNAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chkNNTruoc1975 = new System.Windows.Forms.CheckBox();
+            this.chkNNSau1975 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.daMembers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -398,7 +400,7 @@
             this.daMembers.ReadOnly = true;
             this.daMembers.RowHeadersVisible = false;
             this.daMembers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.daMembers.Size = new System.Drawing.Size(452, 348);
+            this.daMembers.Size = new System.Drawing.Size(452, 328);
             this.daMembers.TabIndex = 1;
             this.daMembers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.daMembers_CellClick);
             this.daMembers.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.daMembers_CellDoubleClick);
@@ -505,11 +507,13 @@
             // 
             this.splitContainer2.Panel2.Controls.Add(this.groupBox10);
             this.splitContainer2.Size = new System.Drawing.Size(458, 503);
-            this.splitContainer2.SplitterDistance = 132;
+            this.splitContainer2.SplitterDistance = 152;
             this.splitContainer2.TabIndex = 0;
             // 
             // groupBox9
             // 
+            this.groupBox9.Controls.Add(this.chkNNSau1975);
+            this.groupBox9.Controls.Add(this.chkNNTruoc1975);
             this.groupBox9.Controls.Add(this.linkLabel1);
             this.groupBox9.Controls.Add(this.txtNamXuatNguSearch);
             this.groupBox9.Controls.Add(this.label30);
@@ -527,7 +531,7 @@
             this.groupBox9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox9.Location = new System.Drawing.Point(0, 0);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(458, 132);
+            this.groupBox9.Size = new System.Drawing.Size(458, 152);
             this.groupBox9.TabIndex = 0;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Tìm kiếm";
@@ -545,17 +549,17 @@
             // 
             // txtNamXuatNguSearch
             // 
-            this.txtNamXuatNguSearch.Location = new System.Drawing.Point(236, 99);
+            this.txtNamXuatNguSearch.Location = new System.Drawing.Point(77, 125);
             this.txtNamXuatNguSearch.MaxLength = 4;
             this.txtNamXuatNguSearch.Name = "txtNamXuatNguSearch";
-            this.txtNamXuatNguSearch.Size = new System.Drawing.Size(114, 20);
+            this.txtNamXuatNguSearch.Size = new System.Drawing.Size(83, 20);
             this.txtNamXuatNguSearch.TabIndex = 9;
             this.txtNamXuatNguSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNamXuatNguSearch_KeyPress);
             // 
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(171, 93);
+            this.label30.Location = new System.Drawing.Point(12, 119);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(51, 26);
             this.label30.TabIndex = 8;
@@ -603,7 +607,7 @@
             // 
             this.btnSearch.Image = global::VRM.Properties.Resources.search;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSearch.Location = new System.Drawing.Point(369, 91);
+            this.btnSearch.Location = new System.Drawing.Point(369, 111);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(83, 35);
             this.btnSearch.TabIndex = 3;
@@ -669,7 +673,7 @@
             this.groupBox10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox10.Location = new System.Drawing.Point(0, 0);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(458, 367);
+            this.groupBox10.Size = new System.Drawing.Size(458, 347);
             this.groupBox10.TabIndex = 0;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Danh sách hội viên";
@@ -1672,6 +1676,26 @@
             this.DIACHIHIENNAY.Name = "DIACHIHIENNAY";
             this.DIACHIHIENNAY.Width = 250;
             // 
+            // chkNNTruoc1975
+            // 
+            this.chkNNTruoc1975.AutoSize = true;
+            this.chkNNTruoc1975.Location = new System.Drawing.Point(177, 102);
+            this.chkNNTruoc1975.Name = "chkNNTruoc1975";
+            this.chkNNTruoc1975.Size = new System.Drawing.Size(156, 17);
+            this.chkNNTruoc1975.TabIndex = 11;
+            this.chkNNTruoc1975.Text = "Nhập ngũ trước 30/041975";
+            this.chkNNTruoc1975.UseVisualStyleBackColor = true;
+            // 
+            // chkNNSau1975
+            // 
+            this.chkNNSau1975.AutoSize = true;
+            this.chkNNSau1975.Location = new System.Drawing.Point(177, 129);
+            this.chkNNSau1975.Name = "chkNNSau1975";
+            this.chkNNSau1975.Size = new System.Drawing.Size(149, 17);
+            this.chkNNSau1975.TabIndex = 12;
+            this.chkNNSau1975.Text = "Nhập ngũ sau 30/041975";
+            this.chkNNSau1975.UseVisualStyleBackColor = true;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1865,5 +1889,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NAMNGHIHUU;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.TextBox txtCCCD;
+        private System.Windows.Forms.CheckBox chkNNSau1975;
+        private System.Windows.Forms.CheckBox chkNNTruoc1975;
     }
 }

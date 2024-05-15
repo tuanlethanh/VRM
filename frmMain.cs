@@ -121,6 +121,18 @@ namespace VRM
                 query = query.Where(s => s.NGAYNHAPNGU.HasValue && nam.Equals(s.NGAYNHAPNGU.Value.Year));
             }
 
+            if (chkNNSau1975.Checked)
+            {
+                var date = new DateTime(1975, 4, 30);
+                query = query.Where(s => s.NGAYNHAPNGU.HasValue && s.NGAYNHAPNGU.Value >= date);
+            }
+
+            if (chkNNTruoc1975.Checked)
+            {
+                var date = new DateTime(1975, 4, 30);
+                query = query.Where(s => s.NGAYNHAPNGU.HasValue && s.NGAYNHAPNGU.Value < date);
+            }
+
             if (!string.IsNullOrEmpty(txtNamXuatNguSearch.Text))
             {
                 var keyword = txtNamXuatNguSearch.Text;
@@ -413,6 +425,18 @@ namespace VRM
                     if (chkChatDocDaCamSearch.Checked)
                     {
                         query = query.Where(s => s.CHATDOCDACAM == true);
+                    }
+
+                    if (chkNNSau1975.Checked)
+                    {
+                        var date = new DateTime(1975, 4, 30);
+                        query = query.Where(s => s.NGAYNHAPNGU.HasValue && s.NGAYNHAPNGU.Value >= date);
+                    }
+
+                    if (chkNNTruoc1975.Checked)
+                    {
+                        var date = new DateTime(1975, 4, 30);
+                        query = query.Where(s => s.NGAYNHAPNGU.HasValue && s.NGAYNHAPNGU.Value < date);
                     }
 
                     var listHoiVien = query.Join(databaseContext.CHIHOIs, hv => hv.CHIHOI_ID, ch => ch.ID, (hv, ch) => new

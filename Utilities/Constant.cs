@@ -12,11 +12,9 @@ namespace VRM.Utilities
     {
         public static List<DropdownModel> DanhMucLoaiKhangChien = new List<DropdownModel>
             {
-                new DropdownModel {Id = "CHIEN_DICH_DIEN_BIEN_PHU", Name = "Chiến dịch điện biên phủ" },
-                new DropdownModel {Id = "GIAI_PHONG_THU_DO", Name = "Giải phóng thủ đô" },
-                new DropdownModel {Id = "KHANG_CHIEN_CHONG_MY", Name = "Kháng chiến chống Mỹ" },
-                new DropdownModel {Id = "CHIEN_DICH_HO_CHI_MINH", Name = "Chiến dịch Hồ Chí Minh" },
-                new DropdownModel {Id = "CCCB_SAU_30_4", Name = "CCB sau 30/4" },
+                new DropdownModel {Id = "CHIEN_DICH_DIEN_BIEN_PHU", Name = "Chống pháp" },
+                new DropdownModel {Id = "KHANG_CHIEN_CHONG_MY", Name = "Chống Mỹ" },
+                new DropdownModel {Id = "CCCB_SAU_30_4", Name = "Sau 30/4/1975" },
             };
 
         public static List<DropdownModel> DanhMucLoaiKhenThuong = new List<DropdownModel>
