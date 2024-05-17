@@ -42,5 +42,8 @@ namespace VRM.Entities
 
         [System.ComponentModel.DataAnnotations.Schema.NotMapped]
         public string TENKHANGCHIEN { get; set; }
+
+        [System.ComponentModel.DataAnnotations.Schema.NotMapped]
+        public string TENCHIENDICH { get; set; }
     }
 }

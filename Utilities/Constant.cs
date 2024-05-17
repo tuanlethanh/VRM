@@ -12,9 +12,19 @@ namespace VRM.Utilities
     {
         public static List<DropdownModel> DanhMucLoaiKhangChien = new List<DropdownModel>
             {
-                new DropdownModel {Id = "CHIEN_DICH_DIEN_BIEN_PHU", Name = "Chống pháp" },
+                new DropdownModel {Id = "KHANG_CHIEN_CHONG_PHAP", Name = "Chống pháp" },
                 new DropdownModel {Id = "KHANG_CHIEN_CHONG_MY", Name = "Chống Mỹ" },
                 new DropdownModel {Id = "CCCB_SAU_30_4", Name = "Sau 30/4/1975" },
+            };
+
+        public static List<DropdownModel> DanhMucChienDich = new List<DropdownModel>
+            {
+                new DropdownModel {Id = "CHIEN_DICH_DIEN_BIEN_PHU", Name = "Chiến dịch điện biên phủ", ParentId = "KHANG_CHIEN_CHONG_PHAP" },
+                new DropdownModel {Id = "GIAI_PHONG_THU_DO", Name = "Giải phóng thủ đô", ParentId = "KHANG_CHIEN_CHONG_PHAP" },
+                new DropdownModel {Id = "KHANG_CHIEN_CHONG_PHAP_KHAC", Name = "Chiến dịch khác", ParentId = "KHANG_CHIEN_CHONG_PHAP" },
+                new DropdownModel {Id = "CHIEN_DICH_HO_CHI_MINH", Name = "Chiến dịch hồ Chí Minh" , ParentId = "KHANG_CHIEN_CHONG_MY"},
+                new DropdownModel {Id = "KHANG_CHIEN_CHONG_MY_KHAC", Name = "Chiến dịch khác" , ParentId = "KHANG_CHIEN_CHONG_MY"},
+                new DropdownModel {Id = "CHIEN_DICH_SAU_30_4", Name = "Chiến dịch sau 30/4/1975", ParentId = "CCCB_SAU_30_4" },
             };
 
         public static List<DropdownModel> DanhMucLoaiKhenThuong = new List<DropdownModel>

@@ -9,6 +9,7 @@ namespace VRM.Models
     public class DropdownModel
     {
         public object Id { get; set; }
+        public object ParentId { get; set; }
         public string Name { get; set; }
     }
 }

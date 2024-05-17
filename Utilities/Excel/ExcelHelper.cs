@@ -223,6 +223,7 @@ namespace VRM.Utilities.Excel
                             }
                             else
                             {
+                                if (dataItem == null) continue;
                                 var memberInfo = dataItem.GetType().GetProperty(listAttributes[i]);
                                 if (memberInfo != null)
                                 {

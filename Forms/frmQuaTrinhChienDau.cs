@@ -49,9 +49,10 @@ namespace VRM.Forms
             KhangChien.CHUCVU = txtChucVu.Text;
             KhangChien.CAPBAC = txtCapBac.Text;
             KhangChien.DONVI = txtDonVi.Text;
-            KhangChien.CHIENDICH = txtTenChienDich.Text;
+            KhangChien.CHIENDICH = cboChienDich.SelectedValue.ToString();
             KhangChien.LOAIKHANGCHIEN = cboLoaiKhangChien.SelectedValue.ToString();
             KhangChien.TENKHANGCHIEN = Constant.DanhMucLoaiKhangChien.FirstOrDefault(s => s.Id.ToString() == KhangChien.LOAIKHANGCHIEN)?.Name;
+            KhangChien.TENCHIENDICH = Constant.DanhMucChienDich.FirstOrDefault(s => s.Id.ToString() == KhangChien.CHIENDICH)?.Name;
             SaveChanged(KhangChien);
             DialogResult = DialogResult.OK;
         }
@@ -61,6 +62,11 @@ namespace VRM.Forms
             cboLoaiKhangChien.DataSource = Constant.DanhMucLoaiKhangChien;
             cboLoaiKhangChien.DisplayMember = "Name";
             cboLoaiKhangChien.ValueMember = "Id";
+            cboLoaiKhangChien.SelectedValue = "KHANG_CHIEN_CHONG_PHAP";
+
+            cboChienDich.DataSource = Constant.DanhMucChienDich;
+            cboChienDich.DisplayMember = "Name";
+            cboChienDich.ValueMember = "Id";
 
             if (KhangChien == null)
             {
@@ -70,9 +76,21 @@ namespace VRM.Forms
             txtChucVu.Text = KhangChien.CHUCVU;
             txtCapBac.Text = KhangChien.CAPBAC;
             txtDonVi.Text = KhangChien.DONVI;
-            txtTenChienDich.Text = KhangChien.CHIENDICH;
             if (!string.IsNullOrEmpty(KhangChien.LOAIKHANGCHIEN))
                 cboLoaiKhangChien.SelectedValue = KhangChien.LOAIKHANGCHIEN;
+            if (!string.IsNullOrEmpty(KhangChien.CHIENDICH))
+                cboChienDich.SelectedValue = KhangChien.CHIENDICH;
+        }
+
+        private void cboLoaiKhangChien_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboLoaiKhangChien.SelectedValue != null)
+            {
+                
+                cboChienDich.DataSource = Constant.DanhMucChienDich.Where(s => s.ParentId == cboLoaiKhangChien.SelectedValue).ToList();
+                cboChienDich.DisplayMember = "Name";
+                cboChienDich.ValueMember = "Id";
+            }
         }
     }
 }

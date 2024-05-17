@@ -226,6 +226,7 @@ namespace VRM
                         txtCCCD.Text = hoivien.CCCD;
                         txtQuanlify.Text = hoivien.TRINHDOCHUYENMON;
                         txtPoliticalTheory.Text = hoivien.LYLUANCHINHTRI;
+                        txtKyNiemChuong.Text = hoivien.KYNIEMCHUONG;
                         if(!String.IsNullOrEmpty(hoivien.HINHANH))
                         {
                             pbAvatar.ImageLocation = hoivien.HINHANH;
@@ -276,8 +277,8 @@ namespace VRM
         {
             DanhSachQuaTrinhChienDau.ForEach(s =>
             {
-                var ck = Constant.DanhMucLoaiKhenThuong.FirstOrDefault(k => k.Id.Equals(s.LOAIKHANGCHIEN));
-                if (ck != null) s.TENKHANGCHIEN = ck.Name;
+                s.TENKHANGCHIEN = Constant.DanhMucLoaiKhangChien.FirstOrDefault(k => k.Id.Equals(s.LOAIKHANGCHIEN))?.Name;
+                s.TENCHIENDICH = Constant.DanhMucChienDich.FirstOrDefault(k => k.Id.Equals(s.CHIENDICH))?.Name;
             });
             var bindingList = new BindingList<QUATRINHCHIENDAU>(DanhSachQuaTrinhChienDau);
             var source = new BindingSource(bindingList, null);
@@ -288,8 +289,7 @@ namespace VRM
         {
             DanhSachKhenThuong.ForEach(s =>
             {
-                var ck = Constant.DanhMucLoaiKhenThuong.FirstOrDefault(k => k.Id.Equals(s.LOAIKHENTHUONG));
-                if (ck != null) s.TENKHENTHUONG = ck.Name;
+                s.TENKHENTHUONG = Constant.DanhMucLoaiKhenThuong.FirstOrDefault(k => k.Id.Equals(s.LOAIKHENTHUONG))?.Name;
             });
             var bindingList = new BindingList<KHENTHUONG>(DanhSachKhenThuong);
             var source = new BindingSource(bindingList, null);
@@ -300,8 +300,7 @@ namespace VRM
         {
             DanhSachThanhVien.ForEach(s =>
             {
-                var ck = Constant.DanhMucMoiQuanHe.FirstOrDefault(k => k.Id.Equals(s.QUANHE));
-                if (ck != null) s.TENQUANHE = ck.Name;
+                s.TENQUANHE = Constant.DanhMucMoiQuanHe.FirstOrDefault(k => k.Id.Equals(s.QUANHE))?.Name;
             });
             var bindingList = new BindingList<THONGTINGIADINH>(DanhSachThanhVien);
             var source = new BindingSource(bindingList, null);
@@ -483,13 +482,13 @@ namespace VRM
                             TenChiHoi = s.TenChiHoi
                         };
                         hoivien.ChatDocDaCam_Con = listTTGiaDinhs.Any(k => k.HOIVIEN_ID == s.HoiVien.ID && k.CHATDOCDACAM && k.QUANHE == "CON") ? "x" : "";
-                        var chienDichDienBienPhu = listQuaTrinhChienDaus.FirstOrDefault(k => k.HOIVIEN_ID == s.HoiVien.ID && k.LOAIKHANGCHIEN == "CHIEN_DICH_DIEN_BIEN_PHU");
+                        var chienDichDienBienPhu = listQuaTrinhChienDaus.FirstOrDefault(k => k.HOIVIEN_ID == s.HoiVien.ID && k.CHIENDICH == "CHIEN_DICH_DIEN_BIEN_PHU");
                         if (chienDichDienBienPhu != null)
                         {
                             hoivien.ChucVu_CDDienBienPhu = string.Format("Cấp bậc: {0}, Chức vụ: {1}", chienDichDienBienPhu.CAPBAC, chienDichDienBienPhu.CHUCVU);
                             hoivien.DonVi_CDDienBienPhu = string.Format("Đơn vị: {0}, Thời gian: {1}", chienDichDienBienPhu.DONVI, chienDichDienBienPhu.THOIGIAN);
                         }
-                        var GPThuDo = listQuaTrinhChienDaus.FirstOrDefault(k => k.HOIVIEN_ID == s.HoiVien.ID && k.LOAIKHANGCHIEN == "GIAI_PHONG_THU_DO");
+                        var GPThuDo = listQuaTrinhChienDaus.FirstOrDefault(k => k.HOIVIEN_ID == s.HoiVien.ID && k.CHIENDICH == "GIAI_PHONG_THU_DO");
                         if (GPThuDo != null)
                         {
                             hoivien.ChucVu_GPThuDo = string.Format("Cấp bậc: {0}, Chức vụ: {1}", GPThuDo.CAPBAC, GPThuDo.CHUCVU);
@@ -498,7 +497,7 @@ namespace VRM
                         hoivien.ChongMy = listQuaTrinhChienDaus.Any(k => k.HOIVIEN_ID == s.HoiVien.ID && k.LOAIKHANGCHIEN == "KHANG_CHIEN_CHONG_MY") ? "x" : "";
                         hoivien.CCB_sau304 = listQuaTrinhChienDaus.Any(k => k.HOIVIEN_ID == s.HoiVien.ID && k.LOAIKHANGCHIEN == "CCCB_SAU_30_4") ? "x" : "";
 
-                        var CHIEN_DICH_HO_CHI_MINH = listQuaTrinhChienDaus.FirstOrDefault(k => k.HOIVIEN_ID == s.HoiVien.ID && k.LOAIKHANGCHIEN == "CHIEN_DICH_HO_CHI_MINH");
+                        var CHIEN_DICH_HO_CHI_MINH = listQuaTrinhChienDaus.FirstOrDefault(k => k.HOIVIEN_ID == s.HoiVien.ID && k.CHIENDICH == "CHIEN_DICH_HO_CHI_MINH");
                         if (CHIEN_DICH_HO_CHI_MINH != null)
                         {
                             hoivien.ChucVu_HCM = string.Format("Cấp bậc: {0}, Chức vụ: {1}", CHIEN_DICH_HO_CHI_MINH.CAPBAC, CHIEN_DICH_HO_CHI_MINH.CHUCVU);

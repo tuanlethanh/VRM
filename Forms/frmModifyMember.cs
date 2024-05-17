@@ -110,6 +110,7 @@ namespace VRM.Forms
             hoivien.TINHTRANGSUCKHOE = txtTinhTrangSucKhoe.Text;
             hoivien.CHATDOCDACAM = chkChatDocDaCam.Checked;
             hoivien.COQUANDONVI = txtCoQuanDonViKhiNghiHuu.Text;
+            hoivien.KYNIEMCHUONG = txtKyNiemChuong.Text;
             hoivien.CAPBAC = cboCapBac.SelectedValue.ToString();
             hoivien.CHUCVU = txtChucVu.Text;
             hoivien.NGAYNGHIHUU = isValidDate(txtNgayNghiHuu.Text)
@@ -318,8 +319,8 @@ namespace VRM.Forms
         {
             DanhSachQuaTrinhChienDau.ForEach(s =>
             {
-                var ck = Constant.DanhMucLoaiKhenThuong.FirstOrDefault(k => k.Id.Equals(s.LOAIKHANGCHIEN));
-                if (ck != null) s.TENKHANGCHIEN = ck.Name;
+                s.TENKHANGCHIEN = Constant.DanhMucLoaiKhangChien.FirstOrDefault(k => k.Id.Equals(s.LOAIKHANGCHIEN))?.Name;
+                s.TENCHIENDICH = Constant.DanhMucChienDich.FirstOrDefault(k => k.Id.Equals(s.CHIENDICH))?.Name;
             });
             var bindingList = new BindingList<QUATRINHCHIENDAU>(DanhSachQuaTrinhChienDau);
             var source = new BindingSource(bindingList, null);
@@ -330,8 +331,7 @@ namespace VRM.Forms
         {
             DanhSachKhenThuong.ForEach(s =>
             {
-                var ck = Constant.DanhMucLoaiKhenThuong.FirstOrDefault(k => k.Id.Equals(s.LOAIKHENTHUONG));
-                if (ck != null) s.TENKHENTHUONG = ck.Name;
+                s.TENKHENTHUONG = Constant.DanhMucLoaiKhenThuong.FirstOrDefault(k => k.Id.Equals(s.LOAIKHENTHUONG))?.Name;
             });
             var bindingList = new BindingList<KHENTHUONG>(DanhSachKhenThuong);
             var source = new BindingSource(bindingList, null);
@@ -342,8 +342,7 @@ namespace VRM.Forms
         {
             DanhSachThanhVien.ForEach(s =>
             {
-                var ck = Constant.DanhMucMoiQuanHe.FirstOrDefault(k => k.Id.Equals(s.QUANHE));
-                if (ck != null) s.TENQUANHE = ck.Name;
+                s.TENQUANHE = Constant.DanhMucMoiQuanHe.FirstOrDefault(k => k.Id.Equals(s.QUANHE))?.Name;
             });
             var bindingList = new BindingList<THONGTINGIADINH>(DanhSachThanhVien);
             var source = new BindingSource(bindingList, null);

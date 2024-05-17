@@ -35,13 +35,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cboLoaiKhangChien = new System.Windows.Forms.ComboBox();
-            this.txtTenChienDich = new System.Windows.Forms.TextBox();
             this.txtCapBac = new System.Windows.Forms.TextBox();
             this.txtChucVu = new System.Windows.Forms.TextBox();
             this.txtDonVi = new System.Windows.Forms.TextBox();
             this.txtThoiGian = new System.Windows.Forms.TextBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.cboChienDich = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -105,13 +105,7 @@
             this.cboLoaiKhangChien.Name = "cboLoaiKhangChien";
             this.cboLoaiKhangChien.Size = new System.Drawing.Size(245, 21);
             this.cboLoaiKhangChien.TabIndex = 1;
-            // 
-            // txtTenChienDich
-            // 
-            this.txtTenChienDich.Location = new System.Drawing.Point(107, 36);
-            this.txtTenChienDich.Name = "txtTenChienDich";
-            this.txtTenChienDich.Size = new System.Drawing.Size(245, 20);
-            this.txtTenChienDich.TabIndex = 2;
+            this.cboLoaiKhangChien.SelectedIndexChanged += new System.EventHandler(this.cboLoaiKhangChien_SelectedIndexChanged);
             // 
             // txtCapBac
             // 
@@ -167,18 +161,26 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // cboChienDich
+            // 
+            this.cboChienDich.FormattingEnabled = true;
+            this.cboChienDich.Location = new System.Drawing.Point(107, 36);
+            this.cboChienDich.Name = "cboChienDich";
+            this.cboChienDich.Size = new System.Drawing.Size(245, 21);
+            this.cboChienDich.TabIndex = 9;
+            // 
             // frmQuaTrinhChienDau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(368, 208);
+            this.Controls.Add(this.cboChienDich);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtThoiGian);
             this.Controls.Add(this.txtDonVi);
             this.Controls.Add(this.txtChucVu);
             this.Controls.Add(this.txtCapBac);
-            this.Controls.Add(this.txtTenChienDich);
             this.Controls.Add(this.cboLoaiKhangChien);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -204,12 +206,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cboLoaiKhangChien;
-        private System.Windows.Forms.TextBox txtTenChienDich;
         private System.Windows.Forms.TextBox txtCapBac;
         private System.Windows.Forms.TextBox txtChucVu;
         private System.Windows.Forms.TextBox txtDonVi;
         private System.Windows.Forms.TextBox txtThoiGian;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.ComboBox cboChienDich;
     }
 }
