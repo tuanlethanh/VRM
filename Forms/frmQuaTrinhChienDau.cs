@@ -62,11 +62,13 @@ namespace VRM.Forms
             cboLoaiKhangChien.DataSource = Constant.DanhMucLoaiKhangChien;
             cboLoaiKhangChien.DisplayMember = "Name";
             cboLoaiKhangChien.ValueMember = "Id";
-            cboLoaiKhangChien.SelectedValue = "KHANG_CHIEN_CHONG_PHAP";
+            
 
             cboChienDich.DataSource = Constant.DanhMucChienDich;
             cboChienDich.DisplayMember = "Name";
             cboChienDich.ValueMember = "Id";
+
+            cboLoaiKhangChien.SelectedValue = "KHANG_CHIEN_CHONG_PHAP";
 
             if (KhangChien == null)
             {

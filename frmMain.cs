@@ -59,7 +59,7 @@ namespace VRM
 
 
                 oldSize = base.Size;
-                refreshDataGridView();
+                daMembers.DataSource = searchData();
 
                 var listChiHoi = databaseContext.CHIHOIs.ToList();
                 listChiHoi.Insert(0, new CHIHOI { ID = -1, TENCHIHOI = "------Tất cả------" });
@@ -86,7 +86,7 @@ namespace VRM
             }
         }
 
-        void refreshDataGridView()
+        List<HoiVienModel> searchData()
         {
             var query = databaseContext.HOIVIENs.AsQueryable();
             if (cboTimKiemChiHoi.SelectedValue != null
@@ -155,6 +155,9 @@ namespace VRM
                 (hoivien, chihoi) => new { hoivien, chihoi }).ToList();
 
             var listDat = new List<HoiVienModel>();
+            var lsIds = data.Select(s => s.hoivien.ID).ToList();
+            var chiendichs = new List<string> { "CHIEN_DICH_HO_CHI_MINH", "KHANG_CHIEN_CHONG_MY_KHAC" };
+            var lstKhangChiens = databaseContext.QUATRINHCHIENDAUs.Where(s => lsIds.Contains(s.HOIVIEN_ID) && chiendichs.Contains(s.CHIENDICH)).ToList();
             foreach (var item in data)
             {
                 listDat.Add(new HoiVienModel
@@ -167,11 +170,13 @@ namespace VRM
                     NAMNGHIHUU = item.hoivien.NGAYNGHIHUU?.Year.ToString(),
                     NAMNHAPNGU = item.hoivien.NGAYNHAPNGU?.Year.ToString(),
                     NAMXUATNGU = item.hoivien.NGAYXUATNGU?.Year.ToString(),
-                    QUEQUAN = item.hoivien.QUEQUAN
+                    QUEQUAN = item.hoivien.QUEQUAN,
+                    CHONGMY = lstKhangChiens.Any(s => s.HOIVIEN_ID == item.hoivien.ID),
+                    KYNIEMCHUONG = item.hoivien.KYNIEMCHUONG,
                 });
             }
 
-            daMembers.DataSource = listDat;
+           return listDat;
         }
 
         private void btnNewMember_Click(object sender, EventArgs e)
@@ -181,7 +186,7 @@ namespace VRM
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 MessageBox.Show("Tạo hội viên thành công", "Lưu thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                refreshDataGridView();
+                daMembers.DataSource = searchData();
             }
         }
 
@@ -362,7 +367,7 @@ namespace VRM
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            refreshDataGridView();
+            daMembers.DataSource = searchData();
         }
 
         private void btnExport_Click(object sender, EventArgs e)
@@ -577,7 +582,7 @@ namespace VRM
 
 
                 oldSize = base.Size;
-                refreshDataGridView();
+                daMembers.DataSource = searchData();
 
                 var listChiHoi = databaseContext.CHIHOIs.ToList();
                 listChiHoi.Insert(0, new CHIHOI { ID = -1, TENCHIHOI = "------Tất cả------" });
@@ -812,7 +817,7 @@ namespace VRM
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     MessageBox.Show("Chỉnh sửa viên thành công", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    refreshDataGridView();
+                    daMembers.DataSource = searchData();
                     currentSelectedRow = this.daMembers.CurrentRow;
                     bindingData(currentSelectedRow);
                 }
@@ -835,7 +840,7 @@ namespace VRM
                     databaseContext.HOIVIENs.Remove(member);
                     databaseContext.SaveChanges();
                     currentSelectedRow = null;
-                    refreshDataGridView();
+                    daMembers.DataSource = searchData();
                 }
             }
             else
@@ -993,5 +998,41 @@ namespace VRM
                 e.Handled = true;
             }
         }
+
+        private void btnExportDs_Click(object sender, EventArgs e)
+        {
+            var data = searchData();
+            data.ForEach(s =>
+            {
+                s.CHONGMY = s.CHONGMY.ToString() == "True" ? "x" : "-";
+            });
+
+            var templateFile = $"{Application.StartupPath}\\Templates\\DanhSachHoiVienNew.xlsx";
+            
+            try
+            {
+                var aWorkBook = ExcelHelper.GetWorkbook(templateFile);
+                aWorkBook = ExcelHelper.ExportExcel(data, aWorkBook, 0, new List<ColumnValue>() { });
+                MemoryStream mstream = new MemoryStream();
+                OoxmlSaveOptions opts1 = new OoxmlSaveOptions(SaveFormat.Xlsx);
+                aWorkBook.Save(mstream, opts1);
+                SaveFileDialog saveDlg = new SaveFileDialog();
+                saveDlg.InitialDirectory = @"C:\";
+                saveDlg.Filter = "Excel files (*.xlsx)|*.xlsx";
+                saveDlg.FilterIndex = 0;
+                saveDlg.RestoreDirectory = true;
+                saveDlg.Title = "Export Excel File To";
+                if (saveDlg.ShowDialog() == DialogResult.OK)
+                {
+                    File.WriteAllBytes(saveDlg.FileName, mstream.ToArray());
+                    Process.Start(saveDlg.FileName);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra trong quá trình xử lý", "Lỗi cập nhật thông tin", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+                
     }
 }

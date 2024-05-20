@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ribbon1 = new System.Windows.Forms.Ribbon();
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.listButtonUpdate = new System.Windows.Forms.RibbonPanel();
@@ -55,15 +55,6 @@
             this.btnDoiMatKhau = new System.Windows.Forms.RibbonButton();
             this.btnLogin = new System.Windows.Forms.RibbonButton();
             this.daMembers = new System.Windows.Forms.DataGridView();
-            this.HVID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HVCHIHOI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HVMA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HVHoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VNGAYSINH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HVQUEQUAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NAMNHAPNGU = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NAMXUATNGU = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NAMNGHIHUU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
@@ -103,6 +94,8 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtKyNiemChuong = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.txtCCCD = new System.Windows.Forms.TextBox();
             this.txtNgayVaoDang = new System.Windows.Forms.MaskedTextBox();
@@ -154,6 +147,17 @@
             this.txtReligon = new System.Windows.Forms.TextBox();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dagKhangChien = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MEMBER_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LKC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LOAIKHANGCHIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENCHIENDICH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CAPBAC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHUCVU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DONVI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.THOIGIAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dagKhenThuong = new System.Windows.Forms.DataGridView();
             this.LOAIKHENTHUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -173,19 +177,18 @@
             this.CHATDOCDACAM = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.QUEQUAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DIACHIHIENNAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dagKhangChien = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MEMBER_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LKC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LOAIKHANGCHIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENCHIENDICH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CAPBAC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHUCVU = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DONVI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.THOIGIAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtKyNiemChuong = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
+            this.HVID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HVCHIHOI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HVMA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HVHoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VNGAYSINH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HVQUEQUAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NAMNHAPNGU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NAMXUATNGU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NAMNGHIHUU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHONGMY = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.KYNIEMCHUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnExportDs = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.daMembers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -203,11 +206,11 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dagKhangChien)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dagKhenThuong)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dagGiaDinh)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dagKhangChien)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon1
@@ -397,7 +400,9 @@
             this.HVQUEQUAN,
             this.NAMNHAPNGU,
             this.NAMXUATNGU,
-            this.NAMNGHIHUU});
+            this.NAMNGHIHUU,
+            this.CHONGMY,
+            this.KYNIEMCHUONG});
             this.daMembers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.daMembers.Location = new System.Drawing.Point(3, 16);
             this.daMembers.Name = "daMembers";
@@ -409,73 +414,6 @@
             this.daMembers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.daMembers_CellClick);
             this.daMembers.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.daMembers_CellDoubleClick);
             this.daMembers.SelectionChanged += new System.EventHandler(this.daMembers_SelectionChanged);
-            // 
-            // HVID
-            // 
-            this.HVID.DataPropertyName = "ID";
-            this.HVID.HeaderText = "ID";
-            this.HVID.Name = "HVID";
-            this.HVID.ReadOnly = true;
-            this.HVID.Visible = false;
-            // 
-            // HVCHIHOI
-            // 
-            this.HVCHIHOI.DataPropertyName = "TENCHIHOI";
-            this.HVCHIHOI.HeaderText = "Chi hội";
-            this.HVCHIHOI.Name = "HVCHIHOI";
-            this.HVCHIHOI.ReadOnly = true;
-            this.HVCHIHOI.Width = 120;
-            // 
-            // HVMA
-            // 
-            this.HVMA.DataPropertyName = "MAHOIVIEN";
-            this.HVMA.HeaderText = "Mã hội viên";
-            this.HVMA.Name = "HVMA";
-            this.HVMA.ReadOnly = true;
-            // 
-            // HVHoTen
-            // 
-            this.HVHoTen.DataPropertyName = "HOTEN";
-            this.HVHoTen.HeaderText = "Tên hội viên";
-            this.HVHoTen.Name = "HVHoTen";
-            this.HVHoTen.ReadOnly = true;
-            this.HVHoTen.Width = 150;
-            // 
-            // VNGAYSINH
-            // 
-            this.VNGAYSINH.DataPropertyName = "NAMSINH";
-            this.VNGAYSINH.HeaderText = "Ngày sinh";
-            this.VNGAYSINH.Name = "VNGAYSINH";
-            this.VNGAYSINH.ReadOnly = true;
-            // 
-            // HVQUEQUAN
-            // 
-            this.HVQUEQUAN.DataPropertyName = "QUEQUAN";
-            this.HVQUEQUAN.HeaderText = "Quê quán";
-            this.HVQUEQUAN.Name = "HVQUEQUAN";
-            this.HVQUEQUAN.ReadOnly = true;
-            this.HVQUEQUAN.Width = 200;
-            // 
-            // NAMNHAPNGU
-            // 
-            this.NAMNHAPNGU.DataPropertyName = "NAMNHAPNGU";
-            this.NAMNHAPNGU.HeaderText = "Năm nhập ngũ";
-            this.NAMNHAPNGU.Name = "NAMNHAPNGU";
-            this.NAMNHAPNGU.ReadOnly = true;
-            // 
-            // NAMXUATNGU
-            // 
-            this.NAMXUATNGU.DataPropertyName = "NAMXUATNGU";
-            this.NAMXUATNGU.HeaderText = "Năm xuất ngũ";
-            this.NAMXUATNGU.Name = "NAMXUATNGU";
-            this.NAMXUATNGU.ReadOnly = true;
-            // 
-            // NAMNGHIHUU
-            // 
-            this.NAMNGHIHUU.DataPropertyName = "NAMNGHIHUU";
-            this.NAMNGHIHUU.HeaderText = "Năm nghỉ hưu";
-            this.NAMNGHIHUU.Name = "NAMNGHIHUU";
-            this.NAMNGHIHUU.ReadOnly = true;
             // 
             // splitContainer1
             // 
@@ -516,6 +454,7 @@
             // 
             // groupBox9
             // 
+            this.groupBox9.Controls.Add(this.btnExportDs);
             this.groupBox9.Controls.Add(this.chkNNSau1975);
             this.groupBox9.Controls.Add(this.chkNNTruoc1975);
             this.groupBox9.Controls.Add(this.linkLabel1);
@@ -631,7 +570,7 @@
             // 
             this.btnSearch.Image = global::VRM.Properties.Resources.search;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSearch.Location = new System.Drawing.Point(369, 111);
+            this.btnSearch.Location = new System.Drawing.Point(369, 12);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(83, 35);
             this.btnSearch.TabIndex = 3;
@@ -949,6 +888,22 @@
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin hội viên";
+            // 
+            // txtKyNiemChuong
+            // 
+            this.txtKyNiemChuong.Location = new System.Drawing.Point(535, 252);
+            this.txtKyNiemChuong.Name = "txtKyNiemChuong";
+            this.txtKyNiemChuong.Size = new System.Drawing.Size(215, 20);
+            this.txtKyNiemChuong.TabIndex = 57;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(427, 255);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(86, 13);
+            this.label32.TabIndex = 56;
+            this.label32.Text = "Kỷ niệm chương:";
             // 
             // label31
             // 
@@ -1391,215 +1346,19 @@
             this.tabPage2.Text = "Quá trình chiến đấu";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.dagKhenThuong);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(771, 477);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Khen thưởng";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // dagKhenThuong
-            // 
-            this.dagKhenThuong.AllowUserToAddRows = false;
-            this.dagKhenThuong.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dagKhenThuong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
-            this.dagKhenThuong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dagKhenThuong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.LOAIKHENTHUONG,
-            this.HOIVIEN_ID,
-            this.KTID,
-            this.TENKHENTHUONG,
-            this.NAMKHENTHUONG,
-            this.NOIDUNG});
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dagKhenThuong.DefaultCellStyle = dataGridViewCellStyle20;
-            this.dagKhenThuong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dagKhenThuong.Location = new System.Drawing.Point(3, 3);
-            this.dagKhenThuong.Name = "dagKhenThuong";
-            this.dagKhenThuong.RowHeadersVisible = false;
-            this.dagKhenThuong.Size = new System.Drawing.Size(765, 471);
-            this.dagKhenThuong.TabIndex = 1;
-            // 
-            // LOAIKHENTHUONG
-            // 
-            this.LOAIKHENTHUONG.DataPropertyName = "LOAIKHENTHUONG";
-            this.LOAIKHENTHUONG.HeaderText = "Column1";
-            this.LOAIKHENTHUONG.Name = "LOAIKHENTHUONG";
-            this.LOAIKHENTHUONG.Visible = false;
-            // 
-            // HOIVIEN_ID
-            // 
-            this.HOIVIEN_ID.DataPropertyName = "HOIVIEN_ID";
-            this.HOIVIEN_ID.HeaderText = "Column1";
-            this.HOIVIEN_ID.Name = "HOIVIEN_ID";
-            this.HOIVIEN_ID.Visible = false;
-            // 
-            // KTID
-            // 
-            this.KTID.DataPropertyName = "ID";
-            this.KTID.HeaderText = "ID";
-            this.KTID.Name = "KTID";
-            this.KTID.Visible = false;
-            // 
-            // TENKHENTHUONG
-            // 
-            this.TENKHENTHUONG.DataPropertyName = "TENKHENTHUONG";
-            this.TENKHENTHUONG.HeaderText = "Tên khen thưởng";
-            this.TENKHENTHUONG.Name = "TENKHENTHUONG";
-            this.TENKHENTHUONG.Width = 250;
-            // 
-            // NAMKHENTHUONG
-            // 
-            this.NAMKHENTHUONG.DataPropertyName = "NAMKHENTHUONG";
-            this.NAMKHENTHUONG.HeaderText = "Năm";
-            this.NAMKHENTHUONG.Name = "NAMKHENTHUONG";
-            // 
-            // NOIDUNG
-            // 
-            this.NOIDUNG.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NOIDUNG.DataPropertyName = "NOIDUNGKHENTHUONG";
-            this.NOIDUNG.HeaderText = "Nội dung khen thưởng";
-            this.NOIDUNG.Name = "NOIDUNG";
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.dagGiaDinh);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(771, 477);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Thông tin gia đình";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // dagGiaDinh
-            // 
-            this.dagGiaDinh.AllowUserToAddRows = false;
-            this.dagGiaDinh.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dagGiaDinh.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
-            this.dagGiaDinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dagGiaDinh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.QHID,
-            this.HV,
-            this.Column1,
-            this.QUANHE,
-            this.HOTEN,
-            this.NAMSINH,
-            this.CHATDOCDACAM,
-            this.QUEQUAN,
-            this.DIACHIHIENNAY});
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dagGiaDinh.DefaultCellStyle = dataGridViewCellStyle22;
-            this.dagGiaDinh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dagGiaDinh.Location = new System.Drawing.Point(3, 3);
-            this.dagGiaDinh.Name = "dagGiaDinh";
-            this.dagGiaDinh.RowHeadersVisible = false;
-            this.dagGiaDinh.Size = new System.Drawing.Size(765, 471);
-            this.dagGiaDinh.TabIndex = 1;
-            // 
-            // QHID
-            // 
-            this.QHID.DataPropertyName = "ID";
-            this.QHID.HeaderText = "ID";
-            this.QHID.Name = "QHID";
-            this.QHID.Visible = false;
-            // 
-            // HV
-            // 
-            this.HV.DataPropertyName = "HOIVIEN_ID";
-            this.HV.HeaderText = "Hội viên";
-            this.HV.Name = "HV";
-            this.HV.Visible = false;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "QUANHE";
-            this.Column1.HeaderText = "QUANHE";
-            this.Column1.Name = "Column1";
-            this.Column1.Visible = false;
-            // 
-            // QUANHE
-            // 
-            this.QUANHE.DataPropertyName = "TENQUANHE";
-            this.QUANHE.HeaderText = "Quan hệ";
-            this.QUANHE.Name = "QUANHE";
-            // 
-            // HOTEN
-            // 
-            this.HOTEN.DataPropertyName = "HOTEN";
-            this.HOTEN.HeaderText = "Họ tên";
-            this.HOTEN.Name = "HOTEN";
-            this.HOTEN.Width = 200;
-            // 
-            // NAMSINH
-            // 
-            this.NAMSINH.DataPropertyName = "NAMSINH";
-            this.NAMSINH.HeaderText = "Năm sinh";
-            this.NAMSINH.Name = "NAMSINH";
-            // 
-            // CHATDOCDACAM
-            // 
-            this.CHATDOCDACAM.DataPropertyName = "CHATDOCDACAM";
-            this.CHATDOCDACAM.HeaderText = "Chất độc da cam";
-            this.CHATDOCDACAM.Name = "CHATDOCDACAM";
-            // 
-            // QUEQUAN
-            // 
-            this.QUEQUAN.DataPropertyName = "QUEQUAN";
-            this.QUEQUAN.HeaderText = "Quê quán";
-            this.QUEQUAN.Name = "QUEQUAN";
-            this.QUEQUAN.Width = 250;
-            // 
-            // DIACHIHIENNAY
-            // 
-            this.DIACHIHIENNAY.DataPropertyName = "DIACHIHIENNAY";
-            this.DIACHIHIENNAY.HeaderText = "Địa chỉ";
-            this.DIACHIHIENNAY.Name = "DIACHIHIENNAY";
-            this.DIACHIHIENNAY.Width = 250;
-            // 
             // dagKhangChien
             // 
             this.dagKhangChien.AllowUserToAddRows = false;
             this.dagKhangChien.AllowUserToDeleteRows = false;
             this.dagKhangChien.AllowUserToResizeColumns = false;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dagKhangChien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dagKhangChien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.dagKhangChien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dagKhangChien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -1612,27 +1371,27 @@
             this.CHUCVU,
             this.DONVI,
             this.THOIGIAN});
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dagKhangChien.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dagKhangChien.DefaultCellStyle = dataGridViewCellStyle23;
             this.dagKhangChien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dagKhangChien.Location = new System.Drawing.Point(3, 3);
             this.dagKhangChien.MultiSelect = false;
             this.dagKhangChien.Name = "dagKhangChien";
             this.dagKhangChien.ReadOnly = true;
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dagKhangChien.RowHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dagKhangChien.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
             this.dagKhangChien.RowHeadersVisible = false;
             this.dagKhangChien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dagKhangChien.ShowEditingIcon = false;
@@ -1727,21 +1486,298 @@
             this.THOIGIAN.ReadOnly = true;
             this.THOIGIAN.Width = 200;
             // 
-            // txtKyNiemChuong
+            // tabPage3
             // 
-            this.txtKyNiemChuong.Location = new System.Drawing.Point(535, 252);
-            this.txtKyNiemChuong.Name = "txtKyNiemChuong";
-            this.txtKyNiemChuong.Size = new System.Drawing.Size(215, 20);
-            this.txtKyNiemChuong.TabIndex = 57;
+            this.tabPage3.Controls.Add(this.dagKhenThuong);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(771, 477);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Khen thưởng";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // label32
+            // dagKhenThuong
             // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(427, 255);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(86, 13);
-            this.label32.TabIndex = 56;
-            this.label32.Text = "Kỷ niệm chương:";
+            this.dagKhenThuong.AllowUserToAddRows = false;
+            this.dagKhenThuong.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dagKhenThuong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            this.dagKhenThuong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dagKhenThuong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.LOAIKHENTHUONG,
+            this.HOIVIEN_ID,
+            this.KTID,
+            this.TENKHENTHUONG,
+            this.NAMKHENTHUONG,
+            this.NOIDUNG});
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dagKhenThuong.DefaultCellStyle = dataGridViewCellStyle26;
+            this.dagKhenThuong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dagKhenThuong.Location = new System.Drawing.Point(3, 3);
+            this.dagKhenThuong.Name = "dagKhenThuong";
+            this.dagKhenThuong.RowHeadersVisible = false;
+            this.dagKhenThuong.Size = new System.Drawing.Size(765, 471);
+            this.dagKhenThuong.TabIndex = 1;
+            // 
+            // LOAIKHENTHUONG
+            // 
+            this.LOAIKHENTHUONG.DataPropertyName = "LOAIKHENTHUONG";
+            this.LOAIKHENTHUONG.HeaderText = "Column1";
+            this.LOAIKHENTHUONG.Name = "LOAIKHENTHUONG";
+            this.LOAIKHENTHUONG.Visible = false;
+            // 
+            // HOIVIEN_ID
+            // 
+            this.HOIVIEN_ID.DataPropertyName = "HOIVIEN_ID";
+            this.HOIVIEN_ID.HeaderText = "Column1";
+            this.HOIVIEN_ID.Name = "HOIVIEN_ID";
+            this.HOIVIEN_ID.Visible = false;
+            // 
+            // KTID
+            // 
+            this.KTID.DataPropertyName = "ID";
+            this.KTID.HeaderText = "ID";
+            this.KTID.Name = "KTID";
+            this.KTID.Visible = false;
+            // 
+            // TENKHENTHUONG
+            // 
+            this.TENKHENTHUONG.DataPropertyName = "TENKHENTHUONG";
+            this.TENKHENTHUONG.HeaderText = "Tên khen thưởng";
+            this.TENKHENTHUONG.Name = "TENKHENTHUONG";
+            this.TENKHENTHUONG.Width = 250;
+            // 
+            // NAMKHENTHUONG
+            // 
+            this.NAMKHENTHUONG.DataPropertyName = "NAMKHENTHUONG";
+            this.NAMKHENTHUONG.HeaderText = "Năm";
+            this.NAMKHENTHUONG.Name = "NAMKHENTHUONG";
+            // 
+            // NOIDUNG
+            // 
+            this.NOIDUNG.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NOIDUNG.DataPropertyName = "NOIDUNGKHENTHUONG";
+            this.NOIDUNG.HeaderText = "Nội dung khen thưởng";
+            this.NOIDUNG.Name = "NOIDUNG";
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.dagGiaDinh);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(771, 477);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Thông tin gia đình";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // dagGiaDinh
+            // 
+            this.dagGiaDinh.AllowUserToAddRows = false;
+            this.dagGiaDinh.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dagGiaDinh.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            this.dagGiaDinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dagGiaDinh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.QHID,
+            this.HV,
+            this.Column1,
+            this.QUANHE,
+            this.HOTEN,
+            this.NAMSINH,
+            this.CHATDOCDACAM,
+            this.QUEQUAN,
+            this.DIACHIHIENNAY});
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dagGiaDinh.DefaultCellStyle = dataGridViewCellStyle28;
+            this.dagGiaDinh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dagGiaDinh.Location = new System.Drawing.Point(3, 3);
+            this.dagGiaDinh.Name = "dagGiaDinh";
+            this.dagGiaDinh.RowHeadersVisible = false;
+            this.dagGiaDinh.Size = new System.Drawing.Size(765, 471);
+            this.dagGiaDinh.TabIndex = 1;
+            // 
+            // QHID
+            // 
+            this.QHID.DataPropertyName = "ID";
+            this.QHID.HeaderText = "ID";
+            this.QHID.Name = "QHID";
+            this.QHID.Visible = false;
+            // 
+            // HV
+            // 
+            this.HV.DataPropertyName = "HOIVIEN_ID";
+            this.HV.HeaderText = "Hội viên";
+            this.HV.Name = "HV";
+            this.HV.Visible = false;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "QUANHE";
+            this.Column1.HeaderText = "QUANHE";
+            this.Column1.Name = "Column1";
+            this.Column1.Visible = false;
+            // 
+            // QUANHE
+            // 
+            this.QUANHE.DataPropertyName = "TENQUANHE";
+            this.QUANHE.HeaderText = "Quan hệ";
+            this.QUANHE.Name = "QUANHE";
+            // 
+            // HOTEN
+            // 
+            this.HOTEN.DataPropertyName = "HOTEN";
+            this.HOTEN.HeaderText = "Họ tên";
+            this.HOTEN.Name = "HOTEN";
+            this.HOTEN.Width = 200;
+            // 
+            // NAMSINH
+            // 
+            this.NAMSINH.DataPropertyName = "NAMSINH";
+            this.NAMSINH.HeaderText = "Năm sinh";
+            this.NAMSINH.Name = "NAMSINH";
+            // 
+            // CHATDOCDACAM
+            // 
+            this.CHATDOCDACAM.DataPropertyName = "CHATDOCDACAM";
+            this.CHATDOCDACAM.HeaderText = "Chất độc da cam";
+            this.CHATDOCDACAM.Name = "CHATDOCDACAM";
+            // 
+            // QUEQUAN
+            // 
+            this.QUEQUAN.DataPropertyName = "QUEQUAN";
+            this.QUEQUAN.HeaderText = "Quê quán";
+            this.QUEQUAN.Name = "QUEQUAN";
+            this.QUEQUAN.Width = 250;
+            // 
+            // DIACHIHIENNAY
+            // 
+            this.DIACHIHIENNAY.DataPropertyName = "DIACHIHIENNAY";
+            this.DIACHIHIENNAY.HeaderText = "Địa chỉ";
+            this.DIACHIHIENNAY.Name = "DIACHIHIENNAY";
+            this.DIACHIHIENNAY.Width = 250;
+            // 
+            // HVID
+            // 
+            this.HVID.DataPropertyName = "ID";
+            this.HVID.HeaderText = "ID";
+            this.HVID.Name = "HVID";
+            this.HVID.ReadOnly = true;
+            this.HVID.Visible = false;
+            // 
+            // HVCHIHOI
+            // 
+            this.HVCHIHOI.DataPropertyName = "TENCHIHOI";
+            this.HVCHIHOI.HeaderText = "Chi hội";
+            this.HVCHIHOI.Name = "HVCHIHOI";
+            this.HVCHIHOI.ReadOnly = true;
+            this.HVCHIHOI.Width = 120;
+            // 
+            // HVMA
+            // 
+            this.HVMA.DataPropertyName = "MAHOIVIEN";
+            this.HVMA.HeaderText = "Mã hội viên";
+            this.HVMA.Name = "HVMA";
+            this.HVMA.ReadOnly = true;
+            // 
+            // HVHoTen
+            // 
+            this.HVHoTen.DataPropertyName = "HOTEN";
+            this.HVHoTen.HeaderText = "Tên hội viên";
+            this.HVHoTen.Name = "HVHoTen";
+            this.HVHoTen.ReadOnly = true;
+            this.HVHoTen.Width = 150;
+            // 
+            // VNGAYSINH
+            // 
+            this.VNGAYSINH.DataPropertyName = "NAMSINH";
+            this.VNGAYSINH.HeaderText = "Ngày sinh";
+            this.VNGAYSINH.Name = "VNGAYSINH";
+            this.VNGAYSINH.ReadOnly = true;
+            // 
+            // HVQUEQUAN
+            // 
+            this.HVQUEQUAN.DataPropertyName = "QUEQUAN";
+            this.HVQUEQUAN.HeaderText = "Quê quán";
+            this.HVQUEQUAN.Name = "HVQUEQUAN";
+            this.HVQUEQUAN.ReadOnly = true;
+            this.HVQUEQUAN.Width = 200;
+            // 
+            // NAMNHAPNGU
+            // 
+            this.NAMNHAPNGU.DataPropertyName = "NAMNHAPNGU";
+            this.NAMNHAPNGU.HeaderText = "Năm nhập ngũ";
+            this.NAMNHAPNGU.Name = "NAMNHAPNGU";
+            this.NAMNHAPNGU.ReadOnly = true;
+            this.NAMNHAPNGU.Width = 50;
+            // 
+            // NAMXUATNGU
+            // 
+            this.NAMXUATNGU.DataPropertyName = "NAMXUATNGU";
+            this.NAMXUATNGU.HeaderText = "Năm xuất ngũ";
+            this.NAMXUATNGU.Name = "NAMXUATNGU";
+            this.NAMXUATNGU.ReadOnly = true;
+            this.NAMXUATNGU.Width = 50;
+            // 
+            // NAMNGHIHUU
+            // 
+            this.NAMNGHIHUU.DataPropertyName = "NAMNGHIHUU";
+            this.NAMNGHIHUU.HeaderText = "Năm nghỉ hưu";
+            this.NAMNGHIHUU.Name = "NAMNGHIHUU";
+            this.NAMNGHIHUU.ReadOnly = true;
+            this.NAMNGHIHUU.Width = 50;
+            // 
+            // CHONGMY
+            // 
+            this.CHONGMY.DataPropertyName = "CHONGMY";
+            this.CHONGMY.HeaderText = "Chống Mỹ";
+            this.CHONGMY.Name = "CHONGMY";
+            this.CHONGMY.ReadOnly = true;
+            // 
+            // KYNIEMCHUONG
+            // 
+            this.KYNIEMCHUONG.DataPropertyName = "KYNIEMCHUONG";
+            this.KYNIEMCHUONG.HeaderText = "Kỷ niệm chương";
+            this.KYNIEMCHUONG.Name = "KYNIEMCHUONG";
+            this.KYNIEMCHUONG.ReadOnly = true;
+            // 
+            // btnExportDs
+            // 
+            this.btnExportDs.Image = global::VRM.Properties.Resources.print;
+            this.btnExportDs.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExportDs.Location = new System.Drawing.Point(348, 113);
+            this.btnExportDs.Name = "btnExportDs";
+            this.btnExportDs.Size = new System.Drawing.Size(104, 35);
+            this.btnExportDs.TabIndex = 13;
+            this.btnExportDs.Text = "Xuất dữ liệu";
+            this.btnExportDs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExportDs.UseVisualStyleBackColor = true;
+            this.btnExportDs.Click += new System.EventHandler(this.btnExportDs_Click);
             // 
             // frmMain
             // 
@@ -1778,11 +1814,11 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dagKhangChien)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dagKhenThuong)).EndInit();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dagGiaDinh)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dagKhangChien)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1915,15 +1951,6 @@
         private System.Windows.Forms.MaskedTextBox txtNgayNghiHuu;
         private System.Windows.Forms.MaskedTextBox txtNgayXuatNgu;
         private System.Windows.Forms.MaskedTextBox txtNgayVaoDang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HVID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HVCHIHOI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HVMA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HVHoTen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn VNGAYSINH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HVQUEQUAN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NAMNHAPNGU;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NAMXUATNGU;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NAMNGHIHUU;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.TextBox txtCCCD;
         private System.Windows.Forms.CheckBox chkNNSau1975;
@@ -1941,5 +1968,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn THOIGIAN;
         private System.Windows.Forms.TextBox txtKyNiemChuong;
         private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HVID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HVCHIHOI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HVMA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HVHoTen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VNGAYSINH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HVQUEQUAN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NAMNHAPNGU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NAMXUATNGU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NAMNGHIHUU;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn CHONGMY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KYNIEMCHUONG;
+        private System.Windows.Forms.Button btnExportDs;
     }
 }

@@ -266,6 +266,9 @@
     <None Include="Properties\DataSources\VRM.Utilities.Excel.Emums+ValueDataType.datasource" />
     <None Include="Properties\DataSources\VRM.Utilities.Excel.Emums.datasource" />
     <None Include="Properties\DataSources\VRM.Utilities.Excel.ExcelHelper.datasource" />
+    <None Include="Templates\DanhSachHoiVienNew.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Templates\DanhSachHoiVienSHORT.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

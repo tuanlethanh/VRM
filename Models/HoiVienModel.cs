@@ -16,6 +16,8 @@ namespace VRM.Models
         public string NAMNHAPNGU {  get; set; }
         public string NAMXUATNGU {  get; set; }
         public string QUEQUAN {  get; set; }
+        public object CHONGMY {  get; set; }
+        public string KYNIEMCHUONG {  get; set; }
         public DateTime? NAMSINH {  get; set; }
     }
 }
