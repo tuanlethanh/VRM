@@ -152,7 +152,7 @@ namespace VRM
             }
     
             var data = query.Join(databaseContext.CHIHOIs, hoivien => hoivien.CHIHOI_ID, chihoi => chihoi.ID,
-                (hoivien, chihoi) => new { hoivien, chihoi }).ToList();
+                (hoivien, chihoi) => new { hoivien, chihoi }).OrderBy(s => s.hoivien.ID).ToList();
 
             var listDat = new List<HoiVienModel>();
             var lsIds = data.Select(s => s.hoivien.ID).ToList();
@@ -380,7 +380,7 @@ namespace VRM
 
                 try
                 {
-                    var query = databaseContext.HOIVIENs.AsQueryable();
+                    var query = databaseContext.HOIVIENs.AsNoTracking().AsQueryable();
                     if (cboTimKiemChiHoi.SelectedValue != null
                         && decimal.Parse(cboTimKiemChiHoi.SelectedValue.ToString()) != -1)
                     {
@@ -450,9 +450,9 @@ namespace VRM
                     }).ToList();
 
                     var listHoiVienIds = listHoiVien.Select(s => s.HoiVien.ID).ToList();
-                    var listQuaTrinhChienDaus = databaseContext.QUATRINHCHIENDAUs.Where(s => listHoiVienIds.Contains(s.HOIVIEN_ID)).ToList();
+                    var listQuaTrinhChienDaus = databaseContext.QUATRINHCHIENDAUs.AsNoTracking().Where(s => listHoiVienIds.Contains(s.HOIVIEN_ID)).ToList();
                     //var listKhenThuongs = databaseContext.KHENTHUONGs.Where(s => listHoiVienIds.Contains(s.HOIVIEN_ID)).ToList();
-                    var listTTGiaDinhs = databaseContext.THONGTINGIADINHs.Where(s => listHoiVienIds.Contains(s.HOIVIEN_ID)).ToList();
+                    var listTTGiaDinhs = databaseContext.THONGTINGIADINHs.AsNoTracking().Where(s => listHoiVienIds.Contains(s.HOIVIEN_ID)).ToList();
 
 
                     var listReport = new List<ReportListModel>();
@@ -460,6 +460,7 @@ namespace VRM
                     {
                         var hoivien = new ReportListModel
                         {
+                            ID = s.HoiVien.ID,
                             HoTen = s.HoiVien.HOTEN,
                             NamSinh = s.HoiVien.NAMSINH?.ToString("dd/MM/yyyy"),
                             NgayNhapNgu = s.HoiVien.NGAYNHAPNGU == null ? "" : s.HoiVien.NGAYNHAPNGU?.ToString("MM/yyyy"),
@@ -510,6 +511,7 @@ namespace VRM
                         }
                         listReport.Add(hoivien);
                     });
+                    listReport = listReport.OrderBy(s => s.ID).ToList();
                     var templateFile = $"{Application.StartupPath}\\Templates\\DanhSachHoiVienFULL.xlsx";
                     switch (printType)
                     {

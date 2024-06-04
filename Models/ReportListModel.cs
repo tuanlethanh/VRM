@@ -10,7 +10,7 @@ namespace VRM.Models
     public class ReportListModel
     {
         public int STT {  get; set; }
-
+        public int ID { get; set; }
         public string TenChiHoi {  get; set; }
         public string HoTen {  get; set; }
         public string NamSinh {  get; set; }

@@ -104,7 +104,7 @@ namespace VRM.Forms
             hoivien.CONGGIAO = chkCongGiao.Checked;
             hoivien.DANTOCITNGUOI = chkDanTocItNguoi.Checked;
             hoivien.CONLIETSI = chkConLietSi.Checked;
-            hoivien.THUONGBINH = cboThuongBenhBinh.SelectedValue.ToString().Contains("THUONGBINH");
+            hoivien.THUONGBINH = cboThuongBenhBinh.SelectedValue.ToString().Contains("HANG");
             hoivien.BENHBINH = cboThuongBenhBinh.SelectedValue.ToString().Contains("BENHBINH");
             hoivien.THUONGBENHBINH = cboThuongBenhBinh.SelectedValue.ToString();
             hoivien.TINHTRANGSUCKHOE = txtTinhTrangSucKhoe.Text;
