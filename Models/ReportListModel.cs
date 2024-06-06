@@ -12,6 +12,7 @@ namespace VRM.Models
         public int STT {  get; set; }
         public int ID { get; set; }
         public string TenChiHoi {  get; set; }
+        public string MaChiHoi {  get; set; }
         public string HoTen {  get; set; }
         public string NamSinh {  get; set; }
         public string NgayNhapNgu {  get; set; }

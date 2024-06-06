@@ -34,7 +34,7 @@ namespace VRM.Forms
 
         void refreshGrid()
         {
-            var query = databaseContext.CHIHOIs.AsQueryable();
+            var query = databaseContext.CHIHOIs.AsNoTracking().AsQueryable();
             if (!string.IsNullOrEmpty(txtKeyword.Text))
             {
                 query.Where(s => txtKeyword.Text.Contains(s.TENCHIHOI)

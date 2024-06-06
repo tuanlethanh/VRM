@@ -10,6 +10,7 @@ namespace VRM.Models
     {
         public decimal ID {  get; set; }
         public string TENCHIHOI {  get; set; }
+        public string MACHIHOI {  get; set; }
         public string MAHOIVIEN {  get; set; }
         public string HOTEN {  get; set; }
         public string NAMNGHIHUU {  get; set; }

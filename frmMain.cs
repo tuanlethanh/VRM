@@ -149,10 +149,15 @@ namespace VRM
             if (chkChatDocDaCamSearch.Checked)
             {
                 query = query.Where(s => s.CHATDOCDACAM == true);
+            } 
+            
+            if (chKThuongBinh.Checked)
+            {
+                query = query.Where(s => s.THUONGBINH == true);
             }
     
             var data = query.Join(databaseContext.CHIHOIs, hoivien => hoivien.CHIHOI_ID, chihoi => chihoi.ID,
-                (hoivien, chihoi) => new { hoivien, chihoi }).OrderBy(s => s.hoivien.ID).ToList();
+                (hoivien, chihoi) => new { hoivien, chihoi }).ToList();
 
             var listDat = new List<HoiVienModel>();
             var lsIds = data.Select(s => s.hoivien.ID).ToList();
@@ -173,10 +178,11 @@ namespace VRM
                     QUEQUAN = item.hoivien.QUEQUAN,
                     CHONGMY = lstKhangChiens.Any(s => s.HOIVIEN_ID == item.hoivien.ID),
                     KYNIEMCHUONG = item.hoivien.KYNIEMCHUONG,
+                    MACHIHOI = item.chihoi.MACHIHOI
                 });
             }
 
-           return listDat;
+           return listDat.ToList().OrderBy(s => s.MACHIHOI).ToList();
         }
 
         private void btnNewMember_Click(object sender, EventArgs e)
@@ -443,10 +449,15 @@ namespace VRM
                         query = query.Where(s => s.NGAYNHAPNGU.HasValue && s.NGAYNHAPNGU.Value < date);
                     }
 
+                    if (chKThuongBinh.Checked)
+                    {
+                        query = query.Where(s => s.THUONGBINH == true);
+                    }
+
                     var listHoiVien = query.Join(databaseContext.CHIHOIs, hv => hv.CHIHOI_ID, ch => ch.ID, (hv, ch) => new
                     {
                         HoiVien = hv,
-                        TenChiHoi = ch.TENCHIHOI
+                        ChiHoi = ch
                     }).ToList();
 
                     var listHoiVienIds = listHoiVien.Select(s => s.HoiVien.ID).ToList();
@@ -485,7 +496,8 @@ namespace VRM
                             NgayVaoHoi = s.HoiVien.NGAYVAOHOI == null ? "" : s.HoiVien.NGAYVAOHOI?.ToString("dd/MM/yyyy"),
                             NamCapTheHoiVien = s.HoiVien.NGAYCAPTHE == null ? "" : s.HoiVien.NGAYCAPTHE?.ToString("yyyy"),
                             SoTheHoiVien = s.HoiVien.MAHOIVIEN,
-                            TenChiHoi = s.TenChiHoi
+                            TenChiHoi = s.ChiHoi.TENCHIHOI,
+                            MaChiHoi = s.ChiHoi.MACHIHOI
                         };
                         hoivien.ChatDocDaCam_Con = listTTGiaDinhs.Any(k => k.HOIVIEN_ID == s.HoiVien.ID && k.CHATDOCDACAM && k.QUANHE == "CON") ? "x" : "";
                         var chienDichDienBienPhu = listQuaTrinhChienDaus.FirstOrDefault(k => k.HOIVIEN_ID == s.HoiVien.ID && k.CHIENDICH == "CHIEN_DICH_DIEN_BIEN_PHU");
@@ -511,7 +523,7 @@ namespace VRM
                         }
                         listReport.Add(hoivien);
                     });
-                    listReport = listReport.OrderBy(s => s.ID).ToList();
+                    listReport = listReport.ToList().OrderBy(s => s.MaChiHoi).ToList();
                     var templateFile = $"{Application.StartupPath}\\Templates\\DanhSachHoiVienFULL.xlsx";
                     switch (printType)
                     {

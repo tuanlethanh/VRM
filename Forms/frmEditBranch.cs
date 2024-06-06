@@ -47,11 +47,16 @@ namespace VRM.Forms
             if (branch == null || branch.ID == 0)
             {
                 branch = new CHIHOI();
+                branch.MACHIHOI = txtCode.Text;
+                branch.TENCHIHOI = txtName.Text;
+                databaseContext.CHIHOIs.Add(branch);
             }
-
-            branch.MACHIHOI = txtCode.Text;
-            branch.TENCHIHOI = txtName.Text;
-            databaseContext.CHIHOIs.Add(branch);
+            else
+            {
+                branch = databaseContext.CHIHOIs.FirstOrDefault(s => s.ID == branch.ID);
+                branch.MACHIHOI = txtCode.Text;
+                branch.TENCHIHOI = txtName.Text;
+            }
             databaseContext.SaveChanges();
             DialogResult = DialogResult.OK;
         }
