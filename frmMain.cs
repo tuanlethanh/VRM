@@ -84,6 +84,11 @@ namespace VRM
                 cboCapBac.DataSource = Constant.DanhMucCapBac;
                 cboCapBac.DisplayMember = "Name";
                 cboCapBac.ValueMember = "Id";
+
+                cboDoiDoiTuongKetNap.DataSource = Constant.DanhMucDoiTuongKetNap;
+                cboDoiDoiTuongKetNap.DisplayMember = "Name";
+                cboDoiDoiTuongKetNap.ValueMember = "Id";
+
             }
         }
 
@@ -261,6 +266,15 @@ namespace VRM
                         txtCoQuanDonViKhiNghiHuu.Text = hoivien.COQUANDONVI;
                         txtTinhTrangSucKhoe.Text = hoivien.TINHTRANGSUCKHOE;
                         chkChatDocDaCam.Checked = hoivien.CHATDOCDACAM;
+
+                        txtChieuCao.Value = hoivien.CHIEUCAO ?? 0;
+                        txtCanNang.Value = hoivien.CANNANG ?? 0;
+                        txtPhuCap.Text = hoivien.PHUCAP;
+                        if (!string.IsNullOrEmpty(hoivien.DOITUONGKETNAP))
+                        {
+                            cboDoiDoiTuongKetNap.SelectedValue = hoivien.DOITUONGKETNAP;
+                        }
+
                         #endregion
 
                         #region Thông tin kháng chiên

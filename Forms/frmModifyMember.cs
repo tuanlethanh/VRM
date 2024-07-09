@@ -87,7 +87,7 @@ namespace VRM.Forms
             hoivien.NAMSINH = isValidDate(txtDateOfBirth.Text) ? DateTime.ParseExact(txtDateOfBirth.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture) : date;
             hoivien.GIOITINH = cboGender.SelectedValue.ToString();
             hoivien.DANTOC = txtethnic.Text;
-            hoivien.TONGIAO = txtCode.Text;
+            hoivien.TONGIAO = txtReligon.Text;
             hoivien.QUEQUAN = txtHomtown.Text;
             hoivien.NOICUTRU = txtResidence.Text;
             hoivien.DIACHI = txtAddress.Text;
