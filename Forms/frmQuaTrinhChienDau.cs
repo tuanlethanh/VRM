@@ -68,7 +68,7 @@ namespace VRM.Forms
             cboChienDich.DisplayMember = "Name";
             cboChienDich.ValueMember = "Id";
 
-            cboLoaiKhangChien.SelectedValue = "KHANG_CHIEN_CHONG_PHAP";
+            cboLoaiKhangChien.SelectedValue = "KHANG_CHIEN_CHONG_MY";
 
             if (KhangChien == null)
             {
@@ -82,6 +82,10 @@ namespace VRM.Forms
                 cboLoaiKhangChien.SelectedValue = KhangChien.LOAIKHANGCHIEN;
             if (!string.IsNullOrEmpty(KhangChien.CHIENDICH))
                 cboChienDich.SelectedValue = KhangChien.CHIENDICH;
+            else
+            {
+                cboChienDich.SelectedValue = "KHANG_CHIEN_CHONG_MY_KHAC";
+            }
         }
 
         private void cboLoaiKhangChien_SelectedIndexChanged(object sender, EventArgs e)

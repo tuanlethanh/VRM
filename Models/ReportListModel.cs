@@ -46,5 +46,24 @@ namespace VRM.Models
         public string NgayVaoHoi { get; set; }
         public string NamCapTheHoiVien { get; set; }
         public string SoTheHoiVien { get; set; }
+        public string CCCD { get; set; }
+        public string GTNam { get; set; }
+        public string GTNu { get; set; }
+        public string HoKhauThuongChu { get; set; }
+        public string DiaChi { get; set; }
+        public string BHYT { get; set; }
+        public decimal? ChieuCao { get; set; }
+        public decimal? CanNang { get; set; }
+        public string TinhTrangSucKhoe { get; set; }
+        public string SoDienThoai { get; set; }
+        public string DonViTruocNghiHuu { get; set; }
+        public string CapBac { get; set; }
+        public string DoiTuongKetNap { get; set; }
+        public string PhuCap { get; set; }
+        public string KyNiemChuong { get; set; }
+        public string DanToc { get; set; }
+        public string TonGiao { get; set; }
+        public string HoKhauThuongTru { get; set; }
+        public string QueQuan { get; set; }
     }
 }

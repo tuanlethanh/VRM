@@ -78,9 +78,22 @@ namespace VRM.Utilities
                 new DropdownModel {Id = "CNVQP", Name = "Công nhân viên Quốc phòng" }
             };
 
+        public static List<DropdownModel> DanhMucDoiTuongKetNap = new List<DropdownModel>
+            {
+                new DropdownModel {Id = "DOITUONG1", Name = "Đối tượng 1" },
+                new DropdownModel {Id = "DOITUONG2", Name = "Đối tượng 2" },
+                new DropdownModel {Id = "DOITUONG3", Name = "Đối tượng 3" },
+                new DropdownModel {Id = "DOITUONG4", Name = "Đối tượng 4" },
+                new DropdownModel {Id = "DOITUONG5", Name = "Đối tượng 5" },
+                new DropdownModel {Id = "DOITUONG6", Name = "Đối tượng 6" },
+                new DropdownModel {Id = "DOITUONG7", Name = "Đối tượng 7" },
+            };
+
         public static USER LoginUser = new USER();
 
         public static string PRINT_MEMBER_LIST_FULL = "FULL";
         public static string PRINT_MEMBER_LIST_SHORT = "SHORT";
+        public static string PRINT_MEMBER_LIST_DS_HOIVIEN = "DS_HOIVIEN";
+        public static string PRINT_MEMBER_LIST_DS_HOIVIEN_TT = "DS_HOIVIEN_TT";
     }
 }

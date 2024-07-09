@@ -144,6 +144,18 @@ namespace VRM.Entities
 
         [Column(Name = "KYNIEMCHUONG", DbType = "VARCHAR")]
         public string KYNIEMCHUONG { get; set; }
+
+        [Column(Name = "CHIEUCAO", DbType = "NUMBER")]
+        public decimal? CHIEUCAO { get; set; }
+
+        [Column(Name = "CANNANG", DbType = "NUMBER")]
+        public decimal? CANNANG { get; set; }
+
+        [Column(Name = "DOITUONGKETNAP", DbType = "VARCHAR")]
+        public string DOITUONGKETNAP { get; set; }
+
+        [Column(Name = "PHUCAP", DbType = "VARCHAR")]
+        public string PHUCAP { get; set; }
     }
 
 

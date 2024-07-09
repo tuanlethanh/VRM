@@ -1,4 +1,5 @@
 ﻿using Aspose.Cells;
+using Aspose.Cells.Charts;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -467,7 +468,7 @@ namespace VRM
 
 
                     var listReport = new List<ReportListModel>();
-                    listHoiVien.AsParallel().ForAll(s =>
+                    listHoiVien.ForEach(s =>
                     {
                         var hoivien = new ReportListModel
                         {
@@ -497,7 +498,25 @@ namespace VRM
                             NamCapTheHoiVien = s.HoiVien.NGAYCAPTHE == null ? "" : s.HoiVien.NGAYCAPTHE?.ToString("yyyy"),
                             SoTheHoiVien = s.HoiVien.MAHOIVIEN,
                             TenChiHoi = s.ChiHoi.TENCHIHOI,
-                            MaChiHoi = s.ChiHoi.MACHIHOI
+                            MaChiHoi = s.ChiHoi.MACHIHOI,
+                            GTNam = s.HoiVien.GIOITINH == "NAM" ? s.HoiVien.NAMSINH?.ToString("yyyy") : "",
+                            GTNu = s.HoiVien.GIOITINH == "NU" ? s.HoiVien.NAMSINH?.ToString("yyyy") : "",
+                            CCCD = s.HoiVien?.CCCD,
+                            HoKhauThuongChu = s.HoiVien.NOICUTRU,
+                            DiaChi = s.HoiVien.DIACHI,
+                            BHYT = s.HoiVien.BHYT,
+                            ChieuCao = s.HoiVien.CHIEUCAO,
+                            CanNang = s.HoiVien.CANNANG,
+                            TinhTrangSucKhoe = s.HoiVien.TINHTRANGSUCKHOE, 
+                            SoDienThoai = s.HoiVien.SODIENTHOAI,
+                            DonViTruocNghiHuu = s.HoiVien.COQUANKHIXUATNGU,
+                            DoiTuongKetNap = s.HoiVien.DOITUONGKETNAP,
+                            PhuCap = !string.IsNullOrEmpty(s.HoiVien.PHUCAP) || s.HoiVien.NGAYNGHIHUU.HasValue ? "x" : "",
+                            KyNiemChuong = s.HoiVien.KYNIEMCHUONG,
+                            DanToc = s.HoiVien.DANTOC,
+                            TonGiao = s.HoiVien.TONGIAO,
+                            HoKhauThuongTru = s.HoiVien.NOICUTRU,
+                            QueQuan = s.HoiVien.QUEQUAN
                         };
                         hoivien.ChatDocDaCam_Con = listTTGiaDinhs.Any(k => k.HOIVIEN_ID == s.HoiVien.ID && k.CHATDOCDACAM && k.QUANHE == "CON") ? "x" : "";
                         var chienDichDienBienPhu = listQuaTrinhChienDaus.FirstOrDefault(k => k.HOIVIEN_ID == s.HoiVien.ID && k.CHIENDICH == "CHIEN_DICH_DIEN_BIEN_PHU");
@@ -521,6 +540,7 @@ namespace VRM
                             hoivien.ChucVu_HCM = string.Format("Cấp bậc: {0}, Chức vụ: {1}", CHIEN_DICH_HO_CHI_MINH.CAPBAC, CHIEN_DICH_HO_CHI_MINH.CHUCVU);
                             hoivien.DonVi_HCM = string.Format("Đơn vị: {0}, Thời gian: {1}", CHIEN_DICH_HO_CHI_MINH.DONVI, CHIEN_DICH_HO_CHI_MINH.THOIGIAN);
                         }
+                        hoivien.ChatDocDaCam_BanThan = "wswww";
                         listReport.Add(hoivien);
                     });
                     listReport = listReport.ToList().OrderBy(s => s.MaChiHoi).ToList();
@@ -543,16 +563,50 @@ namespace VRM
                                 templateFile = $"{Application.StartupPath}\\Templates\\DanhSachHoiVienSHORT.xlsx";
                             }
                             break;
+                        case "DS_HOIVIEN":
+                            templateFile = $"{Application.StartupPath}\\Templates\\ThongTinHoiVien.xlsx";
+                            break;
+                        case "DS_HOIVIEN_TT":
+                            templateFile = $"{Application.StartupPath}\\Templates\\DanhSachTTHoiVien.xlsx";
+                            break;
                     }
                     
 
 
                     var aWorkBook = ExcelHelper.GetWorkbook(templateFile);
-                    aWorkBook = ExcelHelper.ExportExcel(listReport, aWorkBook, 0, new List<ColumnValue>() {
-                new ColumnValue{FieldName = "CHIHOI", FieldValue = listReport.Count > 0 ? listReport[0].TenChiHoi : "", IsValue = true, ValueType = ValueDataType.String},
-            });
+
+                    if (new List<string>{ "FULL", "SHORT"}.Contains(printType))
+                    {
+                        aWorkBook = ExcelHelper.ExportExcel(listReport, aWorkBook, 0, new List<ColumnValue>() {
+                            new ColumnValue{FieldName = "CHIHOI", FieldValue = listReport.Count > 0 ? listReport[0].TenChiHoi : "", IsValue = true, ValueType = ValueDataType.String}
+                        });
+                    }
+                    else if (new List<string> { "DS_HOIVIEN_TT", "DS_HOIVIEN" }.Contains(printType))
+                    {
+                        var workBook = new Workbook();
+                        workBook.Worksheets.RemoveAt(0);
+                        var listChiHois = listReport.Select(s => s.MaChiHoi).Distinct().OrderBy(s => s).ToList();
+                        int index = 0;
+                        foreach (var chihoi in listChiHois)
+                        {
+                            aWorkBook = ExcelHelper.GetWorkbook(templateFile);
+                            var data = listReport.Where(s => s.MaChiHoi == chihoi).ToList();
+                            aWorkBook = ExcelHelper.ExportExcel(data, aWorkBook, 0, new List<ColumnValue>() {
+                            new ColumnValue{FieldName = "TenCH", FieldValue = data.Count > 0 ? data[0].TenChiHoi : "", IsValue = true, ValueType = ValueDataType.String} });
+                            Worksheet ws0 = aWorkBook.Worksheets[0];
+                            workBook.Worksheets.Add(data[0].TenChiHoi);
+                            Worksheet ws1 = workBook.Worksheets[index];
+                            ws1.Copy(ws0);
+                            index++;
+                        }
+                        aWorkBook = new Workbook();
+                        aWorkBook = workBook;
+                    }
+
+                   
                     MemoryStream mstream = new MemoryStream();
                     OoxmlSaveOptions opts1 = new OoxmlSaveOptions(SaveFormat.Xlsx);
+
                     aWorkBook.Save(mstream, opts1);
                     SaveFileDialog saveDlg = new SaveFileDialog();
                     saveDlg.InitialDirectory = @"C:\";
@@ -1027,6 +1081,7 @@ namespace VRM
             {
                 var aWorkBook = ExcelHelper.GetWorkbook(templateFile);
                 aWorkBook = ExcelHelper.ExportExcel(data, aWorkBook, 0, new List<ColumnValue>() { });
+
                 MemoryStream mstream = new MemoryStream();
                 OoxmlSaveOptions opts1 = new OoxmlSaveOptions(SaveFormat.Xlsx);
                 aWorkBook.Save(mstream, opts1);

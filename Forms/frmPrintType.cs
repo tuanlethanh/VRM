@@ -30,6 +30,8 @@ namespace VRM.Forms
             {
                 new DropdownModel {Id = Constant.PRINT_MEMBER_LIST_FULL, Name = "Danh sách hội viên đầy đủ"},
                 new DropdownModel {Id = Constant.PRINT_MEMBER_LIST_SHORT, Name = "Danh sách hội viên rút gọn"},
+                new DropdownModel {Id = Constant.PRINT_MEMBER_LIST_DS_HOIVIEN_TT, Name = "Danh sách thông tin hội viên"},
+                new DropdownModel {Id = Constant.PRINT_MEMBER_LIST_DS_HOIVIEN, Name = "Danh sách hội viên"},
             };
 
             cboPrintType.DataSource = printType;

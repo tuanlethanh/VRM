@@ -70,12 +70,12 @@ namespace VRM.Forms
         void SaveData()
         {
 
-            
+
 
             if (hoivien == null)
             {
                 hoivien = new HOIVIEN();
-            } 
+            }
             else
             {
                 hoivien = databaseContext.HOIVIENs.FirstOrDefault(s => s.ID == hoivien.ID);
@@ -112,15 +112,19 @@ namespace VRM.Forms
             hoivien.COQUANDONVI = txtCoQuanDonViKhiNghiHuu.Text;
             hoivien.KYNIEMCHUONG = txtKyNiemChuong.Text;
             hoivien.CAPBAC = cboCapBac.SelectedValue.ToString();
+            hoivien.CHIEUCAO = txtChieuCao.Value;
+            hoivien.CANNANG = txtCanNang.Value;
+            hoivien.DOITUONGKETNAP = cboDoiDoiTuongKetNap.SelectedValue.ToString();
             hoivien.CHUCVU = txtChucVu.Text;
+            hoivien.PHUCAP = txtPhuCap.Text;
             hoivien.NGAYNGHIHUU = isValidDate(txtNgayNghiHuu.Text)
-                ? DateTime.ParseExact(txtNgayNghiHuu.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture): date;
+                ? DateTime.ParseExact(txtNgayNghiHuu.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture) : date;
             hoivien.NGAYNHAPNGU = isValidDate(txtNgayNhapNgu.Text)
-                ? DateTime.ParseExact(txtNgayNhapNgu.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture): date;
+                ? DateTime.ParseExact(txtNgayNhapNgu.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture) : date;
             hoivien.NGAYXUATNGU = isValidDate(txtNgayXuatNgu.Text)
-                ? DateTime.ParseExact(txtNgayXuatNgu.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture): date;
+                ? DateTime.ParseExact(txtNgayXuatNgu.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture) : date;
             hoivien.NGAYVAODANG = isValidDate(txtNgayVaoDang.Text)
-                ? DateTime.ParseExact(txtNgayVaoDang.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture): date;
+                ? DateTime.ParseExact(txtNgayVaoDang.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture) : date;
             hoivien.COQUANKHIXUATNGU = txtCoQuanKhiXuatNgu.Text;
 
             hoivien.CHIHOI_ID = cboBranch.SelectedValue != null ? int.Parse(cboBranch.SelectedValue.ToString()) : 0;
@@ -155,7 +159,7 @@ namespace VRM.Forms
                 hoivien.UPDATED_AT = DateTime.Now;
                 hoivien.UPDATED_BY = Constant.LoginUser.ID;
             }
-            
+
             DanhSachQuaTrinhChienDau.ForEach(s => s.HOIVIEN_ID = hoivien.ID);
             databaseContext.QUATRINHCHIENDAUs.AddOrUpdate(DanhSachQuaTrinhChienDau.ToArray());
             DanhSachThanhVien.ForEach(s => s.HOIVIEN_ID = hoivien.ID);
@@ -177,7 +181,7 @@ namespace VRM.Forms
 
         void fillFormData()
         {
-            
+
             var branchs = databaseContext.CHIHOIs.ToList();
             cboBranch.DataSource = branchs;
             cboBranch.DisplayMember = "TENCHIHOI";
@@ -195,6 +199,10 @@ namespace VRM.Forms
             cboCapBac.DisplayMember = "Name";
             cboCapBac.ValueMember = "Id";
 
+            cboDoiDoiTuongKetNap.DataSource = Constant.DanhMucDoiTuongKetNap;
+            cboDoiDoiTuongKetNap.DisplayMember = "Name";
+            cboDoiDoiTuongKetNap.ValueMember = "Id";
+
             if (hoivien != null)
             {
                 hoivien = databaseContext.HOIVIENs.FirstOrDefault(s => s.ID == hoivien.ID);
@@ -210,13 +218,15 @@ namespace VRM.Forms
 
                 if (!String.IsNullOrEmpty(hoivien.THUONGBENHBINH))
                 {
-                    if (Constant.DanhMucHangThuongBinh.Any(s => s.Id.Equals(hoivien.THUONGBENHBINH))) {
+                    if (Constant.DanhMucHangThuongBinh.Any(s => s.Id.Equals(hoivien.THUONGBENHBINH)))
+                    {
                         cboThuongBenhBinh.SelectedValue = hoivien.THUONGBENHBINH;
-                    } 
-                    else {
+                    }
+                    else
+                    {
                         cboThuongBenhBinh.SelectedIndex = 0;
                     }
-                    
+
                 }
 
                 if (!String.IsNullOrEmpty(hoivien.CAPBAC))
@@ -260,6 +270,14 @@ namespace VRM.Forms
                 txtCoQuanDonViKhiNghiHuu.Text = hoivien.COQUANDONVI;
                 txtTinhTrangSucKhoe.Text = hoivien.TINHTRANGSUCKHOE;
                 chkChatDocDaCam.Checked = hoivien.CHATDOCDACAM;
+                txtChieuCao.Value = hoivien.CHIEUCAO ?? 0;
+                txtCanNang.Value = hoivien.CANNANG ?? 0;
+                txtPhuCap.Text = hoivien.PHUCAP;
+                if (!string.IsNullOrEmpty(hoivien.DOITUONGKETNAP))
+                {
+                    cboDoiDoiTuongKetNap.SelectedValue = hoivien.DOITUONGKETNAP;
+                }
+                
                 #endregion
 
                 #region Thông tin kháng chiên
@@ -451,6 +469,11 @@ namespace VRM.Forms
         }
 
         private void txtethnic_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkCongGiao_CheckedChanged(object sender, EventArgs e)
         {
 
         }
