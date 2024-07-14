@@ -554,7 +554,6 @@ namespace VRM
                             hoivien.ChucVu_HCM = string.Format("Cấp bậc: {0}, Chức vụ: {1}", CHIEN_DICH_HO_CHI_MINH.CAPBAC, CHIEN_DICH_HO_CHI_MINH.CHUCVU);
                             hoivien.DonVi_HCM = string.Format("Đơn vị: {0}, Thời gian: {1}", CHIEN_DICH_HO_CHI_MINH.DONVI, CHIEN_DICH_HO_CHI_MINH.THOIGIAN);
                         }
-                        hoivien.ChatDocDaCam_BanThan = "wswww";
                         listReport.Add(hoivien);
                     });
                     listReport = listReport.ToList().OrderBy(s => s.MaChiHoi).ToList();
