@@ -5,7 +5,7 @@ VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VRM", "VRM.csproj", "{C33510CA-1153-4D2B-8AA4-1BE5C2326E99}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupProject", "..\SetupProject\SetupProject.vdproj", "{C2ED2D93-3EBB-4BB7-B5F5-37498DAC5123}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup\Setup.vdproj", "{06B98260-4BD6-40A9-94C7-A3F22FAB9148}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{C33510CA-1153-4D2B-8AA4-1BE5C2326E99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C33510CA-1153-4D2B-8AA4-1BE5C2326E99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C33510CA-1153-4D2B-8AA4-1BE5C2326E99}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C2ED2D93-3EBB-4BB7-B5F5-37498DAC5123}.Debug|Any CPU.ActiveCfg = Debug
-		{C2ED2D93-3EBB-4BB7-B5F5-37498DAC5123}.Release|Any CPU.ActiveCfg = Release
+		{06B98260-4BD6-40A9-94C7-A3F22FAB9148}.Debug|Any CPU.ActiveCfg = Debug
+		{06B98260-4BD6-40A9-94C7-A3F22FAB9148}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
